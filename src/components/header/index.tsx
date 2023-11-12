@@ -23,13 +23,13 @@ export default function Header() {
         )}
         onClick={() => setIsOpen(false)}
       >
-        <div className='relative flex flex-col gap-y-5 rounded-xl text-primary bg-white w-3/4 p-5 py-16'>
+        <div className='relative flex flex-col gap-y-5 rounded-xl text-primary bg-white w-3/4 p-5 py-16 border border-primary'>
           <ImCross
             className='text-2xl absolute top-6 right-6'
             onClick={() => setIsOpen(false)}
           />
           <h2 className='text-center text-2xl font-bold'>Menu</h2>
-          <ul className='flex flex-col gap-y-2 text-xl justify-center items-center'>
+          <ul className='flex flex-col gap-y-3 text-xl justify-center items-center'>
             <li>
               <a className='p-2' href='#' onClick={() => setIsOpen(false)}>
                 Home

@@ -1,15 +1,22 @@
 "use server";
+import prisma from "@/prisma/client";
+import { ContactFormData, contactFormSchema } from "./schemas-and-types";
 
-import { ContactFormData } from "./contact";
-import { contactFormSchema } from "@/server-actions/contact-form-submit";
 
 export async function handleContactFormSubmit(data: ContactFormData) {
-  contactFormSchema.parse(data);
-  console.log({
-    firstName: data.firstName,
-    lastName: data.lastName,
-    email: data.email,
-  });
+  await wait(5)
+  try {
+    contactFormSchema.parse(data);
+    await prisma.message.create({
+      data: {
+        senderFirstName: data.firstName,
+        senderLastName: data.lastName,
+        senderEmail: data.email,
+        message: data.message
+      }
+    });
+  } catch {
+  }
 }
 
 
