@@ -4,7 +4,7 @@ import { ServiceItem } from './service-item';
 
 export default function ServicesList() {
   return (
-    <ul className='flex flex-col md:flex-row md:flex-wrap md:justify-center md:gap-x-5 md:items-stretch gap-y-6 px-2 overflow-hidden'>
+    <ul className='flex flex-col md:flex-row md:flex-wrap md:justify-center md:gap-x-5 md:items-stretch gap-y-6 p-2 overflow-hidden'>
       {services.map((serviceData, index) => (
         <ServiceItem {...serviceData} key={index} />
       ))}

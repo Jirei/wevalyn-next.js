@@ -17,10 +17,10 @@ export default function HeroBackground({
           src={backgroundImage}
           alt={'background image of the hero'}
         />
-        <div className='relative h-[80vh] z-10 flex items-center justify-center'>
+        <div className='relative h-[80vh] 2xl:h-[90vh] z-10 flex items-center justify-center'>
           <div className='flex items-center justify-center'>
             <svg
-            className='w-[98vw] md:w-[65vw]'
+            className='w-[98vw] md:w-[80vw] lg:w-[75vw] 2xl:w-[50vw]'
               // height='100vh'
               viewBox='0 0 213 105'
               fill='none'

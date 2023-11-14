@@ -22,9 +22,11 @@ export function ServiceItem({
     <li
       ref={intersectionRef}
       className={cn(
-        appearFrom === 'right' && 'max-sm:translate-x-[90vw] md:translate-x-[45vw]',
-        appearFrom === 'left' && 'max-sm:-translate-x-[90vw] md:-translate-x-[45vw]',
-        ' transition-transform duration-1000 relative w-full md:w-[40vw] text-white rounded-[5px] overflow-hidden',
+        'shadow-service-card transition-transform duration-1000 relative w-full md:w-[40vw] xl:w-[25vw] 2xl:w-[20vw] text-white rounded-[5px] overflow-hidden',
+        appearFrom === 'right' &&
+          'max-sm:translate-x-[90vw] md:translate-x-[45vw] xl:translate-x-[25vw] 2xl:translate-x-[20vw]',
+        appearFrom === 'left' &&
+          'max-sm:-translate-x-[90vw] md:-translate-x-[45vw] xl:-translate-x-[25vw] 2xl:-translate-x-[20vw]',
         yellowRibbon &&
           'after:h-14 after:w-full after:bg-[#EDDC40] after:absolute after:z-10 after:top-0 after:left-[35%] after:rotate-45',
         hasAppeared && '!translate-x-0'

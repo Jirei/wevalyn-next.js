@@ -36,7 +36,7 @@ export default function Contact() {
       {
         <div
           className={cn(
-            'bg-primary text-white  transition-all duration-1000  h-0 rounded-xl overflow-hidden w-10/12 m-auto',
+            'bg-primary text-white  transition-all duration-1000  h-0 rounded-xl overflow-hidden w-10/12 xl:w-[40vw] m-auto',
             isOpen && 'h-[50rem] border border-primary'
           )}
         >
@@ -105,7 +105,7 @@ export default function Contact() {
             </ul>
             <button
               className={cn(
-                'uppercase bg-white text-primary text-xl font-bol2 font-roboto w-fit self-center py-1.5 gap-y-1 px-10 rounded',
+                'uppercase bg-white text-primary text-xl font-bol2 font-roboto w-fit self-center py-1.5 gap-y-1 px-10 rounded hover:scale-105',
                 isSubmitting && 'bg-red-500'
               )}
               type='submit'
@@ -128,7 +128,7 @@ function ContactButtonWithLottie({ onClick }: { onClick: () => void }) {
         <button
           onClick={onClick}
           className={cn(
-            'bg-[#C171C2]  text-white text-xl px-20 py-3 rounded-xl ml-[4rem] shadow-cta-contact'
+            'bg-[#C171C2] hover:bg-[#a749a9]  text-white text-xl px-20 py-3 rounded-xl ml-[4rem] shadow-cta-contact transition-all hover:-translate-y-1'
           )}
         >
           Contact

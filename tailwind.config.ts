@@ -16,10 +16,11 @@ module.exports = {
       },
     },
     extend: {
-      boxShadow:{
-        'cta-contact':'0px 4px 2.91787px 0px rgba(0, 0, 0, 0.25)'
+      boxShadow: {
+        'cta-contact': '0px 4px 2.91787px 0px rgba(0, 0, 0, 0.25)',
+        'service-card': '0px 6.35911px 3.17955px 0px rgba(0, 0, 0, 0.25)'
       },
-      transitionDuration:{
+      transitionDuration: {
         '3000': '3000ms'
       },
       backgroundImage: {
