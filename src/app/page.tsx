@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <div className='flex flex-col gap-y-16 xl:gap-y-32'>
+        <div className='flex flex-col gap-y-16 xl:gap-y-56'>
           <Hero />
           <Services />
           <DemoWebsites />
