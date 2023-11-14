@@ -16,6 +16,12 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow:{
+        'cta-contact':'0px 4px 2.91787px 0px rgba(0, 0, 0, 0.25)'
+      },
+      transitionDuration:{
+        '3000': '3000ms'
+      },
       backgroundImage: {
         'hero': `
         linear-gradient(rgba(0,105,181, 0.5),rgba(0,105,181, 0.5)),

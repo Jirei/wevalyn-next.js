@@ -1,8 +1,10 @@
-import Contact from './contact';
+import dynamic from 'next/dynamic';
+
+const Contact = dynamic(() => import('./contact'));
 
 export default function CtaSection() {
   return (
-    <div className='flex flex-col gap-y-14 mt-10'>
+    <section className='flex flex-col gap-y-14 mt-10'>
       <div className='flex flex-col gap-y-5 text-primary text-center text-xl'>
         <p className='leading-relaxed'>
           Do you want to request a quote? <br />
@@ -11,6 +13,6 @@ export default function CtaSection() {
         <p>Drop us a line and we’ll get back to you shortly.</p>
       </div>
       <Contact />
-    </div>
+    </section>
   );
 }

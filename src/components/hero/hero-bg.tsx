@@ -11,6 +11,7 @@ export default function HeroBackground({
     <div>
       <div className='relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[rgb(0,105,181)]/40'>
         <Image
+          priority
           fill
           className='object-center object-cover pointer-events-none '
           src={backgroundImage}
@@ -19,7 +20,7 @@ export default function HeroBackground({
         <div className='relative h-[80vh] z-10 flex items-center justify-center'>
           <div className='flex items-center justify-center'>
             <svg
-              width='98vw'
+            className='w-[98vw] md:w-[65vw]'
               // height='100vh'
               viewBox='0 0 213 105'
               fill='none'

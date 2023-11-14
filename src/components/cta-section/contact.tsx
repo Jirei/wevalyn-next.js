@@ -29,7 +29,7 @@ export default function Contact() {
   };
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className='flex flex-col gap-y-10'>
+    <section className='flex flex-col gap-y-10'>
       {!isOpen && (
         <ContactButtonWithLottie onClick={() => setIsOpen(prev => !prev)} />
       )}
@@ -95,7 +95,7 @@ export default function Contact() {
                     <textarea
                       {...register('message')}
                       className='p-2 font-roboto text-primary border border-primary rounded [&:not(:placeholder-shown)]:valid:border-green-500'
-                      placeholder='Hello, I want a landing page with a very nice design...'
+                      placeholder='Hello, I would like a landing page with a sleek & modern design...'
                       rows={7}
                     />
                   </div>
@@ -116,7 +116,7 @@ export default function Contact() {
           </form>
         </div>
       }
-    </div>
+    </section>
   );
 }
 
@@ -128,7 +128,7 @@ function ContactButtonWithLottie({ onClick }: { onClick: () => void }) {
         <button
           onClick={onClick}
           className={cn(
-            'bg-[#C171C2]  text-white text-xl px-20 py-3 rounded-xl ml-[4rem]'
+            'bg-[#C171C2]  text-white text-xl px-20 py-3 rounded-xl ml-[4rem] shadow-cta-contact'
           )}
         >
           Contact
