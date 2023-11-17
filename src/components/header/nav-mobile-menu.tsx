@@ -2,7 +2,7 @@ import { ImCross } from 'react-icons/im';
 import { cn } from '@/lib/utils';
 import type { Dispatch, SetStateAction } from 'react';
 
-export default function NavMenu({
+export default function NavMobileMenu({
   isOpen,
   setIsOpen,
 }: {
@@ -12,7 +12,7 @@ export default function NavMenu({
   return (
     <nav
       className={cn(
-        'flex flex-col items-center justify-center bg-white/50 fixed top-0 translate-x-full duration-700 w-screen overflow-hidden h-screen z-50 transition-all',
+        'lg:hidden flex flex-col items-center justify-center bg-white/50 fixed top-0 translate-x-full duration-700 w-screen overflow-hidden h-screen z-50 transition-all',
         isOpen && 'translate-x-0'
       )}
       onClick={() => setIsOpen(false)}

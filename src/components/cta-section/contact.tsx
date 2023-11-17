@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import ArrowLottie from './arrow-lottie';
 import { cn } from '@/lib/utils';
 import { useForm } from 'react-hook-form';
@@ -20,7 +20,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    console.log("before try on submit")
+    console.log('before try on submit');
     try {
       await handleContactFormSubmit(data);
     } finally {
@@ -28,13 +28,23 @@ export default function Contact() {
     }
   };
   const [isOpen, setIsOpen] = useState(false);
+  const formContainerRef = useRef<HTMLDivElement>(null);
   return (
     <section className='flex flex-col gap-y-10'>
       {!isOpen && (
-        <ContactButtonWithLottie onClick={() => setIsOpen(prev => !prev)} />
+        <ContactButtonWithLottie
+          onClick={() => {
+            setIsOpen(prev => !prev);
+            setTimeout(() => {
+              formContainerRef.current?.scrollIntoView({block:'center',behavior:'smooth'});
+            
+            }, 1000);
+          }}
+        />
       )}
       {
         <div
+          ref={formContainerRef}
           className={cn(
             'bg-primary text-white  transition-all duration-1000  h-0 rounded-xl overflow-hidden w-10/12 xl:w-[40vw] m-auto',
             isOpen && 'h-[50rem] border border-primary'
