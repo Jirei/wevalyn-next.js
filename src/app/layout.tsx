@@ -1,6 +1,8 @@
 import { cn } from '@/lib/utils';
 import './globals.css';
 import { Poppins, Arvo, Roboto } from 'next/font/google';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -31,10 +33,17 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={cn(poppins.variable, arvo.variable, roboto.variable,'scroll-smooth')}
+      className={cn(
+        poppins.variable,
+        arvo.variable,
+        roboto.variable,
+        'scroll-smooth'
+      )}
     >
-      <body className='h-[200vh] font-normal'>
+      <body className='h-[200vh] font-normal overflow-x-hidden'>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

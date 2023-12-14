@@ -46,7 +46,7 @@ export default function Contact() {
         <div
           ref={formContainerRef}
           className={cn(
-            'bg-primary text-white  transition-all duration-1000  h-0 rounded-xl overflow-hidden w-10/12 xl:w-[40vw] m-auto',
+            'bg-primary text-white  transition-all duration-1000  h-0 rounded-xl overflow-hidden w-11/12 max-w-[40rem] m-auto',
             isOpen && 'h-[50rem] border border-primary'
           )}
         >

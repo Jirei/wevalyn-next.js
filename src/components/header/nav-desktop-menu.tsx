@@ -4,12 +4,12 @@ export default function NavDesktopMenu() {
       <div className=' text-primary'>
         <ul className='flex gap-x-8 font-bold text-xl justify-center items-center'>
           <li className="hover:scale-105 transition-all">
-            <a className='p-4  hover:text-primary-light hover:py-1.5' href='#'>
+            <a className='p-4  hover:text-primary-light hover:py-1.5' href='/'>
               Home
             </a>
           </li>
           <li className="hover:scale-105 transition-all">
-            <a className='p-4 hover:text-primary-light hover:py-1.5' href='#NoWhere'>
+            <a className='p-4 hover:text-primary-light hover:py-1.5' href='/about'>
               About
             </a>
           </li>

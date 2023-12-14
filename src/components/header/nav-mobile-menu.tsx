@@ -25,12 +25,12 @@ export default function NavMobileMenu({
         <h2 className='text-center text-2xl font-bold'>Menu</h2>
         <ul className='flex flex-col gap-y-3 text-xl justify-center items-center'>
           <li>
-            <a className='p-2' href='#' onClick={() => setIsOpen(false)}>
+            <a className='p-2' href='/' onClick={() => setIsOpen(false)}>
               Home
             </a>
           </li>
           <li>
-            <a className='p-2' href='#NoWhere' onClick={() => setIsOpen(false)}>
+            <a className='p-2' href='/about' onClick={() => setIsOpen(false)}>
               About
             </a>
           </li>
