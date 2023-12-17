@@ -2,9 +2,8 @@
 import prisma from "@/prisma/client";
 import { ContactFormData, contactFormSchema } from "./schemas-and-types";
 
-
 export async function handleContactFormSubmit(data: ContactFormData) {
-  await wait(5)
+  await wait(5);
   try {
     contactFormSchema.parse(data);
     await prisma.message.create({
@@ -12,13 +11,11 @@ export async function handleContactFormSubmit(data: ContactFormData) {
         senderFirstName: data.firstName,
         senderLastName: data.lastName,
         senderEmail: data.email,
-        message: data.message
-      }
+        message: data.message,
+      },
     });
-  } catch {
-  }
+  } catch {}
 }
-
 
 export async function wait(seconds: number) {
   return new Promise((resolve) => {

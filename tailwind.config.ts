@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   theme: {
     container: {
@@ -17,27 +17,28 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        'cta-contact': '0px 4px 2.91787px 0px rgba(0, 0, 0, 0.25)',
-        'service-card': '0px 6.35911px 3.17955px 0px rgba(0, 0, 0, 0.25)'
+        "cta-contact": "0px 4px 2.91787px 0px rgba(0, 0, 0, 0.25)",
+        "service-card": "0px 6.35911px 3.17955px 0px rgba(0, 0, 0, 0.25)",
       },
       transitionDuration: {
-        '3000': '3000ms'
+        "3000": "3000ms",
       },
       backgroundImage: {
-        'hero': `
+        hero: `
         linear-gradient(rgba(0,105,181, 0.5),rgba(0,105,181, 0.5)),
         url('/hero.jpg')`,
-        'primary-gradient': 'linear-gradient(270deg, rgb(72 160 255) 0%, rgb(64 117 233) 100%)'
+        "primary-gradient":
+          "linear-gradient(270deg, rgb(72 160 255) 0%, rgb(64 117 233) 100%)",
       },
       fontFamily: {
-        sans: ['var(--font-poppins)'],
-        normal: ['var(--font-arvo)'],
-        roboto: ['var(--font-roboto)']
+        sans: ["var(--font-poppins)"],
+        normal: ["var(--font-arvo)"],
+        roboto: ["var(--font-roboto)"],
       },
       colors: {
-        primary: '#0069B5',
-        'primary-light': '#429ADA',
-        'gray-font': '#464646',
+        primary: "#0069B5",
+        "primary-light": "#429ADA",
+        "gray-font": "#464646",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -94,4 +95,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};;
+};

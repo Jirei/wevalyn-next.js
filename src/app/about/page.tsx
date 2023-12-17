@@ -1,8 +1,17 @@
-export default function About() {
+import { ContactButtonWithLottie } from "@/components/contact-button-with-lottie";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About - Wevalyn",
+  description:
+    "Welcome to Wevalyn, your dedicated partner for expert WordPress development services. Transform your online presence with our skilled team of web developers, crafting customized solutions to elevate your website's performance and user experience. From responsive design to seamless integration of powerful WordPress features, we bring your vision to life. Explore our comprehensive services tailored for businesses of all sizes. Trust Wevalyn to turn your digital ambitions into reality. Contact us today for a WordPress experience that sets you apart in the online landscape.",
+};
+
+export default function AboutPage() {
   return (
-    <section className='my-32 p-4 text-lg flex flex-col m-auto gap-y-16 text-gray-font max-w-[60rem]'>
+    <section className=' text-justify mb-32 mt-24 px-12 py-20 rounded text-lg flex flex-col m-auto gap-y-16 text-gray-font max-w-[60rem] bg-[#e5ecf7]'>
       <h1 className='w-fit mb-6 m-auto text-primary text-3xl font-normal text-center'>
-        Wevalyn Is About Crafting Digital Excellence
+        About Us
       </h1>
       <div className='flex flex-col gap-y-4'>
         <h2 className='text-2xl font-bold text-primary'>Our Genesis</h2>
@@ -124,6 +133,7 @@ export default function About() {
           </p>
         </div>
       </div>
+      <ContactButtonWithLottie />
     </section>
   );
 }
