@@ -1,8 +1,9 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/client";
 import "./globals.css";
 import { Poppins, Arvo, Roboto } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,13 +38,16 @@ export default function RootLayout({
         poppins.variable,
         arvo.variable,
         roboto.variable,
-        "scroll-smooth",
+        "scroll-smooth"
       )}
     >
       <body className="font-normal overflow-x-hidden">
         <Header />
         {children}
         <Footer />
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+        />
       </body>
     </html>
   );
