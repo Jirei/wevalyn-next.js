@@ -1,4 +1,4 @@
-import { cn } from "@/lib/client";
+import { cn } from "@/lib/functions";
 import "./globals.css";
 import { Poppins, Arvo, Roboto } from "next/font/google";
 import { Footer } from "@/components/footer";

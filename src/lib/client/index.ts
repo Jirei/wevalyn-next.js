@@ -1,11 +1,12 @@
+import "client-only";
 import { clientEnv } from "@/config/client-config";
 import { CaptchaAction } from "@/types";
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+
+export function logClientError(error: unknown) {
+  if (!process.env.NEXT_PUBLIC_PRODUCTION_MODE) console.error(error);
 }
+
 /**
  * 
  * @param grecaptcha 

@@ -1,5 +1,5 @@
 import { ImCross } from "react-icons/im";
-import { cn } from "@/lib/client";
+import { cn } from "@/lib/functions";
 import type { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 

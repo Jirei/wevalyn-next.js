@@ -1,5 +1,6 @@
 "use client";
-import { checkCaptchaActionOnClient, cn } from "@/lib/client";
+import { checkCaptchaActionOnClient, logClientError } from "@/lib/client";
+import { cn } from "@/lib/functions";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -42,7 +43,7 @@ export function ContactForm() {
       const formResponse = await handleContactFormSubmit(data);
       setFormResponse(formResponse);
     } catch (e) {
-      console.log(e);
+      logClientError(e);
       setFormResponse({
         error: true,
         message: "Something went wrong. Please try again later.",
