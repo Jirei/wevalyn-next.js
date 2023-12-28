@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ArrowLottie from "./arrow-lottie";
-import { cn } from "@/lib/functions";
+import { cn } from "@/lib/common";
 export function ContactButtonWithLottie() {
   return (
     <div className="flex gap-x-4 justify-center items-center">

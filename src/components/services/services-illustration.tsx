@@ -1,6 +1,6 @@
 "use client";
 import { useAppear } from "@/hooks/use-appear";
-import { cn } from "@/lib/functions";
+import { cn } from "@/lib/common";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useRef } from "react";
 

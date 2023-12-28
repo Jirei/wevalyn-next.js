@@ -1,6 +1,7 @@
 "use client";
-import { checkCaptchaActionOnClient, logClientError } from "@/lib/client";
-import { cn } from "@/lib/functions";
+import { checkCaptchaActionOnClient } from "@/lib/client";
+import { logError } from "@/lib/common";
+import { WrappingError, cn } from "@/lib/common";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,25 +28,32 @@ export function ContactForm() {
     },
   });
   const [formResponse, setFormResponse] = useState<FormResponse>({
-    error: null,
+    hasError: null,
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    const { token, error } = await checkCaptchaActionOnClient(
-      grecaptcha,
-      "contact"
-    );
-    if (error) throw new Error("Grecaptcha client token request failed");
     try {
-      data.captchaToken = token;
-      const formResponse = await handleContactFormSubmit(data);
+      const { token, hasError, error } = await checkCaptchaActionOnClient(
+        grecaptcha,
+        "contact"
+      );
+      if (hasError) {
+        throw new WrappingError(
+          "grecaptcha client token request failed",
+          error
+        );
+      }
+      const dataHydratedWithCaptchaToken = { ...data, captchaToken: token };
+      const formResponse = await handleContactFormSubmit(
+        dataHydratedWithCaptchaToken
+      );
       setFormResponse(formResponse);
     } catch (e) {
-      logClientError(e);
+      logError(e);
       setFormResponse({
-        error: true,
+        hasError: true,
         message: "Something went wrong. Please try again later.",
       });
     } finally {
@@ -60,6 +68,8 @@ export function ContactForm() {
       )}
     >
       <form
+        // needed because playwright getByRole() has a bug
+        data-testid="form"
         className="flex flex-col p-5 py-10 gap-y-10"
         onSubmit={handleSubmit(onSubmit)}
       >
@@ -192,7 +202,7 @@ export function ContactForm() {
         {!!formResponse.message && !isSubmitting && (
           <>
             <p className="flex items-center gap-x-2 font-bold text-lg">
-              {formResponse.error && (
+              {formResponse.hasError && (
                 <MdError size="2em" className="text-red-500" />
               )}
               <span>{formResponse.message}</span>

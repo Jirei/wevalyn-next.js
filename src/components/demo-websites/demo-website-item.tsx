@@ -2,7 +2,7 @@
 import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
 import { useAppear } from "@/hooks/use-appear";
-import { cn } from "@/lib/functions";
+import { cn } from "@/lib/common";
 
 export function DemoWebsiteItem({
   name,

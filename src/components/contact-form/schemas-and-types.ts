@@ -21,5 +21,7 @@ export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export type FormResponse = {
   message: string;
-  error: true | null;
+  hasError: true | null;
 };
+
+
