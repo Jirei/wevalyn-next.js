@@ -17,7 +17,7 @@ export function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid: formIsValid, isSubmitted },
     watch,
   } = useForm<ContactFormData>({
     mode: "onSubmit",
@@ -31,6 +31,8 @@ export function ContactForm() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isFormSubmitButtonDisabled =
+    isSubmitting || (!formIsValid && isSubmitted);
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
@@ -191,16 +193,22 @@ export function ContactForm() {
         <button
           className={cn(
             " uppercase bg-white text-primary text-xl font-bold font-roboto w-fit self-center py-1.5 gap-y-1 px-20 rounded",
-            !isSubmitting && "hover:scale-105",
-            isSubmitting && "bg-gray-300"
+            !isFormSubmitButtonDisabled && "hover:scale-105",
+            isFormSubmitButtonDisabled && "bg-gray-300 hover:cursor-not-allowed"
           )}
-          disabled={isSubmitting}
+          disabled={isFormSubmitButtonDisabled}
           type="submit"
         >
           <div className="relative flex gap-x-4">
             <span className={cn("ml-8")}>Submit</span>
             <RotatingLines
-              strokeColor={isSubmitting ? "rgb(0,105,181)" : "rgb(255,255,255)"}
+              strokeColor={
+                isSubmitting
+                  ? "rgb(0,105,181)"
+                  : isFormSubmitButtonDisabled
+                  ? "bg-gray-300"
+                  : "rgb(255,255,255)"
+              }
               strokeWidth="5"
               animationDuration="0.75"
               width="1.2em"
