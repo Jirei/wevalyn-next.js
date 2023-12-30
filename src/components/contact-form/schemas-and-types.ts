@@ -3,13 +3,13 @@ import { z } from "zod";
 export const contactFormSchema = z.object({
   firstName: z
     .string()
-    .min(1, { message: "First Name must have at least 1 character." })
+    .min(1, { message: "First Name must have at least one character." })
     .max(50, { message: "First Name must have maximum 50 characters." }),
   lastName: z
     .string()
-    .min(1, { message: "Last Name must have at least 1 character." })
+    .min(1, { message: "Last Name must have at least one character." })
     .max(50, { message: "Last Name must have maximum 50 characters." }),
-  email: z.string().email(),
+  email: z.string().email({message:"Email is invalid."}),
   message: z
     .string()
     .min(250, { message: "Message must have at least 250 characters." })

@@ -45,10 +45,12 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <Script
-          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-          strategy="lazyOnload"
-        />
+        {process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== "true" && (
+          <Script
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+            strategy="lazyOnload"
+          />
+        )}
       </body>
     </html>
   );

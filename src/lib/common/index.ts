@@ -1,21 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-/**************************************************************************************************/
-/* log function */
 
-export function logError(error: unknown) {
-  process.env.IS_IN_SERVER ? _logServerError(error) : _logClientError(error);
-}
-
-function _logServerError(error: unknown) {
-  console.error(error);
-}
-function _logClientError(error: unknown) {
-  if (!process.env.NEXT_PUBLIC_PRODUCTION_MODE) console.error(error);
-}
-
-/**************************************************************************************************/
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

@@ -1,6 +1,5 @@
 "use client";
-import { checkCaptchaActionOnClient } from "@/lib/client";
-import { logError } from "@/lib/common";
+import { checkCaptchaActionOnClient, logClientError } from "@/lib/client";
 import { WrappingError, cn } from "@/lib/common";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -35,10 +34,11 @@ export function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      const { token, hasError, error } = await checkCaptchaActionOnClient(
-        grecaptcha,
-        "contact"
-      );
+      const {
+        token,
+        hasError,
+        error = undefined,
+      } = await checkCaptchaActionOnClient(window?.grecaptcha, "contact");
       if (hasError) {
         throw new WrappingError(
           "grecaptcha client token request failed",
@@ -51,7 +51,7 @@ export function ContactForm() {
       );
       setFormResponse(formResponse);
     } catch (e) {
-      logError(e);
+      logClientError(e);
       setFormResponse({
         hasError: true,
         message: "Something went wrong. Please try again later.",
@@ -79,8 +79,11 @@ export function ContactForm() {
           <li>
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
-                <label className="text-white text-lg">First name *</label>
+                <label className="text-white text-lg" htmlFor="first-name">
+                  First name *
+                </label>
                 <input
+                  id="first-name"
                   {...register("firstName")}
                   required
                   className={cn(
@@ -105,10 +108,11 @@ export function ContactForm() {
           <li>
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
-                <label className="text-white text-lg">
+                <label className="text-white text-lg" htmlFor="last-name">
                   Last name (not required)
                 </label>
                 <input
+                  id="last-name"
                   {...register("lastName")}
                   className="p-2 font-roboto text-primary border border-primary rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
                   type="text"
@@ -130,8 +134,11 @@ export function ContactForm() {
           <li>
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
-                <label className="text-white text-lg">Email *</label>
+                <label className="text-white text-lg" htmlFor="email">
+                  Email *
+                </label>
                 <input
+                  id="email"
                   {...register("email")}
                   required
                   type="email"
@@ -154,8 +161,11 @@ export function ContactForm() {
           <li>
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
-                <label className="text-white text-lg">Message *</label>
+                <label className="text-white text-lg" htmlFor="message">
+                  Message *
+                </label>
                 <textarea
+                  id="message"
                   {...register("message")}
                   required
                   className="p-2 font-roboto text-primary border border-primary rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
@@ -205,7 +215,9 @@ export function ContactForm() {
               {formResponse.hasError && (
                 <MdError size="2em" className="text-red-500" />
               )}
-              <span>{formResponse.message}</span>
+              <span data-testid="form-feedback-message">
+                {formResponse.message}
+              </span>
             </p>
           </>
         )}
