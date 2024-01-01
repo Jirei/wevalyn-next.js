@@ -16,6 +16,8 @@
     "@hookform/resolvers": "^3.3.3",
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "@prisma/client": "^5.7.1",
+    "@upstash/ratelimit": "^1.0.0",
+    "@vercel/kv": "^1.0.1",
     "add-retries-to-function": "^0.0.3",
     "add-timeout-to-function": "^0.0.12",
     "class-variance-authority": "^0.7.0",

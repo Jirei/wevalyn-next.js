@@ -42,3 +42,4 @@ next-env.d.ts
 
 
 server-errors.log
+/src/prisma/*.db
