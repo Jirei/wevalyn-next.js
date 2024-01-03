@@ -6,9 +6,18 @@ import { captchaActions } from "@/lib/common";
 import { isPrismaTransientError, checkCaptchaClientTokenOnServer, logServerError } from "@/lib/server";
 import { addTimeoutToFunction } from "add-timeout-to-function";
 import { addRetriesToFunction } from "add-retries-to-function";
+import { Ratelimit } from '@upstash/ratelimit';
+import { kv } from '@vercel/kv';
+import { headers } from "next/headers";
 
 export async function handleContactFormSubmit(data: ContactFormData): Promise<FormResponse> {
   try {
+    const ip = headers().get('x-forwarded-for');
+    console.log(ip);
+    const canSendForm = await canUserSendForm(ip);
+    if (!canSendForm) {
+      return { message: "You reached your message limit. Please try again later.", hasError: true };
+    }
     const validatedData = contactFormSchema.parse(data);
     const { isValid, message } = await checkCaptchaClientTokenOnServer({ token: validatedData.captchaToken, action: captchaActions.contact });
     if (!isValid) {
@@ -27,11 +36,30 @@ export async function handleContactFormSubmit(data: ContactFormData): Promise<Fo
   }
 }
 
-const fnWithTimeout = addTimeoutToFunction({ fn: _rawCreateMessageInDB, timeout: 5000 });
-const fnWithTimeoutAndRetries = addRetriesToFunction({ fn: fnWithTimeout, loggingFn: logServerError, shouldStopTrying: e => isPrismaTransientError(e) });
-const createMessageInDB = fnWithTimeoutAndRetries;
+const _fnWithTimeout = addTimeoutToFunction({ fn: _rawCreateMessageInDB, timeout: 5000 });
+const _fnWithTimeoutAndRetries = addRetriesToFunction({ fn: _fnWithTimeout, loggingFn: logServerError, shouldStopTrying: e => isPrismaTransientError(e) });
+const createMessageInDB = _fnWithTimeoutAndRetries;
 
 async function _rawCreateMessageInDB(messageData: Prisma.MessageCreateInput) {
   return await prisma.message.create({ data: messageData });
 }
 
+const _canUserSendFormWithTimeout = addTimeoutToFunction({ fn: _canUserSendForm, timeout: 5000 });
+const _canUserSendFormWithTimeoutAndRetries = addRetriesToFunction({ fn: _canUserSendFormWithTimeout, loggingFn: logServerError });
+const canUserSendForm = _canUserSendFormWithTimeoutAndRetries;
+
+async function _canUserSendForm(ip: string | null): Promise<boolean> {
+  if (!ip) return false;
+  const { success } = await contactRatelimit.limit(
+    ip
+  );
+  return success ? true : false;
+}
+
+const contactRatelimit = new Ratelimit({
+  redis: kv,
+  // 2 contact form submits from the same IP in 10 minutes max
+  limiter: Ratelimit.slidingWindow(2, '600s'),
+  prefix: "ratelimit:contact",
+  timeout: 5000
+});

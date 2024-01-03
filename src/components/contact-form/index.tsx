@@ -51,6 +51,7 @@ export function ContactForm() {
       const formResponse = await handleContactFormSubmit(
         dataHydratedWithCaptchaToken
       );
+      console.log(formResponse)
       setFormResponse(formResponse);
     } catch (e) {
       logClientError(e);
