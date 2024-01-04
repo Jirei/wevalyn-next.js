@@ -8,17 +8,17 @@ import { writeFileSync } from "fs";
 
 
 export function logServerError(error: unknown) {
-  writeFileSync("server-errors.log", String(error) + '\n', { flag: "as" });
+  writeFileSync("server-errors.log", String(error) + "\n", { flag: "as" });
   console.error(error);
 }
 
 export async function checkCaptchaClientTokenOnServer({ token, action }: { token: string, action: CaptchaAction; }) {
-  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === 'true') return { isValid: true } as const;
+  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "on") return { isValid: true } as const;
 
   const response = await fetchWithTwoRetriesOnTimeout("https://www.google.com/recaptcha/api/siteverify",
     {
       method: "POST",
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
         response: token,
         secret: serverEnv.RECAPTCHA_SECRET,
@@ -27,7 +27,7 @@ export async function checkCaptchaClientTokenOnServer({ token, action }: { token
       signal: AbortSignal.timeout(5000)
     });
   const parsedResponse: GrecaptchaServerVerificationAPIResponseJSON = await response.json();
-  if (!parsedResponse.success || (parsedResponse.score <= 0.5 && process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== 'true') || parsedResponse.action !== captchaActions.contact) {
+  if (!parsedResponse.success || (parsedResponse.score <= 0.5 && process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== 'on') || parsedResponse.action !== captchaActions.contact) {
     let internalErrorMessage = "Something unexpected went wrong while verifying the captcha client token";
     if (!parsedResponse.success) internalErrorMessage = "Recaptcha response came but the reCAPTCHA client token wasn't valid";
     else if (parsedResponse.score <= 0.5) internalErrorMessage = "Recaptcha response came but the score was lower than the thresold for bot detection clearance";

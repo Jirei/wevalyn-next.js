@@ -15,7 +15,7 @@ export function logClientError(error: unknown) {
  * @returns An object with the token (if no error) and an error flag.
  */
 export async function checkCaptchaActionOnClient(grecaptcha: ReCaptchaV2.ReCaptcha, action: CaptchaAction): Promise<CheckCaptchaActionOnClientReturnValue> {
-  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "true") return { token: "test-placeholder", hasError: false };
+  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "on") return { token: "test-placeholder", hasError: false };
   try {
     const { isReady, hasError, error } = await isGrecaptchaReady();
     if (hasError || !isReady) throw new WrappingError("Grecaptcha library not ready even though it's needed.", error);

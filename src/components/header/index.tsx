@@ -4,6 +4,7 @@ import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import dynamic from "next/dynamic";
 import NavDesktopMenu from "./nav-desktop-menu";
+import Link from "next/link";
 
 const NavMobileMenu = dynamic(() => import("./nav-mobile-menu"));
 
@@ -14,7 +15,7 @@ export function Header() {
     <header>
       <div className="flex items-center justify-between h-24 p-2">
         <div className="flex flex-col justify-center">
-          <p className="font-sans text-primary font-bold text-3xl">Wevalyn</p>
+          <Link href="/" className="font-sans text-primary font-bold text-3xl">Wevalyn</Link>
         </div>
         <div>
           <NavDesktopMenu />
