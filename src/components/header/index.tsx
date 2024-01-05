@@ -12,10 +12,10 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   useLockBodyScroll(isOpen);
   return (
-    <header>
+    <header className="dark:bg-background-dark-theme">
       <div className="flex items-center justify-between h-24 p-2">
         <div className="flex flex-col justify-center">
-          <Link href="/" className="font-sans text-primary font-bold text-3xl">
+          <Link href="/" className="font-sans text-primary dark:text-primary-dark-theme font-bold text-3xl">
             Wevalyn
           </Link>
         </div>
