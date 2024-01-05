@@ -43,7 +43,7 @@ export default function RootLayout({
     >
       <body className="font-normal overflow-x-hidden">
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
         {process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== "on" && (
           <Script

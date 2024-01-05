@@ -12,9 +12,12 @@ export default function NavMobileMenu({
 }) {
   return (
     <nav
+      // for ARIA of the button that opens it and the cross that closes it
+      id="mobile menu"
+      aria-hidden={!isOpen}
       className={cn(
         "lg:hidden flex flex-col items-center justify-center bg-white/50 fixed top-0 translate-x-full duration-700 w-screen overflow-hidden h-screen z-50 transition-all",
-        isOpen && "translate-x-0",
+        isOpen && "translate-x-0"
       )}
       onClick={(e) => {
         if (!(e.target instanceof HTMLElement)) return;
@@ -24,8 +27,11 @@ export default function NavMobileMenu({
         }
       }}
     >
-      <div className="relative flex flex-col gap-y-5 rounded-xl text-primary bg-white w-3/4 md:w-1/2 p-5 py-16 border border-primary">
+      <div className="relative flex flex-col gap-y-5 rounded-xl text-primary bg-white w-3/4 md:w-1/2 py-16 border border-primary">
         <ImCross
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          aria-label="Close"
           onClick={() => setIsOpen(false)}
           className="text-2xl absolute top-6 right-6"
         />

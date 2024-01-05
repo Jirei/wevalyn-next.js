@@ -13,7 +13,6 @@ import { headers } from "next/headers";
 export async function handleContactFormSubmit(data: ContactFormData): Promise<FormResponse> {
   try {
     const ip = headers().get('x-forwarded-for');
-    console.log(ip);
     const canSendForm = await canUserSendForm(ip);
     if (!canSendForm) {
       return { message: "You reached your message limit. Please try again later.", hasError: true };

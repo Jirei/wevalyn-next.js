@@ -1,3 +1,7 @@
+import { ArticleContainer } from "@/components/article/article-container";
+import { ArticleTitle } from "@/components/article/article-title";
+import { ArticleTitleLevel2 } from "@/components/article/article-title-level-2";
+import { ArticleTitleLevel3 } from "@/components/article/article-title-level-3";
 import { ContactButtonWithLottie } from "@/components/contact-button-with-lottie";
 import { Metadata } from "next";
 
@@ -9,12 +13,10 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <section className=' text-justify mb-32 mt-24 px-12 py-20 rounded text-lg flex flex-col m-auto gap-y-16 text-gray-font max-w-[60rem] bg-[#e5ecf7]'>
-      <h1 className='w-fit mb-6 m-auto text-primary text-3xl font-normal text-center'>
-        About Us
-      </h1>
-      <div className='flex flex-col gap-y-4'>
-        <h2 className='text-2xl font-bold text-primary'>Our Genesis</h2>
+    <ArticleContainer>
+      <ArticleTitle>About Us</ArticleTitle>
+      <div className="flex flex-col gap-y-4">
+        <ArticleTitleLevel2>Our Genesis</ArticleTitleLevel2>
         <p>
           In the ever-evolving digital ecosystem, the need for a reliable,
           creative, and technically proficient WordPress development agency
@@ -25,8 +27,8 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className='flex flex-col gap-y-4'>
-        <h2 className='text-2xl font-bold text-primary'>Our Mission</h2>
+      <div className="flex flex-col gap-y-4">
+        <ArticleTitleLevel2>Our Mission</ArticleTitleLevel2>
         <p>
           At the heart of our mission is a commitment to empower businesses,
           organizations, and individuals with robust, visually stunning
@@ -37,12 +39,10 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className='flex flex-col gap-y-9'>
-        <h2 className='text-2xl font-bold text-primary'>
-          The Wevalyn Difference
-        </h2>
-        <div className='flex flex-col gap-y-4'>
-          <h3 className='font-bold'>Technical Mastery</h3>
+      <div className="flex flex-col gap-y-9">
+        <ArticleTitleLevel2>The Wevalyn Difference</ArticleTitleLevel2>
+        <div className="flex flex-col gap-y-4">
+          <ArticleTitleLevel3>Technical Mastery</ArticleTitleLevel3>
           <p>
             Our team of seasoned WordPress developers boasts an extensive
             understanding of the platform, from its core functionalities to the
@@ -52,8 +52,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className='flex flex-col gap-y-4'>
-          <h3 className='font-bold'>Creative Ingenuity</h3>
+        <div className="flex flex-col gap-y-4">
+          <ArticleTitleLevel3>Creative Ingenuity</ArticleTitleLevel3>
           <p>
             In the realm of digital experiences, creativity is the key to
             standing out. Our designers are not just artists; they are strategic
@@ -64,8 +64,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className='flex flex-col gap-y-4'>
-          <h3 className='font-bold'>Client-Centric Approach</h3>
+        <div className="flex flex-col gap-y-4">
+          <ArticleTitleLevel3>Client-Centric Approach</ArticleTitleLevel3>
           <p>
             Collaboration is at the heart of our process. We understand that
             your vision is unique, and we are here to bring it to life. Our
@@ -75,8 +75,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className='flex flex-col gap-y-4'>
-          <h3 className='font-bold'>Future-Proof Solutions</h3>
+        <div className="flex flex-col gap-y-4">
+          <ArticleTitleLevel3>Future-Proof Solutions</ArticleTitleLevel3>
           <p>
             The digital landscape is dynamic, and we believe in future-proofing
             our solutions. Our development practices adhere to the latest
@@ -86,8 +86,8 @@ export default function AboutPage() {
           </p>
         </div>
       </div>
-      <div className='flex flex-col gap-y-4'>
-        <h2 className='text-2xl font-bold text-primary'>Our Portfolio</h2>
+      <div className="flex flex-col gap-y-4">
+        <ArticleTitleLevel2>Our Portfolio</ArticleTitleLevel2>
         <p>
           Our portfolio is a testament to the diverse projects we&apos;ve
           undertaken and successfully delivered. From small businesses to large
@@ -97,12 +97,10 @@ export default function AboutPage() {
           unique needs of our clients.
         </p>
       </div>
-      <div className='flex flex-col gap-y-9'>
-        <h2 className='text-2xl font-bold text-primary'>
-          Joining Forces with Wevalyn
-        </h2>
-        <div className='flex flex-col gap-y-4'>
-          <h3 className='font-bold'>Let&apos;s Innovate Together</h3>
+      <div className="flex flex-col gap-y-9">
+        <ArticleTitleLevel2>Joining Forces with Wevalyn</ArticleTitleLevel2>
+        <div className="flex flex-col gap-y-4">
+          <ArticleTitleLevel3>Let&apos;s Innovate Together</ArticleTitleLevel3>
           <p>
             Innovation is the heartbeat of Wevalyn. We embrace challenges,
             turning them into opportunities for creative problem-solving. If
@@ -112,8 +110,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className='flex flex-col gap-y-4'>
-          <h3 className='font-bold'>Your Success, Our Priority</h3>
+        <div className="flex flex-col gap-y-4">
+          <ArticleTitleLevel3>Your Success, Our Priority</ArticleTitleLevel3>
           <p>
             Your success is our driving force. We are not satisfied with merely
             meeting expectations; we aim to exceed them. With a focus on
@@ -122,8 +120,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className='flex flex-col gap-y-4'>
-          <h3 className='font-bold'>Experience the Wevalyn Magic</h3>
+        <div className="flex flex-col gap-y-4">
+          <ArticleTitleLevel3>Experience the Wevalyn Magic</ArticleTitleLevel3>
           <p>
             Beyond the code and design, there&apos;s a touch of magic in every
             project we undertake. It&apos;s the Wevalyn difference — the
@@ -134,6 +132,6 @@ export default function AboutPage() {
         </div>
       </div>
       <ContactButtonWithLottie />
-    </section>
+    </ArticleContainer>
   );
 }

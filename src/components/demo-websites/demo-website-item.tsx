@@ -23,7 +23,7 @@ export function DemoWebsiteItem({
     >
       <h2 className="text-primary-light text-2xl">{name}</h2>
       <Image src={imgURL} alt={name + " site screenshot"} />
-      <button className="bg-primary-gradient text-white text-xl px-6 py-4 rounded hover: hover:cursor-pointer hover:scale-105">
+      <button onClick={() =>alert("Fun fact: the demo sites actually do exist but aren't hosted so can't be seen.")} className="bg-primary-gradient text-white text-xl px-6 py-4 rounded hover:cursor-pointer hover:scale-105">
         See live demo
       </button>
     </li>

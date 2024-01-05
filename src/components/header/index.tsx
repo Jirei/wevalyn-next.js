@@ -15,7 +15,9 @@ export function Header() {
     <header>
       <div className="flex items-center justify-between h-24 p-2">
         <div className="flex flex-col justify-center">
-          <Link href="/" className="font-sans text-primary font-bold text-3xl">Wevalyn</Link>
+          <Link href="/" className="font-sans text-primary font-bold text-3xl">
+            Wevalyn
+          </Link>
         </div>
         <div>
           <NavDesktopMenu />
@@ -23,6 +25,9 @@ export function Header() {
       </div>
       {/* Mobile Menu */}
       <span
+        aria-expanded={isOpen}
+        aria-label="Button to open mobile menu"
+        aria-controls="mobile-menu"
         className="lg:hidden rounded text-white border border-white overflow-hidden bg-primary fixed top-[1.5rem] right-2 z-50"
         onClick={() => setIsOpen(true)}
       >

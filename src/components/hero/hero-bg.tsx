@@ -9,7 +9,7 @@ export default function HeroBackground({
   return (
     //source of the "hack" for the background image: https://github.com/vercel/next.js/discussions/18357
     <div className="relative">
-      <span className="absolute top-0 right-0 z-50 w-screen overflow-hidden hidden lg:block">
+      <span className="absolute top-0 right-0 z-50 w-screen hidden lg:block">
         <svg
           width="100%"
           viewBox="0 0 1640 114"
@@ -43,13 +43,18 @@ export default function HeroBackground({
         style={{ clipPath: "inset(0)" }}
         className="relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[rgb(0,105,181)]/40"
       >
-        <Image
-          priority
-          fill
-          className="object-center object-cover pointer-events-none fixed left-0 top-0"
-          src={backgroundImage}
-          alt={"background image of the hero showing a meeting of a dynamic startup"}
-        />
+        {/* Be careful when modifying stuff, you  need to keep the image optimized and with a fixed effect: https://stackoverflow.com/questions/73528598/how-can-i-use-next-js-image-and-attach-it-to-the-background */}
+        <div className="fixed h-full w-full left-0 top-0">
+          <Image
+            priority
+            fill
+            className="object-cover pointer-events-none left-0 top-0"
+            src={backgroundImage}
+            alt={
+              "background image of the hero showing a meeting of a dynamic startup"
+            }
+          />
+        </div>
         <div className="relative h-[80vh] lg:h-[90vh] z-10 flex items-center justify-center">
           <div className="flex items-center justify-center">
             <svg

@@ -51,7 +51,7 @@ export function ContactForm() {
       const formResponse = await handleContactFormSubmit(
         dataHydratedWithCaptchaToken
       );
-      console.log(formResponse)
+      console.log(formResponse);
       setFormResponse(formResponse);
     } catch (e) {
       logClientError(e);
@@ -95,13 +95,19 @@ export function ContactForm() {
                   type="text"
                   placeholder="John"
                   aria-invalid={errors.firstName ? "true" : "false"}
+                  aria-errormessage="first-name-error"
                 />
               </div>
-              <p className="flex items-center gap-x-2 text-red-100">
+              <p
+                aria-hidden={errors.firstName ? "false" : "true"}
+                className="flex items-center gap-x-2 text-red-100"
+              >
                 {errors.firstName?.message && (
                   <>
                     <MdError size="2em" className="text-red-500" />
-                    <span>{errors.firstName?.message}</span>
+                    <span aria-live="polite" id="first-name-error">
+                      {errors.firstName?.message}
+                    </span>
                   </>
                 )}
               </p>
@@ -121,13 +127,19 @@ export function ContactForm() {
                   type="text"
                   placeholder="Doe"
                   aria-invalid={errors.lastName ? "true" : "false"}
+                  aria-errormessage="last-name-error"
                 />
               </div>
-              <p className="flex items-center gap-x-2 text-red-100">
+              <p
+                aria-hidden={errors.lastName ? "false" : "true"}
+                className="flex items-center gap-x-2 text-red-100"
+              >
                 {errors.lastName?.message && (
                   <>
                     <MdError size="2em" className="text-red-500" />
-                    <span>{errors.lastName?.message}</span>
+                    <span aria-live="polite" id="last-name-error">
+                      {errors.lastName?.message}
+                    </span>
                   </>
                 )}
               </p>
@@ -148,13 +160,20 @@ export function ContactForm() {
                   className="p-2 font-roboto text-primary border border-primary rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
                   placeholder="johndoe@example.com"
                   aria-invalid={errors.email ? "true" : "false"}
+                  aria-errormessage="email-error"
                 />
               </div>
-              <p className="flex items-center gap-x-1 text-red-100">
+
+              <p
+                aria-hidden={errors.email ? "false" : "true"}
+                className="flex items-center gap-x-1 text-red-100"
+              >
                 {errors.email?.message && (
                   <>
                     <MdError size="1.7em" className="text-red-500" />
-                    <span>{errors.email?.message}</span>
+                    <span aria-live="polite" id="email-error">
+                      {errors.email?.message}
+                    </span>
                   </>
                 )}
               </p>
@@ -175,13 +194,17 @@ export function ContactForm() {
                   placeholder="Hello, I would like a landing page for my new project..."
                   rows={7}
                   aria-invalid={errors.message ? "true" : "false"}
+                  aria-errormessage="message-error"
                 />
               </div>
-              <p className="flex items-center gap-x-2 text-red-100">
+              <p
+                aria-hidden={errors.message ? "false" : "true"}
+                className="flex items-center gap-x-2 text-red-100"
+              >
                 {errors.message?.message && (
                   <>
                     <MdError size="2em" className="text-red-500" />
-                    <span>
+                    <span aria-live="polite" id="message-error">
                       {errors.message?.message} There are currently{" "}
                       {numberOfCharactersInMessage} characters.
                     </span>
@@ -220,7 +243,10 @@ export function ContactForm() {
         </button>
         {!!formResponse.message && !isSubmitting && (
           <>
-            <p className="flex items-center gap-x-2 font-bold text-lg">
+            <p
+              aria-live="polite"
+              className="flex items-center gap-x-2 font-bold text-lg"
+            >
               {formResponse.hasError && (
                 <MdError size="2em" className="text-red-500" />
               )}

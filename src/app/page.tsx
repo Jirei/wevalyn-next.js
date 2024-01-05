@@ -1,4 +1,4 @@
-import { ContactButtonWithLottie } from "@/components/contact-button-with-lottie";
+import { CtaSection } from "@/components/cta-section";
 import { DemoWebsites } from "@/components/demo-websites";
 import { Hero } from "@/components/hero";
 import { Services } from "@/components/services";
@@ -12,15 +12,11 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
-      <main>
-        <div className='flex flex-col gap-y-16 xl:gap-y-48'>
-          <Hero />
-          <Services />
-          <DemoWebsites />
-          <ContactButtonWithLottie />
-        </div>
-      </main>
-    </>
+    <div className="flex flex-col gap-y-28 xl:gap-y-48 mb-20">
+      <Hero />
+      <Services />
+      <DemoWebsites />
+      <CtaSection />
+    </div>
   );
 }
