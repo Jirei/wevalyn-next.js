@@ -62,7 +62,7 @@ export default function NavMobileMenu({
               Contact
             </Link>
           </li>
-          <li className="p-2 text-red-500" onClick={() => setIsOpen(false)}>
+          <li className="p-2 text-red-600" onClick={() => setIsOpen(false)}>
             Close
           </li>
         </ul>
