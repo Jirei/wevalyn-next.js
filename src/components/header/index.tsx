@@ -12,7 +12,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   useLockBodyScroll(isOpen);
   return (
-    <header className="dark:bg-background-dark-theme">
+    <header>
       <div className="flex items-center justify-between h-24 p-2">
         <div className="flex flex-col justify-center">
           <Link href="/" className="font-sans text-primary dark:text-primary-dark-theme font-bold text-3xl">

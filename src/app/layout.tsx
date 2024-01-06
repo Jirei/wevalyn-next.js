@@ -41,7 +41,7 @@ export default function RootLayout({
         "scroll-smooth"
       )}
     >
-      <body className="font-normal overflow-x-hidden">
+      <body className="font-normal overflow-x-hidden dark:bg-background-dark-theme">
         <Header />
         <main>{children}</main>
         <Footer />

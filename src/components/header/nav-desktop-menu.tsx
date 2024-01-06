@@ -27,7 +27,7 @@ export default function NavDesktopMenu() {
         <li className="p-4">
           <Link
             href="/contact"
-            className="bg-[#C171C2] dark:bg-[#a749a9] hover:bg-[#a749a9] dark:hover:bg-[#99399b]  text-white text-xl px-10 py-3 rounded-xl shadow-cta-contact transition-all hover:scale-105"
+            className="bg-[#C171C2] dark:bg-contact-button-background-dark-theme hover:bg-[#a749a9] dark:hover:bg-contact-button-background-hover-dark-theme  text-white text-xl px-10 py-3 rounded-xl shadow-cta-contact transition-all hover:scale-105"
           >
             Contact
           </Link>

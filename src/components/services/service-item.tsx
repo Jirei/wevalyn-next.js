@@ -29,11 +29,11 @@ export function ServiceItem({
           "max-sm:-translate-x-[90vw] md:-translate-x-[45vw] xl:-translate-x-[25vw] 2xl:-translate-x-[20vw]",
         yellowRibbon &&
           "after:h-14 after:w-full after:bg-[#EDDC40] after:absolute after:z-10 after:top-0 after:left-[35%] after:rotate-45",
-        hasAppeared && "!translate-x-0",
+        hasAppeared && "!translate-x-0"
       )}
     >
       {/* md:h-full so that the smaller card in tablet view is stretched to fill the row height */}
-      <div className="flex flex-col gap-y-8 p-5 py-16 items-center bg-primary-gradient md:h-full">
+      <div className="flex flex-col gap-y-8 p-5 py-16 items-center bg-primary-gradient dark:bg-primary-gradient-dark-theme md:h-full">
         <div>
           <div className="flex gap-x-4">{[...logos]}</div>
         </div>

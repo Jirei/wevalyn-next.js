@@ -29,6 +29,7 @@ module.exports = {
         url('/hero.jpg')`,
         "primary-gradient":
           "linear-gradient(270deg, rgb(72 160 255) 0%, rgb(64 117 233) 100%)",
+        "primary-gradient-dark-theme":"linear-gradient(270deg, rgb(23 59 77) 0%, rgb(0 72 95) 100%)"
       },
       fontFamily: {
         sans: ["var(--font-poppins)"],
@@ -36,16 +37,26 @@ module.exports = {
         roboto: ["var(--font-roboto)"],
       },
       colors: {
-        primary: "#0069B5",
+        // (light/dark) primary color
+        "primary": "#0069B5",
         "primary-dark-theme": "#4fcad1",
-        "primary-dark-dark-theme":"#3ca3a9",
+        // (light/dark) primary light color
         "primary-light": "#429ADA",
         "primary-light-dark-theme": "#76dde3",
+        // (dark) primary dark color
+        "primary-dark-dark-theme": "#3ca3a9",
         "gray-font": "#464646",
+        // (dark) primary very dark color
+        "primary-very-dark-dark-theme":"#305659",
+        // (dark) background color
+        "background-dark-theme": "#464646",
+        // (dark) contact button background
+        "contact-button-background-dark-theme":"#a749a9",
+        // (dark) contact button on hover,
+        "contact-button-background-hover-dark-theme":"#99399b",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        "background-dark-theme": "#464646",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         // primary: {
