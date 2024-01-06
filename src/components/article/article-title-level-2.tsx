@@ -3,5 +3,9 @@ export function ArticleTitleLevel2({
 }: {
   children: React.ReactNode;
 }) {
-  return <h2 className="text-2xl font-bold text-primary">{children}</h2>;
+  return (
+    <h2 className="text-2xl font-bold text-primary dark:text-primary-light-dark-theme">
+      {children}
+    </h2>
+  );
 }

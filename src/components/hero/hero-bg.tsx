@@ -1,5 +1,6 @@
 import backgroundImage from "../../../public/hero.jpg";
 import Image from "next/image";
+import classes from "./hero.module.css";
 
 export default function HeroBackground({
   children,
@@ -30,8 +31,8 @@ export default function HeroBackground({
               y2="451.5"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#0069B5" />
-              <stop offset="1" stopColor="#6FBAF0" />
+              <stop className={classes.stop1} stopColor="#0069B5" />
+              <stop className={classes.stop2} offset="1" stopColor="#6FBAF0" />
             </linearGradient>
           </defs>
         </svg>
@@ -41,7 +42,7 @@ export default function HeroBackground({
       */}
       <div
         style={{ clipPath: "inset(0)" }}
-        className="relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[rgb(0,105,181)]/40 dark:after:bg-[rgb(0,0,0)]/50"
+        className="relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[rgb(0,105,181)]/40 dark:after:bg-[rgb(0,0,0)]/40"
       >
         {/* Be careful when modifying stuff, you  need to keep the image optimized and with a fixed effect: https://stackoverflow.com/questions/73528598/how-can-i-use-next-js-image-and-attach-it-to-the-background */}
         <div className="fixed h-full w-full left-0 top-0">
@@ -71,6 +72,7 @@ export default function HeroBackground({
                 cy="52.1803"
                 rx="106.019"
                 ry="52.1803"
+                className={classes.ellipse}
                 fill="#0069B5"
                 fillOpacity="0.8"
               />

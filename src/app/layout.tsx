@@ -38,10 +38,16 @@ export default function RootLayout({
         poppins.variable,
         arvo.variable,
         roboto.variable,
-        "scroll-smooth"
+        "scroll-smooth",
+        // You need that both for the HTML and body tags because of Mobile Firefox weird behavior
+        "w-screen overflow-x-hidden"
       )}
     >
-      <body className="font-normal overflow-x-hidden dark:bg-background-dark-theme">
+      {/* You need that both for the HTML and body tags because of Mobile Firefox weird behavior */}
+      <body
+       
+        className="font-normal overflow-x-hidden w-screen dark:bg-background-dark-theme"
+      >
         <Header />
         <main>{children}</main>
         <Footer />

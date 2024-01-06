@@ -67,7 +67,7 @@ export function ContactForm() {
   return (
     <section
       className={cn(
-        "bg-primary text-white transition-all duration-1000 rounded-xl overflow-hidden w-11/12 max-w-[40rem] m-auto border border-primary"
+        "bg-primary dark:bg-primary-very-dark-dark-theme text-white transition-all duration-1000 rounded-xl overflow-hidden w-11/12 max-w-[40rem] m-auto border border-primary dark:border-primary-dark-theme"
       )}
     >
       <form
@@ -90,7 +90,7 @@ export function ContactForm() {
                   {...register("firstName")}
                   required
                   className={cn(
-                    "p-2 font-roboto text-primary border border-primary rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                    "p-2 font-roboto text-primary dark:text-primary-very-dark-dark-theme  border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
                   )}
                   type="text"
                   placeholder="John"
@@ -123,7 +123,7 @@ export function ContactForm() {
                 <input
                   id="last-name"
                   {...register("lastName")}
-                  className="p-2 font-roboto text-primary border border-primary rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                  className="p-2 font-roboto text-primary dark:text-primary-very-dark-dark-theme border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
                   type="text"
                   placeholder="Doe"
                   aria-invalid={errors.lastName ? "true" : "false"}
@@ -157,7 +157,7 @@ export function ContactForm() {
                   {...register("email")}
                   required
                   type="email"
-                  className="p-2 font-roboto text-primary border border-primary rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                  className="p-2 font-roboto text-primary dark:text-primary-very-dark-dark-theme border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
                   placeholder="johndoe@example.com"
                   aria-invalid={errors.email ? "true" : "false"}
                   aria-errormessage="email-error"
@@ -190,7 +190,7 @@ export function ContactForm() {
                   id="message"
                   {...register("message")}
                   required
-                  className="p-2 font-roboto text-primary border border-primary rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                  className="p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
                   placeholder="Hello, I would like a landing page for my new project..."
                   rows={7}
                   aria-invalid={errors.message ? "true" : "false"}
@@ -216,7 +216,7 @@ export function ContactForm() {
         </ul>
         <button
           className={cn(
-            " uppercase bg-white text-primary text-xl font-bold font-roboto w-fit self-center py-1.5 gap-y-1 px-20 rounded",
+            " uppercase bg-white dark:bg-primary-dark-dark-theme text-primary text-xl font-bold font-roboto w-fit self-center py-1.5 gap-y-1 px-20 rounded",
             !isFormSubmitButtonDisabled && "hover:scale-105",
             isFormSubmitButtonDisabled && "bg-gray-300 hover:cursor-not-allowed"
           )}
@@ -224,7 +224,11 @@ export function ContactForm() {
           type="submit"
         >
           <div className="relative flex gap-x-4">
-            <span className={cn("ml-8")}>Submit</span>
+            <span
+              className={cn("ml-8", "dark:text-white")}
+            >
+              Submit
+            </span>
             <RotatingLines
               strokeColor={
                 isSubmitting

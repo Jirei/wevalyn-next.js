@@ -14,9 +14,11 @@ export default function NavMobileMenu({
     <nav
       // for ARIA of the button that opens it and the cross that closes it
       id="mobile menu"
+      role="dialog"
+      aria-label="Mobile Navigation Menu"
       aria-hidden={!isOpen}
       className={cn(
-        "lg:hidden flex flex-col items-center justify-center bg-white/50 fixed top-0 translate-x-full duration-700 w-screen overflow-hidden h-screen z-50 transition-all",
+        "lg:hidden flex flex-col items-center justify-center bg-white/50 dark:bg-black/50 fixed top-0 translate-x-full duration-700 w-screen overflow-hidden h-screen z-50 transition-all",
         isOpen && "translate-x-0"
       )}
       onClick={(e) => {
@@ -27,9 +29,8 @@ export default function NavMobileMenu({
         }
       }}
     >
-      <div className="relative flex flex-col gap-y-5 rounded-xl text-primary bg-white w-3/4 md:w-1/2 py-16 border border-primary">
+      <div className="relative flex flex-col gap-y-5 rounded-xl text-primary dark:text-primary-dark-theme bg-white dark:bg-background-dark-theme w-3/4 md:w-1/2 py-16 border border-primary dark:border-primary-dark-theme">
         <ImCross
-          aria-expanded={isOpen}
           aria-controls="mobile-menu"
           aria-label="Close"
           onClick={() => setIsOpen(false)}
@@ -62,7 +63,7 @@ export default function NavMobileMenu({
               Contact
             </Link>
           </li>
-          <li className="p-2 text-red-600" onClick={() => setIsOpen(false)}>
+          <li className="p-2 text-red-600 dark:text-red-300" onClick={() => setIsOpen(false)}>
             Close
           </li>
         </ul>
