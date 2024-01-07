@@ -90,7 +90,7 @@ export function ContactForm() {
                   {...register("firstName")}
                   required
                   className={cn(
-                    "p-2 font-roboto text-primary dark:text-primary-very-dark-dark-theme  border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                    "p-2 font-roboto text-primary dark:text-white dark:bg-gray-800  border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
                   )}
                   type="text"
                   placeholder="John"
@@ -123,7 +123,7 @@ export function ContactForm() {
                 <input
                   id="last-name"
                   {...register("lastName")}
-                  className="p-2 font-roboto text-primary dark:text-primary-very-dark-dark-theme border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                  className="p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
                   type="text"
                   placeholder="Doe"
                   aria-invalid={errors.lastName ? "true" : "false"}
@@ -157,7 +157,7 @@ export function ContactForm() {
                   {...register("email")}
                   required
                   type="email"
-                  className="p-2 font-roboto text-primary dark:text-primary-very-dark-dark-theme border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                  className="p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
                   placeholder="johndoe@example.com"
                   aria-invalid={errors.email ? "true" : "false"}
                   aria-errormessage="email-error"
@@ -224,19 +224,16 @@ export function ContactForm() {
           type="submit"
         >
           <div className="relative flex gap-x-4">
-            <span
-              className={cn("ml-8", "dark:text-white")}
-            >
-              Submit
-            </span>
+            <span className={cn("ml-8", "dark:text-white")}>Submit</span>
             <RotatingLines
-              strokeColor={
-                isSubmitting
-                  ? "rgb(0,105,181)"
-                  : isFormSubmitButtonDisabled
-                  ? "bg-gray-300"
-                  : "rgb(255,255,255)"
-              }
+              ariaLabel="Loading Icon"
+              // strokeColor={
+              //   isSubmitting
+              //     ? "rgb(0,105,181)"
+              //     : isFormSubmitButtonDisabled
+              //     ? "bg-gray-300"
+              //     : "rgb(255,255,255)"
+              // }
               strokeWidth="5"
               animationDuration="0.75"
               width="1.2em"
