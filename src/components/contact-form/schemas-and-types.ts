@@ -1,22 +1,16 @@
 import { z } from "zod";
-import isAlpha from "validator/es/lib/isAlpha";
 
 export const contactFormSchema = z.object({
-  firstName: z.union([
+  firstName:
     z.string()
       .min(1, { message: "First Name must have at least one character." })
-      .max(50, { message: "First Name must have maximum 50 characters." }),
-    z.string().refine(str => isAlpha(str, "en-US")),
-    z.string().refine(str => isAlpha(str, "fr-FR")),
-    z.string().refine(str => isAlpha(str, "es-ES")),
-  ]),
-  lastName: z.union([
+      .max(50, { message: "First Name must have maximum 50 characters." })
+  ,
+  lastName:
     z.string()
-      .min(1, { message: "Last Name must have at least one character." })
-      .max(50, { message: "Last Name must have maximum 50 characters." }),
-    z.string().refine(str => isAlpha(str, "en-US")),
-    z.string().refine(str => isAlpha(str, "fr-FR")),
-    z.string().refine(str => isAlpha(str, "es-ES")),]),
+      .min(0, { message: "Last Name must have at least one character." })
+      .max(50, { message: "Last Name must have maximum 50 characters." })
+  ,
   email: z.string().email({ message: "Email is invalid." }),
   message: z
     .string()

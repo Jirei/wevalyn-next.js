@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className='my-16'>
+    <div className='my-24'>
       <ContactForm />
     </div>
   );

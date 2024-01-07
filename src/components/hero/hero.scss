@@ -1,0 +1,59 @@
+.hero__stop1 {
+  stop-color: #0069b5;
+  html.dark & {
+    stop-color: rgb(45, 56, 59);
+  }
+}
+
+.hero__stop2 {
+  stop-color: #6fbaf0;
+  html.dark & {
+    stop-color: rgb(47, 82, 79);
+  }
+}
+
+.hero__ellipse {
+  fill: #0069b5;
+  html.dark & {
+    fill: rgb(54, 88, 84);
+  }
+}
+
+.ellipse {
+  fill: #0069b5;
+}
+
+.wevalyn-effect {
+  color: transparent;
+  background: linear-gradient(94deg, #89ddee, #18bce9);
+  background-size: 120% 120%;
+  background-clip: text;
+  animation: gradient-animation 1s ease infinite;
+}
+
+.you-effect {
+  color: transparent;
+  background: linear-gradient(94deg, #d3c100, #ebf395);
+  /* background: linear-gradient(94deg,#baa208,#fdff9c); */
+  background-size: 120% 120%;
+  background-clip: text;
+  animation: gradient-animation 2s ease infinite;
+}
+
+.you-glow-effect {
+  background: radial-gradient(#f1e69050 0%, #ffffff00 100%);
+  padding: 0.3rem 1rem;
+  border-radius: 35px;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}

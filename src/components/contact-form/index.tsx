@@ -1,7 +1,7 @@
 "use client";
 import { checkCaptchaActionOnClient, logClientError } from "@/lib/client";
 import { WrappingError, cn } from "@/lib/common";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { handleContactFormSubmit } from "./server-action";
@@ -17,8 +17,14 @@ export function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid: formIsValid, isSubmitted },
+    formState: {
+      errors,
+      isValid: formIsValid,
+      isSubmitted,
+      isSubmitSuccessful,
+    },
     watch,
+    reset,
   } = useForm<ContactFormData>({
     mode: "onSubmit",
     resolver: zodResolver(contactFormSchema),
@@ -51,7 +57,6 @@ export function ContactForm() {
       const formResponse = await handleContactFormSubmit(
         dataHydratedWithCaptchaToken
       );
-      console.log(formResponse);
       setFormResponse(formResponse);
     } catch (e) {
       logClientError(e);
@@ -63,6 +68,9 @@ export function ContactForm() {
       setIsSubmitting(false);
     }
   };
+  useEffect(() => {
+    if (isSubmitSuccessful) reset();
+  }, [isSubmitSuccessful, reset]);
   const numberOfCharactersInMessage = watch("message")?.length;
   return (
     <section
@@ -90,7 +98,11 @@ export function ContactForm() {
                   {...register("firstName")}
                   required
                   className={cn(
-                    "p-2 font-roboto text-primary dark:text-white dark:bg-gray-800  border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                    "p-2 font-roboto text-primary dark:text-white dark:bg-gray-800  border border-primary dark:border-transparent rounded",
+                    isSubmitted &&
+                      errors.firstName &&
+                      "!border-red-500 border-2",
+                    isSubmitted && !errors.firstName && "!border-green-500"
                   )}
                   type="text"
                   placeholder="John"
@@ -123,7 +135,13 @@ export function ContactForm() {
                 <input
                   id="last-name"
                   {...register("lastName")}
-                  className="p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                  className={cn(
+                    "p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded",
+                    isSubmitted &&
+                      errors.lastName &&
+                      "!border-red-500 border-2",
+                    isSubmitted && !errors.lastName && "!border-green-500"
+                  )}
                   type="text"
                   placeholder="Doe"
                   aria-invalid={errors.lastName ? "true" : "false"}
@@ -157,7 +175,11 @@ export function ContactForm() {
                   {...register("email")}
                   required
                   type="email"
-                  className="p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                  className={cn(
+                    "p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded",
+                    isSubmitted && errors.email && "!border-red-500 border-2",
+                    isSubmitted && !errors.email && "!border-green-500"
+                  )}
                   placeholder="johndoe@example.com"
                   aria-invalid={errors.email ? "true" : "false"}
                   aria-errormessage="email-error"
@@ -190,7 +212,11 @@ export function ContactForm() {
                   id="message"
                   {...register("message")}
                   required
-                  className="p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded [&:not(:placeholder-shown)]:valid:border-green-500 [&:not(:placeholder-shown)]invalid:border-red-500 invalid:border-2"
+                  className={cn(
+                    "p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded",
+                    isSubmitted && errors.message && "!border-red-500 border-2",
+                    isSubmitted && !errors.message && "!border-green-500"
+                  )}
                   placeholder="Hello, I would like a landing page for my new project..."
                   rows={7}
                   aria-invalid={errors.message ? "true" : "false"}
@@ -216,30 +242,46 @@ export function ContactForm() {
         </ul>
         <button
           className={cn(
-            " uppercase bg-white dark:bg-primary-dark-dark-theme text-primary text-xl font-bold font-roboto w-fit self-center py-1.5 gap-y-1 px-20 rounded",
+            "uppercase  text-primary text-xl font-bold font-roboto w-fit self-center py-1.5 gap-y-1 px-20 rounded",
             !isFormSubmitButtonDisabled && "hover:scale-105",
-            isFormSubmitButtonDisabled && "bg-gray-300 hover:cursor-not-allowed"
+            isFormSubmitButtonDisabled
+              ? "bg-gray-300 dark:bg-slate-900 hover:cursor-not-allowed"
+              : "bg-white dark:bg-primary-dark-dark-theme"
           )}
           disabled={isFormSubmitButtonDisabled}
           type="submit"
         >
-          <div className="relative flex gap-x-4">
-            <span className={cn("ml-8", "dark:text-white")}>Submit</span>
-            <RotatingLines
-              ariaLabel="Loading Icon"
-              // strokeColor={
-              //   isSubmitting
-              //     ? "rgb(0,105,181)"
-              //     : isFormSubmitButtonDisabled
-              //     ? "bg-gray-300"
-              //     : "rgb(255,255,255)"
-              // }
-              strokeWidth="5"
-              animationDuration="0.75"
-              width="1.2em"
-              visible={true}
-              aria-hidden={isSubmitting ? "false" : "true"}
-            />
+          <div className="relative flex gap-x-4 items-center">
+            <span
+              className={cn(
+                "ml-8",
+                "dark:text-white",
+                isFormSubmitButtonDisabled &&
+                  !isSubmitting &&
+                  "dark:text-gray-300"
+              )}
+            >
+              Submit
+            </span>
+            <span
+              className={cn(
+                "w-fit h-fit",
+                isSubmitting && "!stroke-[rgb(0,105,181)] dark:!stroke-white",
+                isFormSubmitButtonDisabled
+                  ? "stroke-transparent"
+                  : "stroke-white dark:stroke-primary-dark-dark-theme"
+              )}
+            >
+              <RotatingLines
+                ariaLabel="Loading Icon"
+                strokeColor="inherit"
+                strokeWidth="5"
+                animationDuration="0.75"
+                width="1.2em"
+                visible={true}
+                aria-hidden={isSubmitting ? "false" : "true"}
+              />
+            </span>
           </div>
         </button>
         {!!formResponse.message && !isSubmitting && (

@@ -13,7 +13,7 @@ export function Header() {
   useLockBodyScroll(isOpen);
   return (
     <header>
-      <div className="flex items-center justify-between h-24 p-2">
+      <div className="flex items-center justify-between h-24 p-3 xl:p-8">
         <div className="flex flex-col justify-center">
           <Link href="/" className="font-sans text-primary dark:text-primary-dark-dark-theme font-bold text-3xl">
             Wevalyn

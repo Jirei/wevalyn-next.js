@@ -1,6 +1,6 @@
 import backgroundImage from "../../../public/hero.jpg";
 import Image from "next/image";
-import classes from "./hero.module.css";
+import "./hero.scss";
 
 export default function HeroBackground({
   children,
@@ -31,8 +31,8 @@ export default function HeroBackground({
               y2="451.5"
               gradientUnits="userSpaceOnUse"
             >
-              <stop className={classes.stop1} stopColor="#0069B5" />
-              <stop className={classes.stop2} offset="1" stopColor="#6FBAF0" />
+              <stop className="hero__stop1" stopColor="#0069B5" />
+              <stop className="hero__stop2" offset="1" stopColor="#6FBAF0" />
             </linearGradient>
           </defs>
         </svg>
@@ -59,7 +59,7 @@ export default function HeroBackground({
         <div className="relative h-[80vh] lg:h-[90vh] z-10 flex items-center justify-center">
           <div className="flex items-center justify-center">
             <svg
-              className="w-[22rem] md:min-w-[35rem] md:w-[60vw] lg:w-[35rem]"
+              className="w-[24rem] max-w-[98vw] md:min-w-[35rem] md:w-[60vw] lg:w-[35rem]"
               // height='100vh'
               viewBox="0 0 213 105"
               fill="none"
@@ -72,8 +72,8 @@ export default function HeroBackground({
                 cy="52.1803"
                 rx="106.019"
                 ry="52.1803"
-                className={classes.ellipse}
-                fill="#0069B5"
+                className="fill-[#0069b5] dark:fill-[#365854]"
+                fill=""
                 fillOpacity="0.8"
               />
             </svg>

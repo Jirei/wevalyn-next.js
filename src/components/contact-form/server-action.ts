@@ -59,7 +59,7 @@ async function _canUserSendForm(ip: string | null): Promise<boolean> {
 const contactRatelimit = new Ratelimit({
   redis: kv,
   // 2 contact form submits from the same IP in 10 minutes max
-  limiter: Ratelimit.slidingWindow(2, '600s'),
+  limiter: Ratelimit.slidingWindow(200, '600s'),
   prefix: "ratelimit:contact",
   timeout: 5000
 });

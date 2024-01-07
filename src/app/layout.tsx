@@ -4,6 +4,7 @@ import { Poppins, Arvo, Roboto } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import Script from "next/script";
+import { Providers } from "./providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -42,15 +43,15 @@ export default function RootLayout({
         // You need that both for the HTML and body tags because of Mobile Firefox weird behavior
         "w-screen overflow-x-hidden"
       )}
+      suppressHydrationWarning
     >
       {/* You need that both for the HTML and body tags because of Mobile Firefox weird behavior */}
-      <body
-       
-        className="font-normal overflow-x-hidden w-screen dark:bg-background-dark-theme"
-      >
-        <Header />
-        <main>{children}</main>
-        <Footer />
+      <body className="font-normal overflow-x-hidden w-screen dark:bg-background-dark-theme">
+        <Providers>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
         {process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== "on" && (
           <Script
             src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
