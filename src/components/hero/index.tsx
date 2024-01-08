@@ -12,7 +12,7 @@ export function Hero() {
             <span className="font-bold wevalyn-effect">Wevalyn</span> is here
             for{" "}
             <span className="you-glow-effect">
-              <span className="text-yellow-300 font-bold you-effect">YOU.</span>
+              <span className="text-yellow-300 font-bold you-effect">you.</span>
             </span>
           </span>
         </h1>
