@@ -6,7 +6,7 @@ export function useAppear(elementRef: MutableRefObject<null>) {
   const [hasAppeared, setHasAppeared] = useState(false);
   const intersection = useIntersection(elementRef, {
     root: null,
-    threshold: 0.0001,
+    threshold: 0,
   });
   useEffect(() => {
     if (intersection?.isIntersecting) setHasAppeared(true);

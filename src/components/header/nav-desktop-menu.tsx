@@ -1,26 +1,42 @@
 import Link from "next/link";
+import { Settings } from "./settings";
 
 export default function NavDesktopMenu() {
   return (
     <nav className="max-lg:hidden">
       <ul className="text-primary dark:text-primary-dark-theme flex gap-x-8 font-bold text-xl items-center">
+        <li className="">
+          <Settings />
+        </li>
         <li className="hover:scale-105 transition-all">
-          <Link className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme" href="/">
+          <Link
+            className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            href="/"
+          >
             Home
           </Link>
         </li>
         <li className="hover:scale-105 transition-all">
-          <Link className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme" href="/about">
+          <Link
+            className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            href="/about"
+          >
             About
           </Link>
         </li>
         <li className="hover:scale-105 transition-all">
-          <Link className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme" href="/#services">
+          <Link
+            className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            href="/#services"
+          >
             Services
           </Link>
         </li>
         <li className="hover:scale-105 transition-all">
-          <Link className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme" href="/#demos">
+          <Link
+            className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            href="/#demos"
+          >
             Demos
           </Link>
         </li>
@@ -36,3 +52,5 @@ export default function NavDesktopMenu() {
     </nav>
   );
 }
+
+

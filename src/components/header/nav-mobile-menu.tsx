@@ -30,12 +30,14 @@ export default function NavMobileMenu({
       }}
     >
       <div className="relative flex flex-col gap-y-5 rounded-xl text-primary dark:text-primary-dark-theme bg-white dark:bg-background-dark-theme w-3/4 md:w-1/2 py-16 border border-primary dark:border-primary-dark-theme">
-        <ImCross
-          aria-controls="mobile-menu"
-          aria-label="Close"
-          onClick={() => setIsOpen(false)}
+        <button
           className="text-2xl absolute top-6 right-6"
-        />
+          onClick={() => setIsOpen(false)}
+          aria-controls="mobile-menu"
+          aria-label="Button to Close Mobile Menu"
+        >
+          <ImCross />
+        </button>
         <h2 className="text-center text-2xl font-bold">Menu</h2>
         <ul className="flex flex-col gap-y-3 text-xl justify-center items-center">
           <li>
@@ -63,8 +65,13 @@ export default function NavMobileMenu({
               Contact
             </Link>
           </li>
-          <li className="p-2 text-red-600 dark:text-red-300" onClick={() => setIsOpen(false)}>
-            Close
+          <li onClick={() => setIsOpen(false)}>
+            <button
+              className="p-2 text-red-600 dark:text-red-300"
+              aria-controls="mobile-menu"
+            >
+              Close
+            </button>
           </li>
         </ul>
       </div>

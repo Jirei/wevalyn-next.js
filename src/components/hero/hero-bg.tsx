@@ -10,7 +10,8 @@ export default function HeroBackground({
   return (
     //source of the "hack" for the background image: https://github.com/vercel/next.js/discussions/18357
     <div className="relative">
-      <span className="absolute top-0 right-0 z-50 w-screen hidden lg:block">
+      {/* it was z-50 before, you change it but don't know if you broke something */}
+      <span className="absolute top-0 right-0 z-10 w-screen hidden lg:block">
         <svg
           width="100%"
           viewBox="0 0 1640 114"
