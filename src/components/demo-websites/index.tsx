@@ -1,14 +1,13 @@
 import { DemoWebsiteItem } from "./demo-website-item";
-import languageSchoolImage from "../../../public/language-school-main.png";
-import hairdresserImage from "../../../public/hairdresser-main.png";
-import restaurantImage from "../../../public/restaurant-main.png";
+import languageSchoolImage from "@/assets/images/demo-sites/language-school/main.png";
+import hairdresserImage from "@/assets/images/demo-sites/hairdresser/main.png";
+import restaurantImage from "@/assets/images/demo-sites/restaurant/main.png";
+import { HomeSectionTitle } from "@/components/home-section-title";
 
 export function DemoWebsites() {
   return (
     <section id="demos" className="flex flex-col items-center gap-y-28">
-      <h2 className="text-primary dark:text-primary-dark-theme text-3xl">
-        Demo Websites
-      </h2>
+      <HomeSectionTitle>Demo Websites</HomeSectionTitle>
       <p className="text-primary dark:text-primary-dark-theme rounded text-center mx-3 p-5 py-8 text-2xl bg-primary/20 dark:bg-primary-dark-theme/20">
         You can see below some of our creations.
       </p>

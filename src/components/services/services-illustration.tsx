@@ -3,6 +3,7 @@ import { useAppear } from "@/hooks/use-appear";
 import { cn } from "@/lib/common";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useRef } from "react";
+import serviceIllustrationLottieJSON from "@/assets/lottie/services-illustration.json";
 
 export default function ServicesIllustration() {
   const intersectionRef = useRef(null);
@@ -20,7 +21,7 @@ export default function ServicesIllustration() {
         className="w-[50vw] max-w-[20rem]"
         autoplay
         loop
-        src="/lottie/services-illustration.json"
+        src={serviceIllustrationLottieJSON}
       />
     </div>
   );
