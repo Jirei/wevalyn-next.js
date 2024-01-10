@@ -6,7 +6,7 @@ export default function NavDesktopMenu() {
     <nav className="max-lg:hidden">
       <ul className="text-primary dark:text-primary-dark-theme flex gap-x-8 font-bold text-xl items-center">
         <li className="">
-          <Settings />
+          <Settings menuId="settings-menu-desktop" />
         </li>
         <li className="hover:scale-105 transition-all">
           <Link
@@ -52,5 +52,3 @@ export default function NavDesktopMenu() {
     </nav>
   );
 }
-
-

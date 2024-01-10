@@ -10,9 +10,11 @@ import { useHydrationSafeTheme } from "@/hooks/use-hydration-safe-theme";
 export function SettingsPopover({
   isOpen,
   setIsOpen,
+  menuId,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  menuId: string;
 }) {
   const { theme, setTheme } = useTheme();
   const hydrationSafeTheme = useHydrationSafeTheme(theme);
@@ -25,7 +27,7 @@ export function SettingsPopover({
       classNames="settings-popover-menu"
     >
       <div
-        id="settings-menu"
+        id={menuId}
         ref={popoverMenuRef}
         className={cn(
           "hidden absolute top-[100%] font-normal text-lg border-gray-400 border bg-white p-6 py-8 pt-10 rounded dark:bg-background-dark-theme "
@@ -35,7 +37,7 @@ export function SettingsPopover({
           className="absolute top-3 right-3 hover:cursor-pointer hover:scale-105 hover:text-primary-light-dark-theme"
           onClick={() => setIsOpen(false)}
           title="Close"
-          aria-controls="settings-menu"
+          aria-controls={menuId}
           aria-label="Button To Close Settings Menu"
         >
           <ImCross />

@@ -8,7 +8,7 @@ const SettingsPopover = dynamic(() =>
   import("./settings-popover").then((mod) => mod.SettingsPopover)
 );
 
-export function Settings() {
+export function Settings({ menuId }: { menuId: string }) {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const wrappingDivRef = useRef(null);
   useClickAway(wrappingDivRef, () => {
@@ -20,13 +20,17 @@ export function Settings() {
         className="hover:text-primary-light dark:hover:text-primary-light-dark-theme hover:cursor-pointer hover:scale-105 transition-all"
         title="Settings"
         aria-label="Button to Toggle visibility of settings menu"
-        aria-controls="setttings-menu"
+        aria-controls={menuId}
         aria-expanded={isPopoverOpen}
         onClick={() => setIsPopoverOpen((prev) => !prev)}
       >
         <IoMdSettings size="1.5em" />
       </button>
-      <SettingsPopover isOpen={isPopoverOpen} setIsOpen={setIsPopoverOpen} />
+      <SettingsPopover
+        isOpen={isPopoverOpen}
+        setIsOpen={setIsPopoverOpen}
+        menuId={menuId}
+      />
     </div>
   );
 }

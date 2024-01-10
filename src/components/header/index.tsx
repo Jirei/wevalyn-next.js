@@ -24,7 +24,7 @@ export function Header() {
               Wevalyn
             </Link>
             <span className="lg:hidden text-primary dark:text-primary-dark-theme text-xl">
-              <Settings />
+              <Settings menuId="settings-menu-mobile" />
             </span>
           </div>
         </div>
