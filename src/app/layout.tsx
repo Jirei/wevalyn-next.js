@@ -3,7 +3,6 @@ import "./globals.css";
 import { Poppins, Arvo, Roboto } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import Script from "next/script";
 import { Providers } from "./providers";
 
 export const runtime = "edge";
@@ -24,7 +23,7 @@ const arvo = Arvo({
 
 const roboto = Roboto({
   subsets: ["latin"],
-  display: "fallback",
+  display: "swap",
   variable: "--font-roboto",
   weight: ["400"],
 });
@@ -54,12 +53,6 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </Providers>
-        {process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== "on" && (
-          <Script
-            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-            strategy="lazyOnload"
-          />
-        )}
       </body>
     </html>
   );

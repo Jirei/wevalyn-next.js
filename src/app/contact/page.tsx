@@ -1,5 +1,7 @@
 import { ContactForm } from "@/components/contact-form";
 import { Metadata } from "next";
+import Script from "next/script";
+
 
 export const metadata: Metadata = {
   title: "Contact - Wevalyn",
@@ -8,8 +10,16 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className='my-24'>
-      <ContactForm />
-    </div>
+    <>
+      <div className="my-24">
+        <ContactForm />
+      </div>
+      {process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== "on" && (
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+          strategy="lazyOnload"
+        />
+      )}
+    </>
   );
 }
