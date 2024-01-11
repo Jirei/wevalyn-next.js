@@ -2,6 +2,7 @@ import { CtaSection } from "@/components/cta-section";
 import { DemoWebsites } from "@/components/demo-websites";
 import { Hero } from "@/components/hero";
 import { Services } from "@/components/services";
+import { Testimonials } from "@/components/testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Hero />
       <Services />
       <DemoWebsites />
+      <Testimonials/>
       <CtaSection />
     </div>
   );

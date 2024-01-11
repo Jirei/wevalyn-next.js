@@ -1,8 +1,8 @@
 import { DemoWebsiteItem } from "./demo-website-item";
-import languageSchoolImage from "@/assets/images/demo-sites/language-school/main.png";
-import hairdresserImage from "@/assets/images/demo-sites/hairdresser/main.png";
-import restaurantImage from "@/assets/images/demo-sites/restaurant/main.png";
 import { HomeSectionTitle } from "@/components/home-section-title";
+import languageSchoolImage from "./images/language-school/main.png";
+import hairdresserImage from "./images/hairdresser/main.png";
+import restaurantImage from "./images/restaurant/main.png";
 
 export function DemoWebsites() {
   return (

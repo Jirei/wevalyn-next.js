@@ -10,7 +10,7 @@ export default function NavDesktopMenu() {
         </li>
         <li className="hover:scale-105 transition-all">
           <Link
-            className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
             href="/"
           >
             Home
@@ -18,7 +18,7 @@ export default function NavDesktopMenu() {
         </li>
         <li className="hover:scale-105 transition-all">
           <Link
-            className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
             href="/about"
           >
             About
@@ -26,7 +26,7 @@ export default function NavDesktopMenu() {
         </li>
         <li className="hover:scale-105 transition-all">
           <Link
-            className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
             href="/#services"
           >
             Services
@@ -34,13 +34,21 @@ export default function NavDesktopMenu() {
         </li>
         <li className="hover:scale-105 transition-all">
           <Link
-            className="p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
             href="/#demos"
           >
             Demos
           </Link>
         </li>
-        <li className="p-4">
+        <li className="hover:scale-105 transition-all">
+          <Link
+            className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            href="/#testimonials"
+          >
+            Testimonials
+          </Link>
+        </li>
+        <li className="p-2 xl:p-4">
           <Link
             href="/contact"
             className="bg-[#C171C2] dark:bg-contact-button-background-dark-theme hover:bg-[#a749a9] dark:hover:bg-contact-button-background-hover-dark-theme  text-white text-xl px-10 py-3 rounded-xl shadow-cta-contact transition-all hover:scale-105"

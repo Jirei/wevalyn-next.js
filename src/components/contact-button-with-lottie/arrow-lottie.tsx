@@ -1,6 +1,6 @@
 "use client";
 import { Player } from "@lottiefiles/react-lottie-player";
-import arrowLottieJSON from "@/assets/lottie/arrow.json";
+import arrowLottieJSON from "./lottie/arrow.json";
 
 export default function ArrowLottie({ className }: { className: string }) {
   return (

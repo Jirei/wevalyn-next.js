@@ -1,4 +1,4 @@
-import backgroundImage from "@/assets/images/hero.jpg";
+import backgroundImage from "./images/hero.jpg";
 import Image from "next/image";
 import "./hero.scss";
 
