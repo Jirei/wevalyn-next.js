@@ -43,9 +43,9 @@ export function SettingsPopover({
           <ImCross />
         </button>
         <div className="flex flex-col gap-y-3">
-          <label htmlFor="ui-select">Theme:</label>
+          <label htmlFor={`${menuId}-ui-select`}>Theme:</label>
           <select
-            id="ui-select"
+            id={`${menuId}-ui-select`}
             className="dark:bg-gray-800 p-3 px-5 rounded border border-gray-400"
             onChange={(e) => setTheme(e.target.value)}
             value={hydrationSafeTheme}
@@ -57,9 +57,9 @@ export function SettingsPopover({
             <option value="light">Light</option>
             <option value="dark">Dark</option>
           </select>
-          <label htmlFor="language-select">Language:</label>
+          <label htmlFor={`${menuId}-language-select`}>Language:</label>
           <select
-            id="language-select"
+            id={`${menuId}-language-select`}
             className="p-3 px-5 rounded dark:bg-gray-800  border border-gray-400"
           >
             <option>English</option>
