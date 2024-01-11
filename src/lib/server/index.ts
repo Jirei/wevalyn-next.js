@@ -4,11 +4,9 @@ import { CaptchaAction, WrappingError } from "@/lib/common";
 import { z } from "zod";
 import { captchaActions } from "@/lib/common";
 import { addRetriesToFunction } from "add-retries-to-function";
-import { writeFileSync } from "fs";
 
 
 export function logServerError(error: unknown) {
-  writeFileSync("server-errors.log", String(error) + "\n", { flag: "as" });
   console.error(error);
 }
 

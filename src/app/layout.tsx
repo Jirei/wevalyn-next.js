@@ -6,6 +6,8 @@ import { Header } from "@/components/header";
 import Script from "next/script";
 import { Providers } from "./providers";
 
+export const runtime = "edge";
+
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
