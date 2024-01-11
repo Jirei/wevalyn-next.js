@@ -13,7 +13,7 @@ export default function NavMobileMenu({
   return (
     <nav
       // for ARIA of the button that opens it and the cross that closes it
-      id="mobile menu"
+      id="mobile-menu"
       role="dialog"
       aria-label="Mobile Navigation Menu"
       aria-hidden={!isOpen}
