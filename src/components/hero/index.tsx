@@ -1,6 +1,5 @@
-import { cn } from "@/lib/common";
 import HeroBackground from "./hero-bg";
-import "./hero.scss";
+import "./hero.css";
 
 export function Hero() {
   return (

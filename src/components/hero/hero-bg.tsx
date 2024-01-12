@@ -1,6 +1,6 @@
 import backgroundImage from "./images/hero.jpg";
 import Image from "next/image";
-import "./hero.scss";
+import "./hero.css";
 
 export default function HeroBackground({
   children,
