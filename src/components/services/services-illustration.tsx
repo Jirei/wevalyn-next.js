@@ -10,7 +10,7 @@ export default function ServicesIllustration() {
   const hasAppeared = useAppear(intersectionRef);
   return (
     <div
-      aria-label="Illustration showing a developer on a computer and with cards with names of web technologies floating above"
+      aria-hidden={true}
       ref={intersectionRef}
       className={cn(
         "mb-32 after:w-[120%] after:h-[120%] after:translate-x-[-10%] after:translate-y-[10%] opacity-0 transition-opacity duration-3000 relative after:absolute after:m-auto after:inset-0 after:rounded-full after:bg-[rgb(0,105,181)]/20 dark:after:bg-primary-dark-theme/5",
@@ -22,6 +22,7 @@ export default function ServicesIllustration() {
         autoplay
         loop
         src={serviceIllustrationLottieJSON}
+        id="service-illustration"
       />
     </div>
   );

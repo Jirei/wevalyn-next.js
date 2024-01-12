@@ -4,8 +4,14 @@ import arrowLottieJSON from "./lottie/arrow.json";
 
 export default function ArrowLottie({ className }: { className: string }) {
   return (
-    <span aria-label="Animated arrow">
-      <Player className={className} autoplay loop src={arrowLottieJSON} />
+    <span aria-hidden={true}>
+      <Player
+        id="arrow-lottie"
+        className={className}
+        autoplay
+        loop
+        src={arrowLottieJSON}
+      />
     </span>
   );
 }
