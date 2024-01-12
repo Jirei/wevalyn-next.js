@@ -19,7 +19,7 @@ export function Header() {
           <div className="flex items-center gap-x-3">
             <Link
               href="/"
-              className="font-sans text-primary dark:text-primary-dark-theme hover:text-primary-light-dark-theme font-bold text-3xl"
+              className="font-sans text-primary dark:text-primary-dark-theme hover:text-primary-light  dark:hover:text-primary-light-dark-theme font-bold text-3xl transition-colors"
             >
               Wevalyn
             </Link>
