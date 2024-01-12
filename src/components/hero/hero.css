@@ -1,14 +1,14 @@
 .hero__stop1 {
-  stop-color: #0069b5;
+  stop-color: rgb(0, 105, 181, 0.8);
   html.dark & {
-    stop-color: rgb(45, 56, 59);
+    stop-color: rgba(45, 56, 59, 0.8);
   }
 }
 
 .hero__stop2 {
-  stop-color: #6fbaf0;
+  stop-color: rgba(111, 186, 240, 0.8);
   html.dark & {
-    stop-color: rgb(47, 82, 79);
+    stop-color: rgb(47, 82, 79, 0.8);
   }
 }
 

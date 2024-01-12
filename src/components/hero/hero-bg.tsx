@@ -47,7 +47,7 @@ export default function HeroBackground({
       >
         {/* Be careful when modifying stuff, you  need to keep the image optimized and with a fixed effect: https://stackoverflow.com/questions/73528598/how-can-i-use-next-js-image-and-attach-it-to-the-background */}
         <div className="fixed h-full w-full left-0 top-0">
-          <Image
+          {/* <Image
             priority
             fill
             className="object-cover pointer-events-none left-0 top-0"
@@ -55,7 +55,24 @@ export default function HeroBackground({
             alt={
               "background image of the hero showing a meeting of a dynamic startup"
             }
-          />
+          /> */}
+          <video
+            //style={{ objectPosition: "60%" }}
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop={true}
+          >
+            {/* Compressed versions aren't used because doesn't seem worth it */}
+            <source
+              src="/hero/videos/welcoming-personnel.webm"
+              type="video/webm"
+            />
+            <source
+              src="/hero/videos/welcoming-personnel.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
         <div className="relative h-[80vh] lg:h-[90vh] z-10 flex items-center justify-center">
           <div className="flex items-center justify-center">
