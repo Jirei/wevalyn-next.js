@@ -2,6 +2,7 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
 let nextConfig = {
+  outputFileTracing: false,
   // Optional build-time configuration options
   sentry: {
     hideSourceMaps: true,
