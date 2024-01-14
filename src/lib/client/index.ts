@@ -2,10 +2,13 @@ import "client-only";
 import { clientEnv } from "@/config/client-config";
 import { CaptchaAction } from "@/lib/common";
 import { WrappingError } from "../common";
+import * as Sentry from "@sentry/nextjs";
+
 
 
 export function logClientError(error: unknown) {
   if (!process.env.NEXT_PUBLIC_PRODUCTION_MODE) console.error(error);
+  Sentry.captureException(error);
 }
 
 /**

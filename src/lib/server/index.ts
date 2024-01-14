@@ -4,9 +4,11 @@ import { CaptchaAction, WrappingError } from "@/lib/common";
 import { z } from "zod";
 import { captchaActions } from "@/lib/common";
 import { addRetriesToFunction } from "add-retries-to-function";
+import * as Sentry from "@sentry/nextjs";
 
 
 export function logServerError(error: unknown) {
+  Sentry.captureException(error);
   console.error(error);
 }
 

@@ -9,30 +9,40 @@ import { addRetriesToFunction } from "add-retries-to-function";
 import { Ratelimit } from '@upstash/ratelimit';
 import { kv } from '@vercel/kv';
 import { headers } from "next/headers";
+import * as Sentry from "@sentry/nextjs";
 
 export async function handleContactFormSubmit(data: ContactFormData): Promise<FormResponse> {
-  try {
-    const ip = headers().get('x-forwarded-for');
-    const canSendForm = await canUserSendForm(ip);
-    if (!canSendForm) {
-      return { message: "You reached your message limit. Please try again later.", hasError: true };
+  return await Sentry.withServerActionInstrumentation(
+    "Handle Contact Form Action",
+    {
+      headers: headers(),
+      recordResponse: true,
+    }, async (): Promise<FormResponse> => {
+      try {
+        const ip = headers().get('x-forwarded-for');
+        const canSendForm = await canUserSendForm(ip);
+        if (!canSendForm) {
+          return { message: "You reached your message limit. Please try again later.", hasError: true };
+        }
+        const validatedData = contactFormSchema.parse(data);
+        const { isValid, message } = await checkCaptchaClientTokenOnServer({ token: validatedData.captchaToken, action: captchaActions.contact });
+        if (!isValid) {
+          return { message, hasError: true };
+        }
+        await createMessageInDB({
+          senderFirstName: validatedData.firstName,
+          senderLastName: validatedData.lastName,
+          senderEmail: validatedData.email,
+          message: validatedData.message,
+        });
+        return { message: "The message was sent successfully. Thank you for your message.", hasError: null };
+      } catch (e) {
+        logServerError(e);
+        return { message: "Something went wrong. Please try again later.", hasError: true };
+      }
     }
-    const validatedData = contactFormSchema.parse(data);
-    const { isValid, message } = await checkCaptchaClientTokenOnServer({ token: validatedData.captchaToken, action: captchaActions.contact });
-    if (!isValid) {
-      return { message, hasError: true };
-    }
-    await createMessageInDB({
-      senderFirstName: validatedData.firstName,
-      senderLastName: validatedData.lastName,
-      senderEmail: validatedData.email,
-      message: validatedData.message,
-    });
-    return { message: "The message was sent successfully. Thank you for your message.", hasError: null };
-  } catch (e) {
-    logServerError(e);
-    return { message: "Something went wrong. Please try again later.", hasError: true };
-  }
+  );
+
 }
 
 const _fnWithTimeout = addTimeoutToFunction({ fn: _rawCreateMessageInDB, timeout: 5000 });
