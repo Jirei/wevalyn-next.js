@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Providers } from "./providers";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 const poppins = Poppins({
   subsets: ["latin"],
