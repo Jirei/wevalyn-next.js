@@ -5,7 +5,7 @@ let nextConfig = {
   // Optional build-time configuration options
   sentry: {
     hideSourceMaps: true,
-    tunnelRoute: "/monitoring-tunnel",
+    //tunnelRoute: "/monitoring-tunnel",
     // See the sections below for information on the following options:
     //   'Configure Source Maps':
     //     - disableServerWebpackPlugin
