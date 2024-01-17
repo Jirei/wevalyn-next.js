@@ -1,12 +1,15 @@
 import { cn } from "@/lib/common";
-import "./globals.css";
+import "@/app/globals.css";
 import { Poppins, Arvo, Roboto } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { Providers } from "./providers";
+import { Providers } from "../providers";
 import Script from "next/script";
+import { i18n, type Locale } from "@/i18n-config";
 
-// export const runtime = "edge";
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,12 +34,14 @@ const roboto = Roboto({
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: Locale };
 }) {
   return (
     <html
-      lang="en"
+      lang={params.lang}
       className={cn(
         poppins.variable,
         arvo.variable,
@@ -50,7 +55,7 @@ export default function RootLayout({
       {/* You need that both for the HTML and body tags because of Mobile Firefox weird behavior */}
       <body className="font-normal overflow-x-hidden w-screen dark:bg-background-dark-theme">
         <Providers>
-          <Header />
+          <Header lang={params.lang} />
           <main>{children}</main>
           <Footer />
         </Providers>

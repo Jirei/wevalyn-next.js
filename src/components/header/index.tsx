@@ -1,17 +1,15 @@
-"use client";
-import { useLockBodyScroll } from "react-use";
-import { useState } from "react";
-import { BiMenu } from "react-icons/bi";
 import dynamic from "next/dynamic";
 import NavDesktopMenu from "./nav-desktop-menu";
 import Link from "next/link";
 import { Settings } from "./settings";
+import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/get-dictionary";
 
 const NavMobileMenu = dynamic(() => import("./nav-mobile-menu"));
 
-export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  useLockBodyScroll(isOpen);
+export async function Header({ lang }: { lang: Locale }) {
+  const { header: dictionary, navMobile: navMobileDictionary } =
+    await getDictionary(lang);
   return (
     <header>
       <div className="flex items-center justify-between h-24 p-3 xl:p-8">
@@ -21,7 +19,7 @@ export function Header() {
               href="/"
               className="font-sans text-primary dark:text-primary-dark-theme hover:text-primary-light  dark:hover:text-primary-light-dark-theme font-bold text-3xl transition-colors"
             >
-              Wevalyn
+              {dictionary.agencyName}
             </Link>
             <span className="lg:hidden text-primary dark:text-primary-dark-theme text-xl">
               <Settings menuId="settings-menu-mobile" />
@@ -29,19 +27,10 @@ export function Header() {
           </div>
         </div>
         <div>
-          <NavDesktopMenu />
+          <NavDesktopMenu lang={lang} />
         </div>
       </div>
-      {/* Mobile Menu */}
-      <button
-        aria-label="Button to open mobile menu"
-        aria-controls="mobile-menu"
-        className="lg:hidden rounded text-white border border-white overflow-hidden bg-primary dark:bg-primary-very-dark-dark-theme fixed top-[1.5rem] right-2 z-50"
-        onClick={() => setIsOpen(true)}
-      >
-        <BiMenu className="text-inherit bg-inherit" size={"3em"} />
-      </button>
-      <NavMobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <NavMobileMenu dictionary={navMobileDictionary} />
     </header>
   );
 }

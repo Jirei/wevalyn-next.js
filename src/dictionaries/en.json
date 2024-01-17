@@ -1,0 +1,26 @@
+{
+  "header": {
+    "agencyName": "Wevalyn"
+  },
+  "navDesktop": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "demos": "Demos",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "navMobile": {
+    "menu": "Menu",
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "demos": "Demos",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "close": "Close"
+  },
+  "services": {
+    "servicesSectionTitle": "Services"
+  }
+}
