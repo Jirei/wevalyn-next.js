@@ -1,16 +1,19 @@
+import { Locale } from "@/internationalization/i18n-config";
 import { ContactButtonWithLottie } from "../contact-button-with-lottie";
+import { getDictionary } from "@/internationalization/get-dictionary";
 
-export function CtaSection() {
+export async function CtaSection({ lang }: { lang: Locale }) {
+  const { ctaSection: dictionary } = await getDictionary(lang);
   return (
     <section className="flex flex-col gap-y-14 mt-10">
       <div className="flex flex-col gap-y-5 text-primary dark:text-primary-dark-theme text-center text-xl">
         <p className="leading-relaxed">
-          Do you want to request a quote? <br />
-          Do you have any questions?
+          {dictionary.doYouWantToRequestAQuote} <br />
+          {dictionary.doYouHaveAnyQuestions}
         </p>
-        <p>Drop us a line and we’ll get back to you shortly.</p>
+        <p>{dictionary.dropUsALineAndWellGetBackToYouShorty}</p>
       </div>
-      <ContactButtonWithLottie />
+      <ContactButtonWithLottie lang={lang} />
     </section>
   );
 }

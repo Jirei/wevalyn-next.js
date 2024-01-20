@@ -1,0 +1,107 @@
+{
+  "header": {
+    "agencyName": "Wevalyn"
+  },
+  "settings": {
+    "Settings": "Settings",
+    "Theme": "Theme",
+    "System": "System",
+    "Dark": "Dark",
+    "Light": "Light",
+    "Loading": "Loading",
+    "Language": "Language",
+    "toggleVisiblityButtonAriaLabel": "Button to toggle visibility of settings menu",
+    "Close": "Close",
+    "closeSettingsMenuButtonAriaLabel": "Button to close settings menu"
+  },
+  "navDesktop": {
+    "Home": "Home",
+    "About": "About",
+    "Services": "Services",
+    "Demos": "Demos",
+    "Testimonials": "Testimonials",
+    "Contact": "Contact"
+  },
+  "navMobile": {
+    "Menu": "Menu",
+    "Home": "Home",
+    "About": "About",
+    "Services": "Services",
+    "Demos": "Demos",
+    "Testimonials": "Testimonials",
+    "Contact": "Contact",
+    "Close": "Close",
+    "openMobileMenuButtonAriaLabel": "Button to open mobile menu",
+    "mobileNavigationMenuAriaLabel": "Mobile navigation menu",
+    "closeMobileMenuButtonAriaLabel": "Button to close mobile menu"
+  },
+  "services": {
+    "Services": "Services"
+  },
+  "demoWebsites": {
+    "DemoWebsites": "Demo Websites",
+    "youCanSeeBelowSomeOfOurCreations": "You can see below some of our creations."
+  },
+  "demoWebsitesItem": {
+    "seeLiveDemo": "See live demo"
+  },
+  "testimonials": {
+    "Testimonials": "Testimonials"
+  },
+  "ctaSection": {
+    "doYouWantToRequestAQuote": "Do you want to request a quote?",
+    "doYouHaveAnyQuestions": "Do you have any questions?",
+    "dropUsALineAndWellGetBackToYouShorty": "Drop us a line and we’ll get back to you shortly."
+  },
+  "contactButton": {
+    "Contact": "Contact"
+  },
+  "footer": {
+    "Wevalyn": "Wevalyn",
+    "Home": "Home",
+    "About": "About",
+    "Services": "Services",
+    "Demos": "Demos",
+    "Testimonials": "Testimonials",
+    "Contact": "Contact",
+    "copyright": "© 2024 www.wevalyn.com - All Rights Reserved."
+  },
+  "about": {
+    "AboutUs": "About Us",
+    "OurGenesis": "Our Genesis",
+    "ourGenesisText": "In the ever-evolving digital ecosystem, the need for a reliable, creative, and technically proficient WordPress development agency became glaringly evident. This realization led to the birth of Wevalyn. Founded on the principles of integrity, creativity, and excellence, we embarked on a journey to transform concepts into captivating digital realities.",
+    "OurMission": "Our Mission",
+    "ourMissionText": "At the heart of our mission is a commitment to empower businesses, organizations, and individuals with robust, visually stunning WordPress solutions. We believe that the online presence of any entity is not just a representation but an extension of its identity. Our mission is to elevate that identity, crafting a digital footprint that resonates with authenticity and purpose.",
+    "TheWevalynDifference": "The Wevalyn Difference",
+    "TechnicalMastery": "Technical Mastery",
+    "technicalMasteryText": "Our team of seasoned WordPress developers boasts an extensive understanding of the platform, from its core functionalities to the latest trends and updates. We specialize in custom theme development, plugin integration, and optimization to ensure that your website not only meets but exceeds industry standards.",
+    "CreativeIngenuity": "Creative Ingenuity",
+    "creativeIngenuityText": "In the realm of digital experiences, creativity is the key to standing out. Our designers are not just artists; they are strategic thinkers who blend aesthetics with functionality. Whether it's a corporate website, an e-commerce platform, or a personal blog, we infuse creativity into every pixel, ensuring a visually compelling and memorable user experience.",
+    "ClientCentricApproach": "Client-Centric Approach",
+    "clientCentricApproachText": "Collaboration is at the heart of our process. We understand that your vision is unique, and we are here to bring it to life. Our client-centric approach involves active communication, transparency, and a deep understanding of your goals. Your success is our success, and we take pride in being a partner you can trust.",
+    "FutureProofSolutions": "Future-Proof Solutions",
+    "futureProofSolutionsText": "The digital landscape is dynamic, and we believe in future-proofing our solutions. Our development practices adhere to the latest standards, ensuring scalability, security, and adaptability. We don't just build websites; we create foundations for sustained digital growth.",
+    "OurPortfolio": "Our Portfolio",
+    "ourPortfolioText": "Our portfolio is a testament to the diverse projects we've undertaken and successfully delivered. From small businesses to large enterprises, we've had the privilege of working with clients across industries. Each project in our portfolio reflects our commitment to excellence and our ability to tailor solutions to the unique needs of our clients.",
+    "JoiningForcesWithWevalyn": "Joining Forces with Wevalyn",
+    "LetsInnovateTogether": "Let's Innovate Together",
+    "letsInnovateTogetherText": "Innovation is the heartbeat of Wevalyn. We embrace challenges, turning them into opportunities for creative problem-solving. If you're looking for a WordPress development agency that thinks beyond the conventional, we invite you to join us in crafting digital excellence.",
+    "YourSuccessOurPriority": "Your Success, Our Priority",
+    "yourSuccessOurPriorityText": "Your success is our driving force. We are not satisfied with merely meeting expectations; we aim to exceed them. With a focus on results-driven development, we ensure that every line of code contributes to your online success story.",
+    "ExperienceTheWevalynMagic": "Experience the Wevalyn Magic",
+    "experienceTheWevalynMagicText": "Beyond the code and design, there's a touch of magic in every project we undertake. It's the Wevalyn difference — the seamless integration of technology and creativity, resulting in digital experiences that captivate, engage, and leave a lasting impression."
+  },
+  "contactForm": {
+    "ContactForm": "Contact Form",
+    "FirstName": "First name",
+    "firstNamePlaceholder": "John",
+    "LastName": "Last name",
+    "lastNamePlaceholder": "Doe",
+    "NotRequired": "not required",
+    "Email": "Email",
+    "emailPlaceholder": "johndoe@gmail.com",
+    "Message": "Message",
+    "messagePlaceHolder":"Hello, I would like to receive a quote for my project...",
+    "Submit": "Submit"
+  }
+}

@@ -3,7 +3,7 @@ import { DemoWebsites } from "@/components/demo-websites";
 import { Hero } from "@/components/hero";
 import { Services } from "@/components/services";
 import { Testimonials } from "@/components/testimonials";
-import { Locale } from "@/i18n-config";
+import { Locale } from "@/internationalization/i18n-config";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,9 +17,9 @@ export default function HomePage({ params }: { params: { lang: Locale } }) {
     <div className="flex flex-col gap-y-28 xl:gap-y-48 mb-20">
       <Hero lang={params.lang} />
       <Services lang={params.lang} />
-      <DemoWebsites />
-      <Testimonials />
-      <CtaSection />
+      <DemoWebsites lang={params.lang} />
+      <Testimonials lang={params.lang} />
+      <CtaSection lang={params.lang} />
     </div>
   );
 }

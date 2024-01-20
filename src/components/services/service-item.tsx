@@ -1,20 +1,23 @@
 "use client";
 import { useAppear } from "@/hooks/use-appear";
+import { Locale } from "@/internationalization/i18n-config";
 import { cn } from "@/lib/common";
 import { useRef } from "react";
 
 export function ServiceItem({
   logos,
-  name,
-  description,
+  names,
+  descriptions,
   yellowRibbon,
   appearFrom,
+  lang,
 }: {
   logos: JSX.Element[];
-  name: string;
-  description: string;
+  names: { en: string; jp: string };
+  descriptions: { en: string; jp: string };
   yellowRibbon?: boolean;
   appearFrom: "left" | "right";
+  lang: Locale;
 }) {
   const intersectionRef = useRef(null);
   const hasAppeared = useAppear(intersectionRef);
@@ -37,8 +40,8 @@ export function ServiceItem({
         <div>
           <div className="flex gap-x-4">{[...logos]}</div>
         </div>
-        <h2 className="font-bold text-2xl text-center">{name}</h2>
-        <p className="text-center text-xl">{description}</p>
+        <h2 className="font-bold text-2xl text-center">{names[lang]}</h2>
+        <p className="text-center text-xl">{descriptions[lang]}</p>
       </div>
     </li>
   );

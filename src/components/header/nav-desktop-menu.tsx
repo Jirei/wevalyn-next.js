@@ -1,62 +1,66 @@
 import Link from "next/link";
 import { Settings } from "./settings";
-import { getDictionary } from "@/get-dictionary";
-import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/internationalization/get-dictionary";
+import { Locale } from "@/internationalization/i18n-config";
 
 export default async function NavDesktopMenu({ lang }: { lang: Locale }) {
-  const { navDesktop: dictionary } = await getDictionary(lang);
+  const { navDesktop: dictionary, settings: settingsDictionary } =
+    await getDictionary(lang);
   return (
     <nav className="max-lg:hidden">
       <ul className="text-primary dark:text-primary-dark-theme flex gap-x-8 font-bold text-xl items-center">
         <li className="">
-          <Settings menuId="settings-menu-desktop" />
+          <Settings
+            menuId="settings-menu-desktop"
+            dictionary={settingsDictionary}
+          />
         </li>
         <li className="hover:scale-105 transition-all">
           <Link
             className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
-            href="/"
+            href={`/${lang}`}
           >
-            {dictionary.home}
+            {dictionary.Home}
           </Link>
         </li>
         <li className="hover:scale-105 transition-all">
           <Link
             className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
-            href="/about"
+            href={`/${lang}/about`}
           >
-            {dictionary.about}
+            {dictionary.About}
           </Link>
         </li>
         <li className="hover:scale-105 transition-all">
           <Link
             className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
-            href="/#services"
+            href={`/${lang}#services`}
           >
-            {dictionary.services}
+            {dictionary.Services}
           </Link>
         </li>
         <li className="hover:scale-105 transition-all">
           <Link
             className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
-            href="/#demos"
+            href={`/${lang}#demos`}
           >
-            {dictionary.demos}
+            {dictionary.Demos}
           </Link>
         </li>
         <li className="hover:scale-105 transition-all">
           <Link
             className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
-            href="/#testimonials"
+            href={`/${lang}#testimonials`}
           >
-            {dictionary.testimonials}
+            {dictionary.Testimonials}
           </Link>
         </li>
         <li className="p-2 xl:p-4">
           <Link
-            href="/contact"
+            href={`/${lang}/contact`}
             className="bg-[#C171C2] dark:bg-contact-button-background-dark-theme hover:bg-[#a749a9] dark:hover:bg-contact-button-background-hover-dark-theme  text-white text-xl px-10 py-3 rounded-xl shadow-cta-contact transition-all hover:scale-105"
           >
-            {dictionary.contact}
+            {dictionary.Contact}
           </Link>
         </li>
       </ul>

@@ -12,8 +12,13 @@ import {
 } from "./schemas-and-types";
 import { MdError } from "react-icons/md";
 import { RotatingLines } from "react-loader-spinner";
+import { ContactFormDictionary } from "@/internationalization/dictionaries/types";
 
-export function ContactForm() {
+export function ContactForm({
+  dictionary,
+}: {
+  dictionary: ContactFormDictionary;
+}) {
   const {
     register,
     handleSubmit,
@@ -84,14 +89,14 @@ export function ContactForm() {
         className="flex flex-col p-5 py-10 gap-y-10"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h2 className="text-white m-auto text-3xl">Contact Form</h2>
+        <h2 className="text-white m-auto text-3xl">{dictionary.ContactForm}</h2>
         <ul className="flex flex-col gap-y-5">
           {/* First Name Input */}
           <li>
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
                 <label className="text-white text-lg" htmlFor="first-name">
-                  First name *
+                  {dictionary.FirstName} *
                 </label>
                 <input
                   id="first-name"
@@ -130,7 +135,7 @@ export function ContactForm() {
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
                 <label className="text-white text-lg" htmlFor="last-name">
-                  Last name (not required)
+                  {dictionary.LastName} ({dictionary.NotRequired})
                 </label>
                 <input
                   id="last-name"
@@ -168,7 +173,7 @@ export function ContactForm() {
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
                 <label className="text-white text-lg" htmlFor="email">
-                  Email *
+                  {dictionary.Email} *
                 </label>
                 <input
                   id="email"
@@ -206,7 +211,7 @@ export function ContactForm() {
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
                 <label className="text-white text-lg" htmlFor="message">
-                  Message *
+                  {dictionary.Message} *
                 </label>
                 <textarea
                   id="message"
@@ -261,7 +266,7 @@ export function ContactForm() {
                   "dark:text-gray-300"
               )}
             >
-              Submit
+              {dictionary.Submit}
             </span>
             <span
               className={cn(

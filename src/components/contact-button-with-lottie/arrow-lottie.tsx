@@ -1,6 +1,5 @@
 "use client";
 import { Player } from "@lottiefiles/react-lottie-player";
-import arrowLottieJSON from "./lottie/arrow.json";
 
 export default function ArrowLottie({ className }: { className: string }) {
   return (
@@ -10,7 +9,7 @@ export default function ArrowLottie({ className }: { className: string }) {
         className={className}
         autoplay
         loop
-        src={arrowLottieJSON}
+        src="/contact-button-with-lottie/lottie/arrow.json"
       />
     </span>
   );

@@ -3,13 +3,16 @@ import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
 import { useAppear } from "@/hooks/use-appear";
 import { cn } from "@/lib/common";
+import { DemoWebsiteItemDictionary } from "@/internationalization/dictionaries/types";
 
 export function DemoWebsiteItem({
   name,
   imgURL,
+  dictionary,
 }: {
   name: string;
   imgURL: StaticImageData;
+  dictionary: DemoWebsiteItemDictionary;
 }) {
   const intersectionRef = useRef(null);
   const hasAppeared = useAppear(intersectionRef);
@@ -30,10 +33,10 @@ export function DemoWebsiteItem({
           alert(
             "Fun fact: the demo sites actually do exist but aren't hosted so can't be seen."
           )
-        }                                                                                                                                              // used to cancel hover in dark theme
+        } // used to cancel hover in dark theme
         className="bg-primary-gradient dark:bg-primary-gradient-dark-theme text-white text-xl px-6 py-4 rounded hover:cursor-pointer hover:scale-105 dark:hover:scale-100 border border-transparent dark:hover:border-primary-light-dark-theme"
       >
-        See live demo
+        {dictionary.seeLiveDemo}
       </button>
     </li>
   );

@@ -2,23 +2,29 @@
 import { cn } from "@/lib/common";
 import { CSSTransition } from "react-transition-group";
 import { useTheme } from "next-themes";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { ImCross } from "react-icons/im";
 import "./settings-popover.css";
 import { useHydrationSafeTheme } from "@/hooks/use-hydration-safe-theme";
+import { usePathname, useRouter } from "next/navigation";
+import { SettingsDictionary } from "@/internationalization/dictionaries/types";
 
 export function SettingsPopover({
   isOpen,
   setIsOpen,
   menuId,
+  dictionary,
 }: {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   menuId: string;
+  dictionary: SettingsDictionary;
 }) {
   const { theme, setTheme } = useTheme();
   const hydrationSafeTheme = useHydrationSafeTheme(theme);
   const popoverMenuRef = useRef(null);
+  const router = useRouter();
+  const pathName = usePathname();
   return (
     <CSSTransition
       ref={popoverMenuRef}
@@ -36,14 +42,14 @@ export function SettingsPopover({
         <button
           className="absolute top-3 right-3 hover:cursor-pointer hover:scale-105 hover:text-primary-light-dark-theme"
           onClick={() => setIsOpen(false)}
-          title="Close"
+          title={dictionary.Close}
           aria-controls={menuId}
-          aria-label="Button To Close Settings Menu"
+          aria-label={dictionary.closeSettingsMenuButtonAriaLabel}
         >
           <ImCross />
         </button>
         <div className="flex flex-col gap-y-3">
-          <label htmlFor={`${menuId}-ui-select`}>Theme:</label>
+          <label htmlFor={`${menuId}-ui-select`}>{dictionary.Theme}:</label>
           <select
             id={`${menuId}-ui-select`}
             className="dark:bg-gray-800 p-3 px-5 rounded border border-gray-400"
@@ -52,18 +58,27 @@ export function SettingsPopover({
             disabled={!hydrationSafeTheme}
             aria-busy={!hydrationSafeTheme}
           >
-            {!hydrationSafeTheme && <option>Loading...</option>}
-            <option value="system">System</option>
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
+            {!hydrationSafeTheme && <option>{dictionary.Loading}...</option>}
+            <option value="system">{dictionary.System}</option>
+            <option value="light">{dictionary.Light}</option>
+            <option value="dark">{dictionary.Dark}</option>
           </select>
-          <label htmlFor={`${menuId}-language-select`}>Language:</label>
+          <label htmlFor={`${menuId}-language-select`}>
+            {dictionary.Language}:
+          </label>
           <select
+            defaultValue={pathName.split("/")[1]}
+            onChange={(e) => {
+              const segments = pathName.split("/");
+              segments[1] = e.target.value;
+              const pathWithNewLocale = segments.join("/");
+              router.push(pathWithNewLocale);
+            }}
             id={`${menuId}-language-select`}
             className="p-3 px-5 rounded dark:bg-gray-800  border border-gray-400"
           >
-            <option>English</option>
-            <option>日本語</option>
+            <option value="en">English</option>
+            <option value="jp">日本語</option>
           </select>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-import { i18n } from "./i18n-config";
+import { i18n } from "./internationalization/i18n-config";
 
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
@@ -39,6 +39,8 @@ export function middleware(request: NextRequest) {
       '/hero/videos/welcoming-personnel.webm',
       '/hero/videos/welcoming-personnel-compressed.mp4',
       '/hero/videos/welcoming-personnel-compressed.webm',
+      '/services/lottie/services-illustration.json',
+      '/contact-button-with-lottie/lottie/arrow.json'
       // Your other files in `public`
     ].includes(pathname)
   )

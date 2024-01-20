@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Providers } from "../providers";
 import Script from "next/script";
-import { i18n, type Locale } from "@/i18n-config";
+import { i18n, type Locale } from "@/internationalization/i18n-config";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -57,7 +57,7 @@ export default function RootLayout({
         <Providers>
           <Header lang={params.lang} />
           <main>{children}</main>
-          <Footer />
+          <Footer lang={params.lang} />
         </Providers>
         <Script id="microsoft-clarity" strategy="lazyOnload">
           {getMicrosoftClarityScriptContent()}

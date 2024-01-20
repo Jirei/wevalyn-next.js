@@ -1,0 +1,111 @@
+{
+  "header": {
+    "agencyName": "ウェバリン"
+  },
+  "settings": {
+    "Settings": "設定",
+    "Theme": "テーマ",
+    "System": " システム",
+    "Dark": "ダーク",
+    "Light": "ライト",
+    "Loading": "読み込み中",
+    "Language": "言語",
+    "toggleVisiblityButtonAriaLabel": "設定メニューの表示を切り替えるボタン",
+    "Close": "閉じる",
+    "closeSettingsMenuButtonAriaLabel": "設定メニューを閉じるボタン"
+  },
+  "navDesktop": {
+    "Home": "ホーム",
+    "About": "紹介",
+    "Services": "サービス",
+    "Demos": "デモ",
+    "Testimonials": "お客様の声",
+    "Contact": "お問い合わせ"
+  },
+  "navMobile": {
+    "Menu": "メニュー",
+    "Home": "ホーム",
+    "About": "紹介",
+    "Services": "サービス",
+    "Demos": "デモ",
+    "Testimonials": "お客様の声",
+    "Contact": "お問い合わせ",
+    "Close": "閉じる",
+    "openMobileMenuButtonAriaLabel": "モバイルメニューを開くボタン",
+    "mobileNavigationMenuAriaLabel": "モバイルナビゲーションメニュー",
+    "closeMobileMenuButtonAriaLabel": "モバイルメニューを閉じるボタン"
+  },
+  "services": {
+    "Services": "サービス"
+  },
+  "demoWebsites": {
+    "DemoWebsites": "デモウェブサイト",
+    "youCanSeeBelowSomeOfOurCreations": "以下に当社のいくつかの作品をご覧いただけます。"
+  },
+  "demoWebsitesItem": {
+    "seeLiveDemo": "ライブデモを見る"
+  },
+  "testimonials": {
+    "Testimonials": "お客様の声"
+  },
+  "ctaSection": {
+    "doYouWantToRequestAQuote": "お見積りをご希望ですか？",
+    "doYouHaveAnyQuestions": "ご質問はありますか？",
+    "dropUsALineAndWellGetBackToYouShorty": "お問い合わせください。間もなくご連絡いたします。"
+  },
+  "contactButton": {
+    "Contact": "お問い合わせ"
+  },
+  "footer": {
+    "Wevalyn": "ウェバリン",
+    "Home": "ホーム",
+    "About": "紹介",
+    "Services": "サービス",
+    "Demos": "デモ",
+    "Testimonials": "お客様の声",
+    "Contact": "お問い合わせ",
+    "copyright": "© 2024 www.wevalyn.com - 全著作権所有。"
+  },
+  "about": {
+    "AboutUs": "私たちについて",
+    "OurGenesis": "私たちの始まり",
+    "ourGenesisText": "常に進化するデジタルエコシステムの中で、信頼できる創造的で技術的に優れたWordPress開発代理店の必要性が明らかになりました。この実現はWevalynの誕生につながりました。誠実さ、創造性、卓越性の原則に基づいて設立され、私たちは概念を魅力的なデジタルリアリティに変える旅に出ました。",
+    "OurMission": "私たちの使命",
+    "ourMissionText": "私たちの使命の核心は、堅牢で視覚的に魅力的なWordPressソリューションでビジネス、組織、個人を強化することにあります。私たちは、あらゆる実体のオンラインプレゼンスは単なる表現ではなく、そのアイデンティティの延長であると信じています。私たちの使命は、そのアイデンティティを高め、誠実さと目的を持って響き渡るデジタルフットプリントを作り出すことです。",
+    "TheWevalynDifference": "Wevalynの違い",
+    "TechnicalMastery": "技術の習得",
+    "technicalMasteryText": "私たちの経験豊富なWordPress開発チームは、プラットフォームのコア機能から最新のトレンドとアップデートに至るまで、幅広い理解を持っています。私たちはカスタムテーマ開発、プラグイン統合、最適化を専門とし、ウェブサイトが業界標準を単に満たすだけでなく、それを超えることを確実にします。",
+    "CreativeIngenuity": "創造的な独創性",
+    "creativeIngenuityText": "デジタル体験の領域において、創造性は際立つ鍵です。私たちのデザイナーは単なるアーティストではなく、美学を機能性と融合させる戦略的な思考家です。企業のウェブサイト、電子商取引プラットフォーム、個人ブログに至るまで、私たちは創造性を各ピクセルに注ぎ込み、視覚的に魅力的で記憶に残るユーザーエクスペリエンスを保証します。",
+
+    "ClientCentricApproach": "クライアント中心のアプローチ",
+    "clientCentricApproachText": "協力は私たちのプロセスの中核です。お客様のビジョンはユニークであり、私たちはそれを実現するためにここにいます。クライアント中心のアプローチには、積極的なコミュニケーション、透明性、お客様の目標への深い理解が含まれます。お客様の成功は私たちの成功であり、信頼できるパートナーであることを誇りに思います。",
+
+    "FutureProofSolutions": "未来に対応したソリューション",
+    "futureProofSolutionsText": "デジタルランドスケープはダイナミックであり、私たちはソリューションを未来に対応させることを信じています。私たちの開発実践は最新の標準に従い、スケーラビリティ、セキュリティ、適応性を保証します。私たちは単にウェブサイトを構築するだけでなく、持続可能なデジタル成長の基盤を創造します。",
+    "OurPortfolio": "私たちのポートフォリオ",
+    "ourPortfolioText": "私たちのポートフォリオは、私たちが取り組み、成功裏に納品した多様なプロジェクトの証です。小規模なビジネスから大企業に至るまで、さまざまな業界のクライアントとの協力の機会を持ちました。ポートフォリオにある各プロジェクトは、私たちの卓越へのコミットメントと、クライアントのユニークなニーズに合わせたソリューションを提供する能力を反映しています。",
+
+    "JoiningForcesWithWevalyn": "Wevalynとの共同作業",
+    "LetsInnovateTogether": "一緒に革新しましょう",
+    "letsInnovateTogetherText": "革新はWevalynの心臓部です。私たちは挑戦を受け入れ、それを創造的な問題解決の機会に変えます。従来の考え方を超えるWordPress開発代理店を探しているなら、私たちと一緒にデジタルの卓越性を創造することに参加してください。",
+    "YourSuccessOurPriority": "あなたの成功、私たちの優先事項",
+    "yourSuccessOurPriorityText": "あなたの成功は私たちの推進力です。私たちは単に期待に応えるだけでは満足しません；私たちはそれを超えることを目指しています。結果重視の開発に焦点を当て、コードの一行一行があなたのオンラインでの成功物語に貢献するようにします。",
+
+    "ExperienceTheWevalynMagic": "Wevalynの魔法を体験",
+    "experienceTheWevalynMagicText": "コードやデザインを超えて、私たちが取り組む各プロジェクトには、少しの魔法があります。それがWevalynの違いです — テクノロジーと創造性のシームレスな統合が、魅了し、引き込み、そして印象深いデジタル体験を生み出します。"
+  },
+  "contactForm": {
+    "ContactForm": "お問い合わせフォーム",
+    "FirstName": "名",
+    "firstNamePlaceholder": "太郎",
+    "LastName": "姓",
+    "lastNamePlaceholder": "山田",
+    "NotRequired": "必須ではありません",
+    "Email": "メールアドレス",
+    "emailPlaceholder": "yamadataro@gmail.com",
+    "Message": "メッセージ",
+    "messagePlaceHolder": "こんにちは、私のプロジェクトの見積もりを受け取りたいです...",
+    "Submit": "送信"
+  }
+}
