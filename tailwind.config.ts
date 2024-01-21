@@ -21,6 +21,7 @@ module.exports = {
         "service-card": "0px 6.35911px 3.17955px 0px rgba(0, 0, 0, 0.25)",
       },
       transitionDuration: {
+        "2000": "2000ms",
         "3000": "3000ms",
       },
       backgroundImage: {

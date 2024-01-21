@@ -5,9 +5,9 @@ import { getDictionary } from "@/internationalization/get-dictionary";
 import { Locale } from "@/internationalization/i18n-config";
 import { ServiceText } from "./services-text";
 
-
 export async function Services({ lang }: { lang: Locale }) {
-  const { services: dictionary } = await getDictionary(lang);
+  const { services: dictionary, servicesText: servicesTextDictionary } =
+    await getDictionary(lang);
   return (
     <section
       id="services"
@@ -15,7 +15,7 @@ export async function Services({ lang }: { lang: Locale }) {
     >
       <HomeSectionTitle>{dictionary.Services}</HomeSectionTitle>
       <ServicesIllustration />
-      <ServiceText lang={lang} />
+      <ServiceText dictionary={servicesTextDictionary} />
       <ServicesList lang={lang} />
     </section>
   );

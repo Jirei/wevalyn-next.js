@@ -25,7 +25,7 @@ export function ServiceItem({
     <li
       ref={intersectionRef}
       className={cn(
-        "shadow-service-card transition-transform duration-1000 relative max-w-[24rem] text-white rounded-[5px] overflow-hidden",
+        "shadow-service-card transition-transform duration-2000 relative max-w-[24rem] text-white rounded-[5px] overflow-hidden",
         appearFrom === "right" &&
           "max-sm:translate-x-[90vw] md:translate-x-[45vw] xl:translate-x-[25vw] 2xl:translate-x-[20vw]",
         appearFrom === "left" &&
