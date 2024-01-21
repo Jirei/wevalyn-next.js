@@ -11,7 +11,8 @@ export default function HeroBackground({
     //source of the "hack" for the background image: https://github.com/vercel/next.js/discussions/18357
     <div className="relative">
       {/* it was z-50 before, you change it but don't know if you broke something */}
-      <span className="absolute top-0 right-0 z-10 w-screen hidden lg:block">
+      {/* You put -1px on the positioning of span of the svg because there was a gap */}
+      <span className="absolute top-[-1px] right-0 z-10 w-screen hidden lg:block">
         <svg
           width="100%"
           viewBox="0 0 1640 114"
@@ -90,7 +91,7 @@ export default function HeroBackground({
                 cy="52.1803"
                 rx="106.019"
                 ry="52.1803"
-                className="fill-[#0069b5] dark:fill-[#365854]"
+                className="fill-[#0069b5] dark:fill-[#2d4a47]"
                 fill=""
                 fillOpacity="0.8"
               />

@@ -40,7 +40,8 @@ export function middleware(request: NextRequest) {
       '/hero/videos/welcoming-personnel-compressed.mp4',
       '/hero/videos/welcoming-personnel-compressed.webm',
       '/services/lottie/services-illustration.json',
-      '/contact-button-with-lottie/lottie/arrow.json'
+      '/contact-button-with-lottie/lottie/arrow.json',
+      '/services/videos/services.mp4'
       // Your other files in `public`
     ].includes(pathname)
   )

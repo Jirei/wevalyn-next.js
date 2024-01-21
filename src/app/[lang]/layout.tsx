@@ -53,7 +53,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       {/* You need that both for the HTML and body tags because of Mobile Firefox weird behavior */}
-      <body className="font-normal overflow-x-hidden w-screen dark:bg-background-dark-theme">
+      <body className="font-normal overflow-x-hidden w-screen dark:bg-[#3e3e3e] text-gray-font dark:text-white">
         <Providers>
           <Header lang={params.lang} />
           <main>{children}</main>

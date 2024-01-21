@@ -5,6 +5,7 @@ export type SettingsDictionary = Common<typeof englishDictionary.settings, typeo
 export type NavMobileDictionary = Common<typeof englishDictionary.navMobile, typeof japaneseDictionary.navMobile>;
 export type DemoWebsiteItemDictionary = Common<typeof englishDictionary.demoWebsitesItem, typeof japaneseDictionary.demoWebsitesItem>;
 export type ContactFormDictionary = Common<typeof englishDictionary.contactForm, typeof japaneseDictionary.contactForm>;
+export type ServicesTextDictionary = Common<typeof englishDictionary.servicesText, typeof japaneseDictionary.servicesText>;
 
 
 

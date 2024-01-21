@@ -1,4 +1,4 @@
-import { Locale } from "@/i18n-config";
+import { Locale } from "@/internationalization/i18n-config";
 import HeroBackground from "./hero-bg";
 import "./hero.css";
 

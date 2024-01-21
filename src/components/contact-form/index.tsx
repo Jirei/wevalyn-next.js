@@ -103,7 +103,7 @@ export function ContactForm({
                   {...register("firstName")}
                   required
                   className={cn(
-                    "p-2 font-roboto text-primary dark:text-white dark:bg-gray-800  border border-primary dark:border-transparent rounded",
+                    "p-2 font-roboto text-primary dark:text-white dark:bg-[rgb(48,48,48)]  border border-primary dark:border-transparent rounded",
                     isSubmitted &&
                       errors.firstName &&
                       "!border-red-500 border-2",
@@ -141,7 +141,7 @@ export function ContactForm({
                   id="last-name"
                   {...register("lastName")}
                   className={cn(
-                    "p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded",
+                    "p-2 font-roboto text-primary dark:text-white dark:bg-[rgb(48,48,48)] border border-primary dark:border-transparent rounded",
                     isSubmitted &&
                       errors.lastName &&
                       "!border-red-500 border-2",
@@ -181,7 +181,7 @@ export function ContactForm({
                   required
                   type="email"
                   className={cn(
-                    "p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded",
+                    "p-2 font-roboto text-primary dark:text-white dark:bg-[rgb(48,48,48)] border border-primary dark:border-transparent rounded",
                     isSubmitted && errors.email && "!border-red-500 border-2",
                     isSubmitted && !errors.email && "!border-green-500"
                   )}
@@ -218,7 +218,7 @@ export function ContactForm({
                   {...register("message")}
                   required
                   className={cn(
-                    "p-2 font-roboto text-primary dark:text-white dark:bg-gray-800 border border-primary dark:border-transparent rounded",
+                    "p-2 font-roboto text-primary dark:text-white dark:bg-[rgb(48,48,48)] border border-primary dark:border-transparent rounded",
                     isSubmitted && errors.message && "!border-red-500 border-2",
                     isSubmitted && !errors.message && "!border-green-500"
                   )}

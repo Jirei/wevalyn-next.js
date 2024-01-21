@@ -38,6 +38,10 @@
   "services": {
     "Services": "Services"
   },
+  "servicesText":{
+    "paragraph1":"We offer various web development services. The following services are the ones we do the most often because they generally cover the needs of most of our clients and are cost-effective. But we are also pretty flexible and can adapt to your project demands if a different technology is required. We can build a solution from scratch if needed.",
+    "paragraph2":"The possibilities are endless and it can sometimes be overwhelming. We are ready to use our expertise to help you choose the best option for your project and budget if you request it."
+  },
   "demoWebsites": {
     "DemoWebsites": "Demo Websites",
     "youCanSeeBelowSomeOfOurCreations": "You can see below some of our creations."
