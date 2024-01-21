@@ -1,5 +1,5 @@
 .hero__stop1 {
-  stop-color: rgb(0, 105, 181, 0.8);
+  stop-color: rgba(0, 105, 181, 0.8);
   html.dark & {
     stop-color: rgba(45, 56, 59, 0.8);
   }

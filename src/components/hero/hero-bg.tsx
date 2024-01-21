@@ -33,36 +33,24 @@ export default function HeroBackground({
               y2="451.5"
               gradientUnits="userSpaceOnUse"
             >
-              <stop className="hero__stop1" stopColor="#0069B5" />
-              <stop className="hero__stop2" offset="1" stopColor="#6FBAF0" />
+              <stop className="hero__stop1" />
+              <stop className="hero__stop2" offset="1" />
             </linearGradient>
           </defs>
         </svg>
       </span>
-      {/*clipPath:'inset(0)' is used to hide the fixed image inside of it
+      {/*clip-path:'inset(0)' is used to hide the fixed image inside of it
       source of the solution: https://stackoverflow.com/a/68466386/14131879
       */}
-      <div
-        style={{ clipPath: "inset(0)" }}
-        className="relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[rgb(0,105,181)]/20 dark:after:bg-[rgb(0,0,0)]/20"
-      >
+      <div className="[clip-path:inset(0)] relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[rgb(0,105,181)]/20 dark:after:bg-[rgb(0,0,0)]/20">
         {/* Be careful when modifying stuff, you  need to keep the image optimized and with a fixed effect: https://stackoverflow.com/questions/73528598/how-can-i-use-next-js-image-and-attach-it-to-the-background */}
         <div className="fixed h-full w-full left-0 top-0">
-          {/* <Image
-            priority
-            fill
-            className="object-cover pointer-events-none left-0 top-0"
-            src={backgroundImage}
-            alt={
-              "background image of the hero showing a meeting of a dynamic startup"
-            }
-          /> */}
           <video
             //style={{ objectPosition: "60%" }}
             className="w-full h-full object-cover"
             autoPlay
             muted
-            loop={true}
+            loop
           >
             {/* Compressed versions aren't used because doesn't seem worth it */}
             <source
@@ -79,7 +67,6 @@ export default function HeroBackground({
           <div className="flex items-center justify-center">
             <svg
               className="w-[24rem] max-w-[98vw] md:min-w-[35rem] md:w-[60vw] lg:w-[35rem]"
-              // height='100vh'
               viewBox="0 0 213 105"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

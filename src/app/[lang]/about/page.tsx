@@ -6,6 +6,8 @@ import { ContactButtonWithLottie } from "@/components/contact-button-with-lottie
 import { getDictionary } from "@/internationalization/get-dictionary";
 import { Locale } from "@/internationalization/i18n-config";
 import { Metadata } from "next";
+import Image from "next/image";
+import welcomingWevalynTeam from "./images/welcoming-personnel.png";
 
 export const metadata: Metadata = {
   title: "About - Wevalyn",
@@ -22,6 +24,16 @@ export default async function AboutPage({
   return (
     <ArticleContainer>
       <ArticleTitle>{dictionary.AboutUs}</ArticleTitle>
+      <figure className="self-center">
+        <Image
+          className="rounded max-lg:w-screen max-lg:max-w-none"
+          src={welcomingWevalynTeam}
+          alt="Welcoming Wevalyn Team Members standing together"
+        />
+        <figcaption className="text-center text-xl mt-2">
+          {dictionary.TheWevalynTeam}
+        </figcaption>
+      </figure>
       <div className="flex flex-col gap-y-4">
         <ArticleTitleLevel2>{dictionary.OurGenesis}</ArticleTitleLevel2>
         <p>{dictionary.ourGenesisText}</p>
