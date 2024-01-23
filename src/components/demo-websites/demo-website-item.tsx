@@ -29,12 +29,8 @@ export function DemoWebsiteItem({
       </h2>
       <Image src={imgURL} alt={name + " site screenshot"} />
       <button
-        onClick={() =>
-          alert(
-            "Fun fact: the demo sites actually do exist but aren't hosted so can't be seen."
-          )
-        } // used to cancel hover in dark theme
-        className="bg-primary-gradient dark:bg-primary-gradient-dark-theme text-white text-xl px-6 py-4 rounded hover:cursor-pointer hover:scale-105 dark:hover:scale-100 border border-transparent dark:hover:border-primary-light-dark-theme"
+        // used to cancel hover in dark theme
+        className="bg-primary-gradient dark:bg-primary-gradient-dark-theme text-white text-xl px-6 py-4 rounded hover:cursor-pointer hover:scale-105 dark:hover:scale-100 transition-transform border border-transparent dark:hover:border-primary-light-dark-theme"
       >
         {dictionary.seeLiveDemo}
       </button>

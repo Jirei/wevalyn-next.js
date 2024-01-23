@@ -30,7 +30,7 @@ export default async function AboutPage({
           src={welcomingWevalynTeam}
           alt="Welcoming Wevalyn Team Members standing together"
         />
-        <figcaption className="text-center text-xl mt-2">
+        <figcaption className="text-center text-xl mt-2 italic">
           {dictionary.TheWevalynTeam}
         </figcaption>
       </figure>

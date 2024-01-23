@@ -38,9 +38,9 @@
   "services": {
     "Services": "Services"
   },
-  "servicesText":{
-    "paragraph1":"We offer various web development services. The following services are the ones we do the most often because they generally cover the needs of most of our clients and are cost-effective. But we are also pretty flexible and can adapt to your project demands if a different technology is required. We can build a solution from scratch if needed.",
-    "paragraph2":"The possibilities are endless and it can sometimes be overwhelming. We are ready to use our expertise to help you choose the best option for your project and budget if you request it."
+  "servicesText": {
+    "paragraph1": "We offer various web development services. The following services are the ones we do the most often because they generally cover the needs of most of our clients and are cost-effective. But we are also pretty flexible and can adapt to your project demands if a different technology is required. We can build a solution from scratch if needed.",
+    "paragraph2": "The possibilities are endless and it can sometimes be overwhelming. We are ready to use our expertise to help you choose the best option for your project and budget if you request it."
   },
   "demoWebsites": {
     "DemoWebsites": "Demo Websites",
@@ -50,7 +50,33 @@
     "seeLiveDemo": "See live demo"
   },
   "testimonials": {
-    "Testimonials": "Testimonials"
+    "Testimonials": "Testimonials",
+    "testimonialsData": [
+      {
+        "name": "Aranya",
+        "company": "Lotus Thai Restaurant",
+        "testimonial": {
+          "paragraph1": "Tasked with taking our family Thai restaurant online, Wevalyn delivered beyond expectations. Their creation wasn't just a site but an experience, showcasing our menu and simplifying reservations. Their professional team understood our needs, ensuring a smooth process and a website that perfectly embodied our vision.",
+          "paragraph2": "The result? A transformative digital presence that has elevated customer interaction, favoring online reservations and boosting our productivity. Thanks to Wevalyn, we can now concentrate on what we do best—welcoming guests with exceptional service."
+        }
+      },
+      {
+        "name": "Natsuko",
+        "company": "Zen Hair Salon",
+        "testimonial": {
+          "paragraph1": "Wevalyn artfully crafted Zen Hair Salon's online presence, reflecting our salon's elegance and style. Their tailored platform showcases our expertise and simplifies client engagement, setting a new standard for digital beauty experiences.",
+          "paragraph2": "Their collaboration was more than service; it was a partnership towards excellence. The result is a serene, user-friendly website, an extension of our salon's tranquil ambiance. Thanks to Wevalyn, we're now free to focus on what we do best, offering unparalleled beauty services with a personal touch."
+        }
+      },
+      {
+        "name": "Andrea",
+        "company": "Beam Language School",
+        "testimonial": {
+          "paragraph1": "Wevalyn transformed our vision into a dynamic digital platform for Beam Online Language School, creating an engaging, intuitive educational space. Their blend of technical skill and understanding of educational needs resulted in more than a website; it was an innovative learning journey crafted for our diverse students.",
+          "paragraph2": "Their commitment to our vision led to a state-of-the-art platform, enhancing learning through intuitive design and interactive features. This digital leap, thanks to Wevalyn's dedication and expertise, has not only enriched our students' experience but also streamlined our operations, setting us on the path to leadership in online language education."
+        }
+      }
+    ]
   },
   "ctaSection": {
     "doYouWantToRequestAQuote": "Do you want to request a quote?",
@@ -72,7 +98,7 @@
   },
   "about": {
     "AboutUs": "About Us",
-    "TheWevalynTeam":"The Wevalyn Team",
+    "TheWevalynTeam": "The Wevalyn Team",
     "OurGenesis": "Our Genesis",
     "ourGenesisText": "In the ever-evolving digital ecosystem, the need for a reliable, creative, and technically proficient WordPress development agency became glaringly evident. This realization led to the birth of Wevalyn. Founded on the principles of integrity, creativity, and excellence, we embarked on a journey to transform concepts into captivating digital realities.",
     "OurMission": "Our Mission",
@@ -106,7 +132,7 @@
     "Email": "Email",
     "emailPlaceholder": "johndoe@gmail.com",
     "Message": "Message",
-    "messagePlaceHolder":"Hello, I would like to receive a quote for my project...",
+    "messagePlaceHolder": "Hello, I would like to receive a quote for my project...",
     "Submit": "Submit"
   }
 }

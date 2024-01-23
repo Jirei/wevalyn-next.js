@@ -19,7 +19,12 @@ export async function DemoWebsites({ lang }: { lang: Locale }) {
       </p>
       <ul className="flex flex-col xl:flex-row lg:gap-x-3 gap-y-32">
         {demoWebsites.map(({ name, imgURL }, index) => (
-          <DemoWebsiteItem key={index} name={name[lang]} imgURL={imgURL} dictionary={demoWebsitesItemDictionary} />
+          <DemoWebsiteItem
+            key={index}
+            name={name[lang]}
+            imgURL={imgURL}
+            dictionary={demoWebsitesItemDictionary}
+          />
         ))}
       </ul>
     </section>
@@ -27,10 +32,10 @@ export async function DemoWebsites({ lang }: { lang: Locale }) {
 }
 
 const demoWebsites = [
+  { name: { en: "Restaurant", jp: "レストラン" }, imgURL: restaurantImage },
+  { name: { en: "Hair Salon", jp: "美容院" }, imgURL: hairdresserImage },
   {
     name: { en: "Online Language School", jp: "オンライン語学学校" },
     imgURL: languageSchoolImage,
   },
-  { name: { en: "Hair Salon", jp: "美容院" }, imgURL: hairdresserImage },
-  { name: { en: "Restaurant", jp: "レストラン" }, imgURL: restaurantImage },
 ];
