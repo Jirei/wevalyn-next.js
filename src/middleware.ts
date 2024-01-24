@@ -31,17 +31,17 @@ export function middleware(request: NextRequest) {
   // If you have one
   if (
     [
-      '/manifest.json',
-      '/favicon.ico',
-      '/next.svg',
-      '/vercel.svg',
-      '/hero/videos/welcoming-personnel.mp4',
-      '/hero/videos/welcoming-personnel.webm',
-      '/hero/videos/welcoming-personnel-compressed.mp4',
-      '/hero/videos/welcoming-personnel-compressed.webm',
-      '/services/lottie/services-illustration.json',
-      '/contact-button-with-lottie/lottie/arrow.json',
-      '/services/videos/services.mp4'
+      "/manifest.json",
+      "/favicon.ico",
+      "/next.svg",
+      "/vercel.svg",
+      "/hero/videos/welcoming-personnel.mp4",
+      "/hero/videos/welcoming-personnel.webm",
+      "/hero/videos/welcoming-personnel-compressed.mp4",
+      "/hero/videos/welcoming-personnel-compressed.webm",
+      "/services/lottie/services-illustration.json",
+      "/contact-button-with-lottie/lottie/arrow.json",
+      "/services/videos/services.mp4",
       // Your other files in `public`
     ].includes(pathname)
   )

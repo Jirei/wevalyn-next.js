@@ -51,6 +51,8 @@
   },
   "testimonials": {
     "Testimonials": "お客様の声",
+    "BelowAreSomeInterestingTestimonialsWeGotFromOurCustomers": "以下は、お客様からいただいた興味深い感想です。",
+    "WeThankThemForKindlyAllowingUsToShareTheirFeedback": "ご協力いただき、フィードバックを共有させていただけることに感謝します。",
     "testimonialsData": [
       {
         "name": "アラニャ",

@@ -14,10 +14,10 @@ export async function DemoWebsites({ lang }: { lang: Locale }) {
   return (
     <section id="demos" className="flex flex-col items-center gap-y-28">
       <HomeSectionTitle>{dictionary.DemoWebsites}</HomeSectionTitle>
-      <p className="text-primary dark:text-primary-dark-theme rounded text-center mx-3 p-5 py-8 text-2xl bg-primary/20 dark:bg-primary-dark-theme/20">
+      <p className="mx-3 rounded bg-primary/20 p-5 py-8 text-center text-2xl text-primary dark:bg-primary-dark-theme/20 dark:text-primary-dark-theme">
         {dictionary.youCanSeeBelowSomeOfOurCreations}
       </p>
-      <ul className="flex flex-col xl:flex-row lg:gap-x-3 gap-y-32">
+      <ul className="flex flex-col gap-y-32 lg:gap-x-3 xl:flex-row">
         {demoWebsites.map(({ name, imgURL }, index) => (
           <DemoWebsiteItem
             key={index}

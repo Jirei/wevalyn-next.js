@@ -30,24 +30,24 @@ export function TestimonialItem({
   return (
     <li
       className={cn(
-        "relative bg-pink-100 dark:bg-[#3c3c3c] flex flex-col gap-y-10 text-primary  dark:text-white border-primary dark:border-primary-dark-theme border px-5 pt-16 pb-12 rounded w-[90vw] md:w-[70vw] xl:w-[25vw]",
-        index === 1 && "bg-fuchsia-100 !dark:bg-[#383838]"
+        "relative flex w-[90vw] flex-col gap-y-10 rounded border  border-primary bg-pink-100 px-5 pb-12 pt-16 text-primary dark:border-primary-dark-theme dark:bg-[#3c3c3c] dark:text-white md:w-[70vw] xl:w-[25vw]",
+        index === 1 && "!dark:bg-[#383838] bg-fuchsia-100",
       )}
       ref={testimonialItemRef}
     >
       <Image
         className={cn(
-          " w-56 h-56 object-cover bg-pink-200 dark:bg-primary-very-dark-dark-theme  absolute -z-10 rounded-xl border border-primary dark:border-primary-dark-theme m-auto left-0 right-0 translate-y-[-7rem] transition-transform duration-3000",
+          " absolute left-0 right-0 -z-10 m-auto  h-56 w-56 translate-y-[-7rem] rounded-xl border border-primary bg-pink-200 object-cover transition-transform duration-3000 dark:border-primary-dark-theme dark:bg-primary-very-dark-dark-theme",
           hasAppeared && "translate-y-[-17.5rem]",
-          index === 1 && "bg-fuchsia-200"
+          index === 1 && "bg-fuchsia-200",
         )}
         src={imageSources[index]}
         alt="restaurant"
       />
       <h3
         className={cn(
-          "text-xl text-center font-bold dark:text-primary-dark-theme",
-          lang === "jp" && " text-gray-font"
+          "text-center text-xl font-bold dark:text-primary-dark-theme",
+          lang === "jp" && " text-gray-font",
         )}
       >
         {lang === "en" && (
@@ -64,7 +64,7 @@ export function TestimonialItem({
           </>
         )}
       </h3>
-      <div className=" text-lg flex flex-col gap-y-8">
+      <div className="flex flex-col gap-y-8 text-lg">
         <p>{testimonial.paragraph1}</p>
         <p>{testimonial.paragraph2}</p>
       </div>

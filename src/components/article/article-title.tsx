@@ -1,6 +1,6 @@
 export function ArticleTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h1 className="w-fit mb-6 m-auto text-primary dark:text-primary-light-dark-theme text-3xl font-normal text-center">
+    <h1 className="m-auto mb-6 w-fit text-center font-normal text-3xl text-primary dark:text-primary-light-dark-theme">
       {children}
     </h1>
   );

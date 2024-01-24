@@ -20,17 +20,17 @@ export function DemoWebsiteItem({
     <li
       ref={intersectionRef}
       className={cn(
-        "opacity-0 duration-3000 flex flex-col items-center gap-y-9",
-        hasAppeared && "opacity-100"
+        "flex flex-col items-center gap-y-9 opacity-0 duration-3000",
+        hasAppeared && "opacity-100",
       )}
     >
-      <h2 className="text-primary-light dark:text-primary-light-dark-theme text-2xl">
+      <h2 className="text-2xl text-primary-light dark:text-primary-light-dark-theme">
         {name}
       </h2>
       <Image src={imgURL} alt={name + " site screenshot"} />
       <button
         // used to cancel hover in dark theme
-        className="bg-primary-gradient dark:bg-primary-gradient-dark-theme text-white text-xl px-6 py-4 rounded hover:cursor-pointer hover:scale-105 dark:hover:scale-100 transition-transform border border-transparent dark:hover:border-primary-light-dark-theme"
+        className="rounded border border-transparent bg-primary-gradient px-6 py-4 text-xl text-white transition-transform hover:scale-105 hover:cursor-pointer dark:bg-primary-gradient-dark-theme dark:hover:scale-100 dark:hover:border-primary-light-dark-theme"
       >
         {dictionary.seeLiveDemo}
       </button>

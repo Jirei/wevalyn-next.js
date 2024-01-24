@@ -12,7 +12,7 @@ export default function HeroBackground({
     <div className="relative">
       {/* it was z-50 before, you change it but don't know if you broke something */}
       {/* You put -1px on the positioning of span of the svg because there was a gap */}
-      <span className="absolute top-[-1px] right-0 z-10 w-screen hidden lg:block">
+      <span className="absolute right-0 top-[-1px] z-10 hidden w-screen lg:block">
         <svg
           width="100%"
           viewBox="0 0 1640 114"
@@ -42,12 +42,12 @@ export default function HeroBackground({
       {/*clip-path:'inset(0)' is used to hide the fixed image inside of it
       source of the solution: https://stackoverflow.com/a/68466386/14131879
       */}
-      <div className="[clip-path:inset(0)] relative after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[rgb(0,105,181)]/20 dark:after:bg-[rgb(0,0,0)]/20">
+      <div className="relative [clip-path:inset(0)] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-[rgb(0,105,181)]/20 dark:after:bg-[rgb(0,0,0)]/20">
         {/* Be careful when modifying stuff, you  need to keep the image optimized and with a fixed effect: https://stackoverflow.com/questions/73528598/how-can-i-use-next-js-image-and-attach-it-to-the-background */}
-        <div className="fixed h-full w-full left-0 top-0">
+        <div className="fixed left-0 top-0 h-full w-full">
           <video
             //style={{ objectPosition: "60%" }}
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
             autoPlay
             muted
             loop
@@ -63,10 +63,10 @@ export default function HeroBackground({
             />
           </video>
         </div>
-        <div className="relative h-[80vh] lg:h-[90vh] z-10 flex items-center justify-center">
+        <div className="relative z-10 flex h-[80vh] items-center justify-center lg:h-[90vh]">
           <div className="flex items-center justify-center">
             <svg
-              className="w-[24rem] max-w-[98vw] md:min-w-[35rem] md:w-[60vw] lg:w-[35rem]"
+              className="w-[24rem] max-w-[98vw] md:w-[60vw] md:min-w-[35rem] lg:w-[35rem]"
               viewBox="0 0 213 105"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

@@ -16,7 +16,7 @@ export default async function ContactPage({
   params: { lang: Locale };
 }) {
   const { contactForm: contactFormDictionary } = await getDictionary(
-    params.lang
+    params.lang,
   );
   return (
     <>

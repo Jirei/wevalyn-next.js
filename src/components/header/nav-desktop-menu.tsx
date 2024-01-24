@@ -8,48 +8,48 @@ export default async function NavDesktopMenu({ lang }: { lang: Locale }) {
     await getDictionary(lang);
   return (
     <nav className="max-lg:hidden">
-      <ul className="text-primary dark:text-primary-dark-theme flex gap-x-8 font-bold text-xl items-center">
+      <ul className="flex items-center gap-x-8 text-xl font-bold text-primary dark:text-primary-dark-theme">
         <li className="">
           <Settings
             menuId="settings-menu-desktop"
             dictionary={settingsDictionary}
           />
         </li>
-        <li className="hover:scale-105 transition-all">
+        <li className="transition-all hover:scale-105">
           <Link
-            className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            className="p-1 hover:text-primary-light dark:hover:text-primary-light-dark-theme xl:p-4"
             href={`/${lang}`}
           >
             {dictionary.Home}
           </Link>
         </li>
-        <li className="hover:scale-105 transition-all">
+        <li className="transition-all hover:scale-105">
           <Link
-            className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            className="p-1 hover:text-primary-light dark:hover:text-primary-light-dark-theme xl:p-4"
             href={`/${lang}/about`}
           >
             {dictionary.About}
           </Link>
         </li>
-        <li className="hover:scale-105 transition-all">
+        <li className="transition-all hover:scale-105">
           <Link
-            className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            className="p-1 hover:text-primary-light dark:hover:text-primary-light-dark-theme xl:p-4"
             href={`/${lang}#services`}
           >
             {dictionary.Services}
           </Link>
         </li>
-        <li className="hover:scale-105 transition-all">
+        <li className="transition-all hover:scale-105">
           <Link
-            className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            className="p-1 hover:text-primary-light dark:hover:text-primary-light-dark-theme xl:p-4"
             href={`/${lang}#demos`}
           >
             {dictionary.Demos}
           </Link>
         </li>
-        <li className="hover:scale-105 transition-all">
+        <li className="transition-all hover:scale-105">
           <Link
-            className="p-1 xl:p-4 hover:text-primary-light dark:hover:text-primary-light-dark-theme"
+            className="p-1 hover:text-primary-light dark:hover:text-primary-light-dark-theme xl:p-4"
             href={`/${lang}#testimonials`}
           >
             {dictionary.Testimonials}
@@ -58,7 +58,7 @@ export default async function NavDesktopMenu({ lang }: { lang: Locale }) {
         <li className="p-2 xl:p-4">
           <Link
             href={`/${lang}/contact`}
-            className="bg-[#C171C2] dark:bg-contact-button-background-dark-theme hover:bg-[#a749a9] dark:hover:bg-contact-button-background-hover-dark-theme  text-white text-xl px-10 py-3 rounded-xl shadow-cta-contact transition-all hover:scale-105"
+            className="rounded-xl bg-[#C171C2] px-10 py-3  text-xl text-white shadow-cta-contact transition-all hover:scale-105 hover:bg-[#a749a9] dark:bg-contact-button-background-dark-theme dark:hover:bg-contact-button-background-hover-dark-theme"
           >
             {dictionary.Contact}
           </Link>

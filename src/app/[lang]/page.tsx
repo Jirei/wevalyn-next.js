@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function HomePage({ params }: { params: { lang: Locale } }) {
   return (
-    <div className="flex flex-col gap-y-28 xl:gap-y-48 mb-20">
+    <div className="mb-20 flex flex-col gap-y-28 xl:gap-y-48">
       <Hero lang={params.lang} />
       <Services lang={params.lang} />
       <DemoWebsites lang={params.lang} />

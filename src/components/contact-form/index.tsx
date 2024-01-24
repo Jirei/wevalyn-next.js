@@ -55,12 +55,12 @@ export function ContactForm({
       if (hasError) {
         throw new WrappingError(
           "grecaptcha client token request failed",
-          error
+          error,
         );
       }
       const dataHydratedWithCaptchaToken = { ...data, captchaToken: token };
       const formResponse = await handleContactFormSubmit(
-        dataHydratedWithCaptchaToken
+        dataHydratedWithCaptchaToken,
       );
       setFormResponse(formResponse);
     } catch (e) {
@@ -80,22 +80,22 @@ export function ContactForm({
   return (
     <section
       className={cn(
-        "bg-primary dark:bg-primary-very-dark-dark-theme text-white transition-all duration-1000 rounded-xl overflow-hidden w-11/12 max-w-[40rem] m-auto border border-primary dark:border-primary-dark-theme"
+        "m-auto w-11/12 max-w-[40rem] overflow-hidden rounded-xl border border-primary bg-primary text-white transition-all duration-1000 dark:border-primary-dark-theme dark:bg-primary-very-dark-dark-theme",
       )}
     >
       <form
         // needed because playwright getByRole() has a bug
         data-testid="form"
-        className="flex flex-col p-5 py-10 gap-y-10"
+        className="flex flex-col gap-y-10 p-5 py-10"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h2 className="text-white m-auto text-3xl">{dictionary.ContactForm}</h2>
+        <h2 className="m-auto text-3xl text-white">{dictionary.ContactForm}</h2>
         <ul className="flex flex-col gap-y-5">
           {/* First Name Input */}
           <li>
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
-                <label className="text-white text-lg" htmlFor="first-name">
+                <label className="text-lg text-white" htmlFor="first-name">
                   {dictionary.FirstName} *
                 </label>
                 <input
@@ -103,11 +103,11 @@ export function ContactForm({
                   {...register("firstName")}
                   required
                   className={cn(
-                    "p-2 font-roboto text-primary dark:text-white dark:bg-[rgb(48,48,48)]  border border-primary dark:border-transparent rounded",
+                    "rounded border border-primary p-2 font-roboto  text-primary dark:border-transparent dark:bg-[rgb(48,48,48)] dark:text-white",
                     isSubmitted &&
                       errors.firstName &&
-                      "!border-red-500 border-2",
-                    isSubmitted && !errors.firstName && "!border-green-500"
+                      "border-2 !border-red-500",
+                    isSubmitted && !errors.firstName && "!border-green-500",
                   )}
                   type="text"
                   placeholder="John"
@@ -134,18 +134,18 @@ export function ContactForm({
           <li>
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
-                <label className="text-white text-lg" htmlFor="last-name">
+                <label className="text-lg text-white" htmlFor="last-name">
                   {dictionary.LastName} ({dictionary.NotRequired})
                 </label>
                 <input
                   id="last-name"
                   {...register("lastName")}
                   className={cn(
-                    "p-2 font-roboto text-primary dark:text-white dark:bg-[rgb(48,48,48)] border border-primary dark:border-transparent rounded",
+                    "rounded border border-primary p-2 font-roboto text-primary dark:border-transparent dark:bg-[rgb(48,48,48)] dark:text-white",
                     isSubmitted &&
                       errors.lastName &&
-                      "!border-red-500 border-2",
-                    isSubmitted && !errors.lastName && "!border-green-500"
+                      "border-2 !border-red-500",
+                    isSubmitted && !errors.lastName && "!border-green-500",
                   )}
                   type="text"
                   placeholder="Doe"
@@ -172,7 +172,7 @@ export function ContactForm({
           <li>
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
-                <label className="text-white text-lg" htmlFor="email">
+                <label className="text-lg text-white" htmlFor="email">
                   {dictionary.Email} *
                 </label>
                 <input
@@ -181,9 +181,9 @@ export function ContactForm({
                   required
                   type="email"
                   className={cn(
-                    "p-2 font-roboto text-primary dark:text-white dark:bg-[rgb(48,48,48)] border border-primary dark:border-transparent rounded",
-                    isSubmitted && errors.email && "!border-red-500 border-2",
-                    isSubmitted && !errors.email && "!border-green-500"
+                    "rounded border border-primary p-2 font-roboto text-primary dark:border-transparent dark:bg-[rgb(48,48,48)] dark:text-white",
+                    isSubmitted && errors.email && "border-2 !border-red-500",
+                    isSubmitted && !errors.email && "!border-green-500",
                   )}
                   placeholder="johndoe@example.com"
                   aria-invalid={errors.email ? "true" : "false"}
@@ -210,7 +210,7 @@ export function ContactForm({
           <li>
             <div className="flex flex-col gap-y-2">
               <div className="flex flex-col gap-y-2">
-                <label className="text-white text-lg" htmlFor="message">
+                <label className="text-lg text-white" htmlFor="message">
                   {dictionary.Message} *
                 </label>
                 <textarea
@@ -218,9 +218,9 @@ export function ContactForm({
                   {...register("message")}
                   required
                   className={cn(
-                    "p-2 font-roboto text-primary dark:text-white dark:bg-[rgb(48,48,48)] border border-primary dark:border-transparent rounded",
-                    isSubmitted && errors.message && "!border-red-500 border-2",
-                    isSubmitted && !errors.message && "!border-green-500"
+                    "rounded border border-primary p-2 font-roboto text-primary dark:border-transparent dark:bg-[rgb(48,48,48)] dark:text-white",
+                    isSubmitted && errors.message && "border-2 !border-red-500",
+                    isSubmitted && !errors.message && "!border-green-500",
                   )}
                   placeholder="Hello, I would like a landing page for my new project..."
                   rows={7}
@@ -247,34 +247,34 @@ export function ContactForm({
         </ul>
         <button
           className={cn(
-            "uppercase  text-primary text-xl font-bold font-roboto w-fit self-center py-1.5 gap-y-1 px-20 rounded",
+            "w-fit  gap-y-1 self-center rounded px-20 py-1.5 font-roboto text-xl font-bold uppercase text-primary",
             !isFormSubmitButtonDisabled && "hover:scale-105",
             isFormSubmitButtonDisabled
-              ? "bg-gray-300 dark:bg-slate-900 hover:cursor-not-allowed"
-              : "bg-white dark:bg-primary-dark-dark-theme"
+              ? "bg-gray-300 hover:cursor-not-allowed dark:bg-slate-900"
+              : "bg-white dark:bg-primary-dark-dark-theme",
           )}
           disabled={isFormSubmitButtonDisabled}
           type="submit"
         >
-          <div className="relative flex gap-x-4 items-center">
+          <div className="relative flex items-center gap-x-4">
             <span
               className={cn(
                 "ml-8",
                 "dark:text-white",
                 isFormSubmitButtonDisabled &&
                   !isSubmitting &&
-                  "dark:text-gray-300"
+                  "dark:text-gray-300",
               )}
             >
               {dictionary.Submit}
             </span>
             <span
               className={cn(
-                "w-fit h-fit",
+                "h-fit w-fit",
                 isSubmitting && "!stroke-[rgb(0,105,181)] dark:!stroke-white",
                 isFormSubmitButtonDisabled
                   ? "stroke-transparent"
-                  : "stroke-white dark:stroke-primary-dark-dark-theme"
+                  : "stroke-white dark:stroke-primary-dark-dark-theme",
               )}
             >
               <RotatingLines
@@ -293,7 +293,7 @@ export function ContactForm({
           <>
             <p
               aria-live="polite"
-              className="flex items-center gap-x-2 font-bold text-lg"
+              className="flex items-center gap-x-2 text-lg font-bold"
             >
               {formResponse.hasError && (
                 <MdError size="2em" className="text-red-500" />

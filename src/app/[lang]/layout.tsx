@@ -48,12 +48,12 @@ export default function RootLayout({
         roboto.variable,
         "scroll-smooth",
         // You need that both for the HTML and body tags because of Mobile Firefox weird behavior
-        "w-screen overflow-x-hidden"
+        "w-screen overflow-x-hidden",
       )}
       suppressHydrationWarning
     >
       {/* You need that both for the HTML and body tags because of Mobile Firefox weird behavior */}
-      <body className="font-normal overflow-x-hidden w-screen dark:bg-[#3e3e3e] text-gray-font dark:text-white">
+      <body className="w-screen overflow-x-hidden font-normal text-gray-font dark:bg-[#3e3e3e] dark:text-white">
         <Providers>
           <Header lang={params.lang} />
           <main>{children}</main>

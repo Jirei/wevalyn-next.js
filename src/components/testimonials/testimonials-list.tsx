@@ -10,7 +10,7 @@ export function TestimonialsList({
   lang: Locale;
 }) {
   return (
-    <ul className="mt-64 flex flex-col xl:flex-row gap-y-64 gap-x-10 justify-center">
+    <ul className="mt-64 flex flex-col justify-center gap-x-10 gap-y-64 xl:flex-row">
       {dictionary.testimonialsData.map((testimonialData, index) => (
         <TestimonialItem
           key={index}

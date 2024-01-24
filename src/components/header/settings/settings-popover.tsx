@@ -36,11 +36,11 @@ export function SettingsPopover({
         id={menuId}
         ref={popoverMenuRef}
         className={cn(
-          "hidden absolute top-[100%] font-normal text-lg border-gray-400 border bg-white p-6 py-8 pt-10 rounded dark:bg-background-dark-theme "
+          "absolute top-[100%] hidden rounded border border-gray-400 bg-white p-6 py-8 pt-10 font-normal text-lg dark:bg-background-dark-theme ",
         )}
       >
         <button
-          className="absolute top-3 right-3 hover:cursor-pointer hover:scale-105 hover:text-primary-light-dark-theme"
+          className="absolute right-3 top-3 hover:scale-105 hover:cursor-pointer hover:text-primary-light-dark-theme"
           onClick={() => setIsOpen(false)}
           title={dictionary.Close}
           aria-controls={menuId}
@@ -52,7 +52,7 @@ export function SettingsPopover({
           <label htmlFor={`${menuId}-ui-select`}>{dictionary.Theme}:</label>
           <select
             id={`${menuId}-ui-select`}
-            className="dark:bg-gray-800 p-3 px-5 rounded border border-gray-400"
+            className="rounded border border-gray-400 p-3 px-5 dark:bg-gray-800"
             onChange={(e) => setTheme(e.target.value)}
             value={hydrationSafeTheme}
             disabled={!hydrationSafeTheme}
@@ -75,7 +75,7 @@ export function SettingsPopover({
               router.push(pathWithNewLocale);
             }}
             id={`${menuId}-language-select`}
-            className="p-3 px-5 rounded dark:bg-gray-800  border border-gray-400"
+            className="rounded border border-gray-400 p-3  px-5 dark:bg-gray-800"
           >
             <option value="en">English</option>
             <option value="jp">日本語</option>

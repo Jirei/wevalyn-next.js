@@ -4,35 +4,40 @@ import { CaptchaAction } from "@/lib/common";
 import { WrappingError } from "../common";
 import * as Sentry from "@sentry/nextjs";
 
-
-
 export function logClientError(error: unknown) {
   if (!process.env.NEXT_PUBLIC_PRODUCTION_MODE) console.error(error);
   Sentry.captureException(error);
 }
 
 /**
- * 
- * @param grecaptcha 
- * @param action 
+ *
+ * @param grecaptcha
+ * @param action
  * @returns An object with the token (if no error) and an error flag.
  */
-export async function checkCaptchaActionOnClient(grecaptcha: ReCaptchaV2.ReCaptcha, action: CaptchaAction): Promise<CheckCaptchaActionOnClientReturnValue> {
-  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "on") return { token: "test-placeholder", hasError: false };
+export async function checkCaptchaActionOnClient(
+  grecaptcha: ReCaptchaV2.ReCaptcha,
+  action: CaptchaAction,
+): Promise<CheckCaptchaActionOnClientReturnValue> {
+  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "on")
+    return { token: "test-placeholder", hasError: false };
   try {
     const { isReady, hasError, error } = await isGrecaptchaReady();
-    if (hasError || !isReady) throw new WrappingError("Grecaptcha library not ready even though it's needed.", error);
+    if (hasError || !isReady)
+      throw new WrappingError(
+        "Grecaptcha library not ready even though it's needed.",
+        error,
+      );
     let token;
     let lastError;
     for (let i = 0; i < 3; i++) {
       try {
         token = await grecaptcha.execute(
           clientEnv.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-          { action }
+          { action },
         );
         break;
-      }
-      catch (e) {
+      } catch (e) {
         if (i === 3) lastError = e;
         else logClientError(e);
       }
@@ -48,7 +53,10 @@ async function isGrecaptchaReady() {
   try {
     await new Promise((resolve, reject) => {
       grecaptcha.ready(() => resolve(true));
-      setTimeout(() => reject(new Error("grepcaptcha.ready() timed out")), 2000);
+      setTimeout(
+        () => reject(new Error("grepcaptcha.ready() timed out")),
+        2000,
+      );
     });
     return { isReady: true, hasError: false };
   } catch (error) {
@@ -56,13 +64,14 @@ async function isGrecaptchaReady() {
   }
 }
 
-type CheckCaptchaActionOnClientReturnValue = {
-  token: string;
-  hasError: false;
-  error?: undefined;
-} | {
-  token: null;
-  hasError: true;
-  error: unknown;
-};
-
+type CheckCaptchaActionOnClientReturnValue =
+  | {
+      token: string;
+      hasError: false;
+      error?: undefined;
+    }
+  | {
+      token: null;
+      hasError: true;
+      error: unknown;
+    };

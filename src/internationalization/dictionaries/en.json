@@ -51,6 +51,8 @@
   },
   "testimonials": {
     "Testimonials": "Testimonials",
+    "BelowAreSomeInterestingTestimonialsWeGotFromOurCustomers": "Below are some interesting testimonials we got from our customers.",
+    "WeThankThemForKindlyAllowingUsToShareTheirFeedback": "We thank them for kindly allowing us to share their feedback.",
     "testimonialsData": [
       {
         "name": "Aranya",

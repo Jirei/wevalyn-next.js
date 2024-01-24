@@ -30,7 +30,8 @@ module.exports = {
         url('/hero.jpg')`,
         "primary-gradient":
           "linear-gradient(270deg, rgb(72 160 255) 0%, rgb(64 117 233) 100%)",
-        "primary-gradient-dark-theme": "linear-gradient(270deg, rgb(23 59 77) 0%, rgb(0 72 95) 100%)",
+        "primary-gradient-dark-theme":
+          "linear-gradient(270deg, rgb(23 59 77) 0%, rgb(0 72 95) 100%)",
         "background-dark-theme": `linear-gradient(
   45deg,
   hsl(0deg 0% 22%) 0%,
@@ -43,7 +44,7 @@ module.exports = {
   hsl(344deg 0% 36%) 78%,
   hsl(344deg 0% 38%) 89%,
   hsl(0deg 0% 40%) 100%
-)`
+)`,
       },
       fontFamily: {
         sans: ["var(--font-poppins)"],
@@ -52,7 +53,7 @@ module.exports = {
       },
       colors: {
         // (light/dark) primary color
-        "primary": "#0069B5",
+        primary: "#0069B5",
         "primary-dark-theme": "#4fcad1",
         // (light/dark) primary light color
         "primary-light": "#429ADA",

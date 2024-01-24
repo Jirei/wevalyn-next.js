@@ -6,10 +6,10 @@ export async function Footer({ lang }: { lang: Locale }) {
   const { footer: dictionary } = await getDictionary(lang);
   return (
     <footer>
-      <div className="flex flex-col gap-y-5 items-center bg-primary dark:bg-primary-very-dark-dark-theme text-white p-5 py-10">
-        <h2 className="font-sans font-bold text-2xl">{dictionary.Wevalyn}</h2>
+      <div className="flex flex-col items-center gap-y-5 bg-primary p-5 py-10 text-white dark:bg-primary-very-dark-dark-theme">
+        <h2 className="font-sans text-2xl font-bold">{dictionary.Wevalyn}</h2>
         {/* Need to use w-28 ml-7 (fixed width and half on margin left) to avoid layout shift when hover on links  */}
-        <ul className="flex flex-col gap-y-1 font-sans w-28 ml-7">
+        <ul className="ml-7 flex w-28 flex-col gap-y-1 font-sans">
           <li>
             <Link href={`/${lang}`} className="py-2 hover:font-bold">
               {dictionary.Home}
@@ -45,7 +45,7 @@ export async function Footer({ lang }: { lang: Locale }) {
           </li>
         </ul>
       </div>
-      <div className="bg-[#464646] dark:bg-[#2a2a2a] text-white text-sm font-roboto text-center p-2 py-3">
+      <div className="bg-[#464646] p-2 py-3 text-center font-roboto text-sm text-white dark:bg-[#2a2a2a]">
         <p>{dictionary.copyright}</p>
       </div>
     </footer>

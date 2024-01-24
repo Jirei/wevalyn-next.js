@@ -15,16 +15,16 @@ export async function Header({ lang }: { lang: Locale }) {
   } = await getDictionary(lang);
   return (
     <header>
-      <div className="flex items-center justify-between h-24 p-3 xl:p-8">
+      <div className="flex h-24 items-center justify-between p-3 xl:p-8">
         <div className="flex flex-col justify-center">
           <div className="flex items-center gap-x-3">
             <Link
               href={`/${lang}`}
-              className="font-sans text-primary dark:text-primary-dark-theme hover:text-primary-light  dark:hover:text-primary-light-dark-theme font-bold text-3xl transition-colors"
+              className="font-sans text-3xl font-bold text-primary  transition-colors hover:text-primary-light dark:text-primary-dark-theme dark:hover:text-primary-light-dark-theme"
             >
               {dictionary.agencyName}
             </Link>
-            <span className="lg:hidden text-primary dark:text-primary-dark-theme text-xl">
+            <span className="text-xl text-primary dark:text-primary-dark-theme lg:hidden">
               <Settings
                 menuId="settings-menu-mobile"
                 dictionary={settingsDictionary}

@@ -12,8 +12,8 @@ export default function ServicesIllustration() {
       aria-hidden={true}
       ref={intersectionRef}
       className={cn(
-        "mb-16 after:w-[120%] after:h-[120%] after:translate-x-[-10%] after:translate-y-[10%] opacity-0 transition-opacity duration-3000 relative after:absolute after:m-auto after:inset-0 after:rounded-full after:bg-[rgb(0,105,181)]/20 dark:after:bg-primary-dark-theme/5",
-        hasAppeared && "opacity-100"
+        "relative mb-16 opacity-0 transition-opacity duration-3000 after:absolute after:inset-0 after:m-auto after:h-[120%] after:w-[120%] after:translate-x-[-10%] after:translate-y-[10%] after:rounded-full after:bg-[rgb(0,105,181)]/20 dark:after:bg-primary-dark-theme/5",
+        hasAppeared && "opacity-100",
       )}
     >
       <Player

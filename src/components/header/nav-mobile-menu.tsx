@@ -20,10 +20,10 @@ export default function NavMobileMenu({
       <button
         aria-label={dictionary.openMobileMenuButtonAriaLabel}
         aria-controls="mobile-menu"
-        className="lg:hidden rounded text-white border border-white overflow-hidden bg-primary dark:bg-primary-very-dark-dark-theme fixed top-[1.5rem] right-2 z-50"
+        className="fixed right-2 top-[1.5rem] z-50 overflow-hidden rounded border border-white bg-primary text-white dark:bg-primary-very-dark-dark-theme lg:hidden"
         onClick={() => setIsOpen(true)}
       >
-        <BiMenu className="text-inherit bg-inherit" size={"3em"} />
+        <BiMenu className="bg-inherit text-inherit" size={"3em"} />
       </button>
       <nav
         // for ARIA of the button that opens it and the cross that closes it
@@ -32,8 +32,8 @@ export default function NavMobileMenu({
         aria-label={dictionary.mobileNavigationMenuAriaLabel}
         aria-hidden={!isOpen}
         className={cn(
-          "lg:hidden flex flex-col items-center justify-center bg-white/50 dark:bg-black/50 fixed top-0 translate-x-full duration-700 w-screen overflow-hidden h-screen z-50 transition-all",
-          isOpen && "translate-x-0"
+          "fixed top-0 z-50 flex h-screen w-screen translate-x-full flex-col items-center justify-center overflow-hidden bg-white/50 transition-all duration-700 dark:bg-black/50 lg:hidden",
+          isOpen && "translate-x-0",
         )}
         onClick={(e) => {
           if (!(e.target instanceof HTMLElement)) return;
@@ -43,9 +43,9 @@ export default function NavMobileMenu({
           }
         }}
       >
-        <div className="relative flex flex-col gap-y-5 rounded-xl text-primary dark:text-primary-dark-theme bg-white dark:bg-background-dark-theme w-3/4 md:w-1/2 py-16 border border-primary dark:border-primary-dark-theme">
+        <div className="relative flex w-3/4 flex-col gap-y-5 rounded-xl border border-primary bg-white py-16 text-primary dark:border-primary-dark-theme dark:bg-background-dark-theme dark:text-primary-dark-theme md:w-1/2">
           <button
-            className="text-2xl absolute top-6 right-6"
+            className="absolute right-6 top-6 text-2xl"
             onClick={() => setIsOpen(false)}
             aria-controls="mobile-menu"
             aria-label={dictionary.closeMobileMenuButtonAriaLabel}
@@ -53,7 +53,7 @@ export default function NavMobileMenu({
             <ImCross />
           </button>
           <h2 className="text-center text-2xl font-bold">{dictionary.Menu}</h2>
-          <ul className="flex flex-col gap-y-3 text-xl justify-center items-center">
+          <ul className="flex flex-col items-center justify-center gap-y-3 text-xl">
             <li>
               <Link className="p-2" href={`/${lang}`}>
                 {dictionary.Home}

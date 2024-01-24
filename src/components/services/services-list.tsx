@@ -5,7 +5,7 @@ import { Locale } from "@/internationalization/i18n-config";
 
 export default function ServicesList({ lang }: { lang: Locale }) {
   return (
-    <ul className="flex flex-col md:flex-row md:flex-wrap md:justify-center md:gap-x-5 md:items-stretch gap-y-6 p-2 overflow-hidden">
+    <ul className="flex flex-col gap-y-6 overflow-hidden p-2 md:flex-row md:flex-wrap md:items-stretch md:justify-center md:gap-x-5">
       {services.map((serviceData, index) => (
         <ServiceItem lang={lang} {...serviceData} key={index} />
       ))}

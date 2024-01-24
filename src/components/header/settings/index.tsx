@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import { SettingsDictionary } from "@/internationalization/dictionaries/types";
 
 const SettingsPopover = dynamic(() =>
-  import("./settings-popover").then((mod) => mod.SettingsPopover)
+  import("./settings-popover").then((mod) => mod.SettingsPopover),
 );
 
 export function Settings({
@@ -22,9 +22,9 @@ export function Settings({
     setIsPopoverOpen(false);
   });
   return (
-    <div ref={wrappingDivRef} className="z-30 relative p-4 flex items-center">
+    <div ref={wrappingDivRef} className="relative z-30 flex items-center p-4">
       <button
-        className="hover:text-primary-light dark:hover:text-primary-light-dark-theme hover:cursor-pointer hover:scale-105 transition-all"
+        className="transition-all hover:scale-105 hover:cursor-pointer hover:text-primary-light dark:hover:text-primary-light-dark-theme"
         title={dictionary.Settings}
         aria-label={dictionary.toggleVisiblityButtonAriaLabel}
         aria-controls={menuId}
