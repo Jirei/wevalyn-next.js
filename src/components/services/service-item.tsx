@@ -3,6 +3,7 @@ import { useAppear } from "@/hooks/use-appear";
 import { Locale } from "@/internationalization/i18n-config";
 import { cn } from "@/lib/common";
 import { useRef } from "react";
+import React from "react";
 
 export function ServiceItem({
   logos,
@@ -12,7 +13,7 @@ export function ServiceItem({
   appearFrom,
   lang,
 }: {
-  logos: JSX.Element[];
+  logos: React.JSX.Element[];
   names: { en: string; jp: string };
   descriptions: { en: string; jp: string };
   yellowRibbon?: boolean;

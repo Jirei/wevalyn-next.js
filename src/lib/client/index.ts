@@ -66,12 +66,12 @@ async function isGrecaptchaReady() {
 
 type CheckCaptchaActionOnClientReturnValue =
   | {
-      token: string;
-      hasError: false;
-      error?: undefined;
-    }
+    token: string;
+    hasError: false;
+    error?: undefined;
+  }
   | {
-      token: null;
-      hasError: true;
-      error: unknown;
-    };
+    token: null;
+    hasError: true;
+    error: unknown;
+  };

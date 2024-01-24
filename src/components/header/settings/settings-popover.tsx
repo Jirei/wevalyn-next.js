@@ -8,6 +8,7 @@ import "./settings-popover.css";
 import { useHydrationSafeTheme } from "@/hooks/use-hydration-safe-theme";
 import { usePathname, useRouter } from "next/navigation";
 import { SettingsDictionary } from "@/internationalization/dictionaries/types";
+import React from "react";
 
 export function SettingsPopover({
   isOpen,

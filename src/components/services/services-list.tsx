@@ -2,6 +2,7 @@ import { FaWordpress } from "react-icons/fa6";
 import { FaElementor } from "react-icons/fa6";
 import { ServiceItem } from "./service-item";
 import { Locale } from "@/internationalization/i18n-config";
+import React from "react";
 
 export default function ServicesList({ lang }: { lang: Locale }) {
   return (
@@ -13,7 +14,7 @@ export default function ServicesList({ lang }: { lang: Locale }) {
   );
 }
 
-const logos: { [index: string]: JSX.Element } = {
+const logos: { [index: string]: React.JSX.Element } = {
   wordpress: <FaWordpress size="6em" />,
   elementor: <FaElementor size="6em" />,
 };

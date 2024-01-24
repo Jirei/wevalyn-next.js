@@ -140,5 +140,11 @@
     "Message": "メッセージ",
     "messagePlaceHolder": "こんにちは、私のプロジェクトの見積もりを受け取りたいです...",
     "Submit": "送信"
+  },
+  "notFound": {
+    "PageNotFound": "ページが見つかりませんでした。",
+    "UnfortunatelyWeDidntFindThisPageOnOurSite": "申し訳ありませんが、当サイトに該当するページは見つかりませんでした。",
+    "ReturnHome": "ホームに戻る",
+    "OrUseTheLinksInTheHeaderOrFooterToContinueYourVisit": "または、ヘッダーやフッターのリンクを使用して訪問を続けてください。"
   }
 }

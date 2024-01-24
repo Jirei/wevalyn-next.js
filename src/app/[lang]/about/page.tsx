@@ -9,12 +9,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import welcomingWevalynTeam from "./images/welcoming-personnel.png";
 
-export const metadata: Metadata = {
-  title: "About - Wevalyn",
-  description:
-    "Welcome to Wevalyn, your dedicated partner for expert WordPress development services. Transform your online presence with our skilled team of web developers, crafting customized solutions to elevate your website's performance and user experience. From responsive design to seamless integration of powerful WordPress features, we bring your vision to life. Explore our comprehensive services tailored for businesses of all sizes. Trust Wevalyn to turn your digital ambitions into reality. Contact us today for a WordPress experience that sets you apart in the online landscape.",
-};
-
 export default async function AboutPage({
   params,
 }: {
@@ -107,3 +101,23 @@ export default async function AboutPage({
     </ArticleContainer>
   );
 }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: Locale };
+}) {
+  return metadatas[params.lang];
+}
+const metadatas: { en: Metadata; jp: Metadata } = {
+  en: {
+    title: "About - Wevalyn",
+    description:
+      "Welcome to Wevalyn, your dedicated partner for expert WordPress development services. Transform your online presence with our skilled team of web developers, crafting customized solutions to elevate your website's performance and user experience. From responsive design to seamless integration of powerful WordPress features, we bring your vision to life. Explore our comprehensive services tailored for businesses of all sizes. Trust Wevalyn to turn your digital ambitions into reality. Contact us today for a WordPress experience that sets you apart in the online landscape.",
+  },
+  jp: {
+    title: "会社概要 - ウェバリン",
+    description:
+      "ウェバリンへようこそ。あなたの専任パートナーとして、エキスパートなWordPress開発サービスを提供します。熟練したウェブ開発チームが、あなたのウェブサイトのパフォーマンスとユーザーエクスペリエンスを向上させるカスタマイズされたソリューションを創造します。レスポンシブなデザインから、強力なWordPress機能のシームレスな統合に至るまで、私たちはあなたのビジョンを現実のものにします。あらゆる規模のビジネスに適した包括的なサービスをご覧ください。デジタルでの野望を現実にするウェバリンを信頼してください。オンラインの風景で差をつけるWordPressの体験について、今すぐ私たちにお問い合わせください。",
+  },
+};

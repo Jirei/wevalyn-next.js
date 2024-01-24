@@ -3,8 +3,7 @@ import "@/app/globals.css";
 import { Poppins, Arvo, Roboto } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { Providers } from "../providers";
-import Script from "next/script";
+import { Providers } from "./providers";
 import { i18n, type Locale } from "@/internationalization/i18n-config";
 import React from "react";
 
@@ -54,42 +53,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       {/* You need that both for the HTML and body tags because of Mobile Firefox weird behavior */}
-      <body className="flex min-h-screen w-screen flex-col overflow-x-hidden font-normal text-gray-font dark:bg-[#3e3e3e] dark:text-white">
+      <body className="w-screen min-h-screen flex flex-col justify-between overflow-x-hidden font-normal text-gray-font dark:bg-[#3e3e3e] dark:text-white">
         <Providers>
           <Header lang={params.lang} />
-          <main className="flex grow flex-col items-center justify-center">{children}</main>
+          <main className="flex flex-col items-center justify-center">{children}</main>
           <Footer lang={params.lang} />
         </Providers>
-        <Script id="microsoft-clarity" strategy="lazyOnload">
-          {getMicrosoftClarityScriptContent()}
-        </Script>
-        <Script
-          strategy="lazyOnload"
-          src="https://www.googletagmanager.com/gtag/js?id=G-0X8PL7R10X"
-        ></Script>
-        <Script id="google-analytics-sync">
-          {getGoogleAnalyticsSyncScriptContent()}
-        </Script>
       </body>
     </html>
   );
-}
-
-function getMicrosoftClarityScriptContent() {
-  return `(function(c,l,a,r,i,t,y){
-             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-           })(window, document, "clarity", "script", "kll2e7wfzo");
-    `;
-}
-
-function getGoogleAnalyticsSyncScriptContent() {
-  return `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-0X8PL7R10X');
-  `;
 }

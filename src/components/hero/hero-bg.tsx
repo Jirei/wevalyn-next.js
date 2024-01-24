@@ -1,6 +1,5 @@
-import backgroundImage from "./images/hero.jpg";
-import Image from "next/image";
 import "./hero.css";
+import React from "react";
 
 export default function HeroBackground({
   children,
