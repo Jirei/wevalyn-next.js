@@ -1,11 +1,10 @@
 "use client";
+import { getLocaleFromPathname } from "@/lib/client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function NotFound() {
-  const pathname = usePathname();
-  let locale: "en" | "jp" = "en"; // default value
-  if (pathname.startsWith("/jp")) locale = "jp";
+  const locale = getLocaleFromPathname(usePathname());
   const dictionary = inFileDictionaries[locale];
 
   return (

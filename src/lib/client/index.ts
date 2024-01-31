@@ -5,8 +5,9 @@ import { WrappingError } from "../common";
 import * as Sentry from "@sentry/nextjs";
 
 export function logClientError(error: unknown) {
+  console.log("Hello");
   if (!process.env.NEXT_PUBLIC_PRODUCTION_MODE) console.error(error);
-  Sentry.captureException(error);
+  console.log("Sentry id:", Sentry.captureException(error));
 }
 
 /**
@@ -66,12 +67,16 @@ async function isGrecaptchaReady() {
 
 type CheckCaptchaActionOnClientReturnValue =
   | {
-    token: string;
-    hasError: false;
-    error?: undefined;
-  }
+      token: string;
+      hasError: false;
+      error?: undefined;
+    }
   | {
-    token: null;
-    hasError: true;
-    error: unknown;
-  };
+      token: null;
+      hasError: true;
+      error: unknown;
+    };
+
+export function getLocaleFromPathname(pathname: string) {
+  return pathname.startsWith("/jp") ? "jp" : "en";
+}
