@@ -41,7 +41,7 @@ export function SettingsPopover({
         )}
       >
         <button
-          className="absolute right-3 top-3 hover:scale-105 hover:cursor-pointer hover:text-primary-light-dark-theme"
+          className="absolute right-3 top-3 hover:scale-105 hover:cursor-pointer hover:text-primary-light dark:hover:text-primary-light-dark-theme"
           onClick={() => setIsOpen(false)}
           title={dictionary.Close}
           aria-controls={menuId}
