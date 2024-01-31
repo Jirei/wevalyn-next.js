@@ -15,7 +15,10 @@ export default function NotFound() {
       <div className="text-center text-xl leading-relaxed">
         <p>{dictionary.UnfortunatelyWeDidntFindThisPageOnOurSite}</p>
         <p>
-          <Link className="underline" href={`/${locale}`}>
+          <Link
+            className="underline hover:text-primary-light dark:hover:text-primary-dark-theme"
+            href={`/${locale}`}
+          >
             {dictionary.ReturnHome}
           </Link>{" "}
           {dictionary.OrUseTheLinksInTheHeaderOrFooterToContinueYourVisit}
