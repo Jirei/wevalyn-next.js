@@ -34,8 +34,8 @@ export async function checkCaptchaClientTokenOnServer({
       signal: AbortSignal.timeout(5000),
     },
   );
-  const parsedResponse: GrecaptchaServerVerificationAPIResponseJSON =
-    await response.json();
+  const parsedResponse =
+    (await response.json()) as GrecaptchaServerVerificationAPIResponseJSON;
   if (
     !parsedResponse.success ||
     (parsedResponse.score <= 0.5 &&

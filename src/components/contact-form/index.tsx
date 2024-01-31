@@ -87,7 +87,8 @@ export function ContactForm({
         // needed because playwright getByRole() has a bug
         data-testid="form"
         className="flex flex-col gap-y-10 p-5 py-10"
-        onSubmit={handleSubmit(onSubmit)}
+        // Need to do that to avoid eslint error because of promise returned where void is expected, react-hook-form hasn't yet implemented a fix and it's unclear whether they're going to do it
+        onSubmit={(...args) => void handleSubmit(onSubmit)(...args)}
       >
         <h2 className="m-auto text-3xl text-white">{dictionary.ContactForm}</h2>
         <ul className="flex flex-col gap-y-5">

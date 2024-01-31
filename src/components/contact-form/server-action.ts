@@ -80,7 +80,7 @@ const _fnWithTimeoutAndRetries = addRetriesToFunction({
 const createMessageInDB = _fnWithTimeoutAndRetries;
 
 async function _rawCreateMessageInDB(messageData: Prisma.MessageCreateInput) {
-  return await prisma.message.create({ data: messageData });
+  await prisma.message.create({ data: messageData });
 }
 
 const _canUserSendFormWithTimeout = addTimeoutToFunction({

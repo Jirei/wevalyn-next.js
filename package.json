@@ -17,7 +17,6 @@
     "@hookform/resolvers": "^3.3.4",
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "@prisma/client": "^5.9.0",
-    "@prisma/extension-accelerate": "^0.6.2",
     "@sentry/nextjs": "^7.99.0",
     "@upstash/ratelimit": "^1.0.0",
     "@vercel/kv": "^1.0.1",

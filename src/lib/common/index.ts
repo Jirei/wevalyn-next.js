@@ -7,11 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 
 export const captchaActions = { contact: "contact" } as const;
 
-// eslint-disable-next-line no-unused-vars
-export type AnyFunction = (...args: any[]) => any;
+export type AnyFunction = (...args: unknown[]) => unknown;
 export type FunctionReturningBooleanOrBooleanPromise = (
-  // eslint-disable-next-line no-unused-vars
-  ...args: any[]
+  ...args: unknown[]
 ) => boolean | Promise<boolean>;
 
 export type CaptchaAction =

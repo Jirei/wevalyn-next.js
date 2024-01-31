@@ -8,7 +8,7 @@ import Script from "next/script";
 import { i18n, type Locale } from "@/internationalization/i18n-config";
 import React from "react";
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
@@ -57,7 +57,9 @@ export default function RootLayout({
       <body className="flex min-h-screen w-screen flex-col overflow-x-hidden font-normal text-gray-font dark:bg-[#3e3e3e] dark:text-white">
         <Providers>
           <Header lang={params.lang} />
-          <main className="flex grow flex-col items-center justify-center">{children}</main>
+          <main className="flex grow flex-col items-center justify-center">
+            {children}
+          </main>
           <Footer lang={params.lang} />
         </Providers>
         <Script id="microsoft-clarity" strategy="lazyOnload">

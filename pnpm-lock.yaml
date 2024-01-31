@@ -17,9 +17,6 @@ dependencies:
   '@prisma/client':
     specifier: ^5.9.0
     version: 5.9.0(prisma@5.9.0)
-  '@prisma/extension-accelerate':
-    specifier: ^0.6.2
-    version: 0.6.2(@prisma/client@5.9.0)
   '@sentry/nextjs':
     specifier: ^7.99.0
     version: 7.99.0(next@14.1.0)(react@18.2.0)
@@ -695,15 +692,6 @@ packages:
       '@prisma/engines-version': 5.9.0-32.23fdc5965b1e05fc54e5f26ed3de66776b93de64
       '@prisma/fetch-engine': 5.9.0
       '@prisma/get-platform': 5.9.0
-
-  /@prisma/extension-accelerate@0.6.2(@prisma/client@5.9.0):
-    resolution: {integrity: sha512-KIBVPeWt8qaSg7wQ+TXmCVeUDoW75whtXcdS9dbHxRoO2OWFH5I9+qbkHBhx5Wj/h1wQpS8usuxGnsZqiBjUpQ==}
-    engines: {node: '>=16'}
-    peerDependencies:
-      '@prisma/client': '>=4.16.1'
-    dependencies:
-      '@prisma/client': 5.9.0(prisma@5.9.0)
-    dev: false
 
   /@prisma/fetch-engine@5.9.0:
     resolution: {integrity: sha512-NL8Vm8Vl2d6NOSkkPGN5TTTz4s6cyCleXOzqtOFWzfKFJ4wtN2Shu7llOT+ykf6nDzh1lCN2JHUt1S6FGFZGig==}

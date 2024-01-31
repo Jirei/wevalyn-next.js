@@ -27,13 +27,10 @@ export default async function ContactPage({
   );
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { lang: Locale };
-}) {
+export function generateMetadata({ params }: { params: { lang: Locale } }) {
   return metadatas[params.lang];
 }
+
 const metadatas: { en: Metadata; jp: Metadata } = {
   en: {
     title: "Contact - Wevalyn",
