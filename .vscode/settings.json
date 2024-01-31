@@ -1,0 +1,4 @@
+{
+  "prettier.enableDebugLogs": false,
+  "javascript.format.enable": false
+}
