@@ -7,9 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 
 export const captchaActions = { contact: "contact" } as const;
 
-export type AnyFunction = (...args: unknown[]) => unknown;
+export type AnyFunction = (..._args: unknown[]) => unknown;
 export type FunctionReturningBooleanOrBooleanPromise = (
-  ...args: unknown[]
+  ..._args: unknown[]
 ) => boolean | Promise<boolean>;
 
 export type CaptchaAction =
