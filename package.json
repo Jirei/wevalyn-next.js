@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "prisma generate & next dev",
-    "dev-playwright": "pnpm exec dotenv -e .env.test -- next dev",
+    "dev": "prisma generate && next dev",
+    "dev-playwright": "prisma generate && dotenv -e .env.test -- next dev",
     "build": "prisma generate --no-engine && next build",
-    "start": "prisma generate & next start",
+    "start": "prisma generate && next start",
     "lint": "next lint",
     "ts-check": "tsc --noEmit",
     "reset-test-db": "pnpm exec dotenv -e .env.test -- prisma migrate reset --force && pnpm exec prisma generate",

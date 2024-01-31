@@ -17,7 +17,7 @@ export default async function ContactPage({
       <div className="my-24 w-full">
         <ContactForm dictionary={contactFormDictionary} />
       </div>
-      {process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== "on" && (
+      {process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== "yes" && (
         <Script
           src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
           strategy="lazyOnload"

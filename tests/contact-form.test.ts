@@ -60,7 +60,7 @@ test.describe("Contact Form Tests", () => {
         "The message was sent successfully. Thank you for your message.",
       );
     });
-    test("form data is saved correctly in the db", async ({ page }) => {
+    test("form data is saved correctly in the db", async () => {
       expect(await prisma.message.count()).toBe(1);
       const messageInDB = await prisma.message.findFirst();
       expect(messageInDB?.senderFirstName).toBe(firstName);

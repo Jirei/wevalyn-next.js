@@ -6,6 +6,9 @@
     "plugin:@next/next/recommended",
     "plugin:prettier/recommended"
   ],
+  "rules": {
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+  },
   "globals": {
     "ReCaptchaV2": "readonly",
     "grecaptcha": "readonly"

@@ -6,7 +6,7 @@ import * as Sentry from "@sentry/nextjs";
 
 export function logClientError(error: unknown) {
   console.log("Hello");
-  if (!process.env.NEXT_PUBLIC_PRODUCTION_MODE) console.error(error);
+  if (process.env.NEXT_PUBLIC_PRODUCTION_MODE !== "yes") console.error(error);
   console.log("Sentry id:", Sentry.captureException(error));
 }
 
@@ -20,7 +20,7 @@ export async function checkCaptchaActionOnClient(
   grecaptcha: ReCaptchaV2.ReCaptcha,
   action: CaptchaAction,
 ): Promise<CheckCaptchaActionOnClientReturnValue> {
-  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "on")
+  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "yes")
     return { token: "test-placeholder", hasError: false };
   try {
     const { isReady, hasError, error } = await isGrecaptchaReady();

@@ -94,7 +94,7 @@ const _canUserSendFormWithTimeoutAndRetries = addRetriesToFunction({
 const canUserSendForm = _canUserSendFormWithTimeoutAndRetries;
 
 async function _canUserSendForm(ip: string | null): Promise<boolean> {
-  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "on") return true;
+  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "yes") return true;
   if (!ip) return false;
   const { success } = await contactRatelimit.limit(ip);
   return success ? true : false;

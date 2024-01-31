@@ -18,7 +18,7 @@ export async function checkCaptchaClientTokenOnServer({
   token: string;
   action: CaptchaAction;
 }) {
-  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "on")
+  if (process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE === "yes")
     return { isValid: true } as const;
 
   const response = await fetchWithTwoRetriesOnTimeout(
@@ -39,7 +39,7 @@ export async function checkCaptchaClientTokenOnServer({
   if (
     !parsedResponse.success ||
     (parsedResponse.score <= 0.5 &&
-      process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== "on") ||
+      process.env.NEXT_PUBLIC_PLAYWRIGHT_MODE !== "yes") ||
     parsedResponse.action !== captchaActions.contact
   ) {
     let internalErrorMessage =
