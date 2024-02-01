@@ -4,7 +4,7 @@ const { withSentryConfig } = require("@sentry/nextjs");
 let nextConfig = {
   // This option was added because without it the build didn't work on Vercel (Probably error with Sentry)
   // Maybe you will be able to remove it when Sentry updates its package.
-  outputFileTracing: false,
+  //outputFileTracing: false,
   // Optional build-time configuration options
   sentry: {
     hideSourceMaps: true,
